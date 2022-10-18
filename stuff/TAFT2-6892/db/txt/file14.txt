@@ -1,0 +1,48 @@
+************141
+Discount Activation Fee Component Absolute/Percentage Alteration-74 Extended Entity
+AlterationPriceOverride
+Discount Activation Fee Component Absolute/Percentage Alteration-74
+50
+{"tax_code": [], "source_id": ["9159426416813519455"], "billing_offer_id": ["40641101"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["Ax1I"]}
+************
+
+************142
+$50 off Price Component-1 Extended Entity
+AlterationPriceOverride
+$50 off Price Component-1
+50
+{"tax_code": [], "source_id": ["9159751225513568888"], "billing_offer_id": ["40658981"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A1fj"]}
+************
+
+************143
+Discount Activation Fee Component Absolute/Percentage Alteration-82 Extended Entity
+AlterationPriceOverride
+Discount Activation Fee Component Absolute/Percentage Alteration-82
+50
+{"tax_code": [], "source_id": ["9160063948213998636"], "billing_offer_id": ["40641101"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["Ax49"]}
+************
+
+************145
+$100 Price Component-10 Extended Entity
+AlterationPriceOverride
+$100 Price Component-10
+100
+{"tax_code": [], "source_id": ["9160914217113079671"], "billing_offer_id": ["40885261"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["AnlD"]}
+************
+
+************146
+$100 Price Component-5 Extended Entity
+AlterationPriceOverride
+$100 Price Component-5
+100
+{"tax_code": [], "source_id": ["9160915016513080100"], "billing_offer_id": ["40885261"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["AnlF"]}
+************
+
+************148
+$50 Price Component-1001 Extended Entity
+AlterationPriceOverride
+$50 Price Component-1001
+50
+{"tax_code": [], "source_id": ["9161139804913174693"], "billing_offer_id": ["40885281"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["Anll"]}
+************
+

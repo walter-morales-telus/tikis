@@ -1,0 +1,104 @@
+{
+    "ncobjects": [
+        {
+            "obj": "9154692129613568913",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 6 MO - $3.5 Price Component-2 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568915"],"billing_offer_id":["40870741"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14t"]},
+            "amount": 3.5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 11
+        },
+        {
+            "obj": "9154692129613568917",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 12 MO - $3.5 Price Component-1 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568919"],"billing_offer_id":["40870761"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14u"]},
+            "amount": 3.5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 12
+        },
+        {
+            "obj": "9154692129613568921",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit Ongoing - $3.5 Price Component-1 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568923"],"billing_offer_id":["40870781"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14v"]},
+            "amount": 3.5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 13
+        },
+        {
+            "obj": "9154692129613568925",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 6 MO - $7 Price Component-1 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568927"],"billing_offer_id":["40870751"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14w"]},
+            "amount": 7,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 14
+        },
+        {
+            "obj": "9154692129613568929",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 12 MO - $7 Price Component-1 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568931"],"billing_offer_id":["40870771"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14x"]},
+            "amount": 7,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 15
+        },
+        {
+            "obj": "9154692129613568933",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit Ongoing - $7 Price Component-1 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568935"],"billing_offer_id":["40881061"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14y"]},
+            "amount": 7,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 16
+        },
+        {
+            "obj": "9154692129613568937",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 6 MO - $5 Price Component-2 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568939"],"billing_offer_id":["40871231"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A14z"]},
+            "amount": 5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 17
+        },
+        {
+            "obj": "9154692129613568941",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 12 MO - $5 Price Component-2 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568943"],"billing_offer_id":["40871241"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A150"]},
+            "amount": 5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 18
+        },
+        {
+            "obj": "9154692129613568945",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit Ongoing - $5 Price Component-2 Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568947"],"billing_offer_id":["40871271"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A151"]},
+            "amount": 5,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 19
+        },
+        {
+            "obj": "9154692129613568949",
+            "completed": true,
+            "award": "Retention 2.0: HP LD Credit 6 MO - $10 (V2) Price Component Extended Entity",
+            "extended_parameters": {"tax_code":[],"source_id":["9154692129613568951"],"billing_offer_id":["40871251"],"sync_to_legacy_system":["true"],"assigned_product_id_prefix":["A152"]},
+            "amount": 10,
+            "type": "AlterationPriceOverride",
+            "reference": "Price Alteration Discount",
+            "correl": 20
+        }
+    ]
+}

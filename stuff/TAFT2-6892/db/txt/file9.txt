@@ -1,0 +1,80 @@
+************91
+$200 Price Component-1000 Extended Entity
+AlterationPriceOverride
+$200 Price Component-1000
+200
+{"tax_code": [], "source_id": ["9153483746613298528"], "billing_offer_id": ["40791271"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A10u"]}
+************
+
+************92
+New Alteration Price Component-36 Extended Entity
+AlterationPriceOverride
+New Alteration Price Component-36
+100
+{"tax_code": [], "source_id": ["9153554201913155254"], "billing_offer_id": ["21176958"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A140"]}
+************
+
+************93
+$75 Price Component-2 Extended Entity
+AlterationPriceOverride
+$75 Price Component-2
+75
+{"tax_code": [], "source_id": ["9153717400113368904"], "billing_offer_id": ["40885271"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16U"]}
+************
+
+************94
+$75 Price Component-6 Extended Entity
+AlterationPriceOverride
+$75 Price Component-6
+75
+{"tax_code": [], "source_id": ["9153717422013368909"], "billing_offer_id": ["40885271"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16a"]}
+************
+
+************95
+$25 Price Component-3 Extended Entity
+AlterationPriceOverride
+$25 Price Component-3
+25
+{"tax_code": [], "source_id": ["9153717473513369014"], "billing_offer_id": ["40885201"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16V"]}
+************
+
+************96
+$25 Price Component-2 Extended Entity
+AlterationPriceOverride
+$25 Price Component-2
+25
+{"tax_code": [], "source_id": ["9153717542313369104"], "billing_offer_id": ["40885201"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16b"]}
+************
+
+************97
+$50 Price Component-13 Extended Entity
+AlterationPriceOverride
+$50 Price Component-13
+50
+{"tax_code": [], "source_id": ["9153717566613369109"], "billing_offer_id": ["40885281"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16W"]}
+************
+
+************98
+$50 Price Component-15 Extended Entity
+AlterationPriceOverride
+$50 Price Component-15
+50
+{"tax_code": [], "source_id": ["9153717629413369309"], "billing_offer_id": ["40885281"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16c"]}
+************
+
+************99
+$100 Price Component-12 Extended Entity
+AlterationPriceOverride
+$100 Price Component-12
+100
+{"tax_code": [], "source_id": ["9153717711013369329"], "billing_offer_id": ["40885261"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16X"]}
+************
+
+************100
+$100 Price Component-7 Extended Entity
+AlterationPriceOverride
+$100 Price Component-7
+100
+{"tax_code": [], "source_id": ["9153717734113369334"], "billing_offer_id": ["40885261"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A16d"]}
+************
+

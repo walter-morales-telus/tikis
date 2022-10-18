@@ -1,0 +1,84 @@
+{
+    "enrichments": [
+      {
+        "id": "92ecc78b-3fe2-477d-9945-4a8f2898e60f",
+        "multiple": false,
+        "name": "Merlin 1.0 Product Offering Enrichment",
+        "components": [
+          {
+            "name": "Merlin 1.0 Product Offering Enrichment #0",
+            "order": 0,
+            "attributes": [
+              {
+                "id": "fddda0ad-cbd6-4051-b937-1c133ca378d9",
+                "localizedValues": {
+                  "en": "The information provided will be associated with the  telephone number and published in the phone directory and 411 database."
+                },
+                "name": "offeringDetailedDescription",
+                "type": "TEXT_AREA"
+              },
+              {
+                "id": "2afe88a6-51d0-4c1b-b120-41dc1227eeef",
+                "localizedValues": {
+                  "en": "http://telus.com/serviceterms"
+                },
+                "name": "Terms",
+                "type": "TEXT_AREA"
+              },
+              {
+                "id": "a57ea89f-12b1-4a4e-b75b-b849db98d53d",
+                "localizedValues": {
+                  "en": "Your name and number will not be listed anywhere",
+                  "fr": "Votre nom et votre numéro ne seront répertoriés nulle part"
+                },
+                "name": "No",
+                "type": "TEXT"
+              },
+              {
+                "id": "c9474d80-7f32-4a50-af6b-154266be32fd",
+                "localizedValues": {
+                  "en": "If you choose to publish your listing in the directory, your listing information will be published in both TELUS and non-TELUS directories, online directories and Directory Assistance.<br/><br/> TELUS' directory publisher makes available lists of published listings to organizations such as charities, telemarketers and political parties for a fee.  You can choose to have your name removed from these lists at no charge.  However, \"de-listed\" phone numbers are still available through Directory Assistance, printed and online directories.  If you do not wish to have your information available in Directory Assistance, online or printed directories, please choose nonpublished as your preference.<br/><br/> You may also choose to have all or part of your address removed from your published listing.",
+                  "fr": "Si vous choisissez de publier votre inscription dans l'annuaire, les renseignements sur votre inscription seront publiés dans les annuaires de TELUS et non-TELUS, les annuaires en ligne et l'Assistance-annuaire.<br/><br/> L'éditeur d'annuaires de TELUS met des listes d'inscriptions publiées à la disposition d'organismes comme des organismes de bienfaisance, des télévendeurs et des partis politiques moyennant des frais. Vous pouvez choisir de faire retirer votre nom de ces listes sans frais. Cependant, les numéros de téléphone \"radiés\" sont toujours disponibles via l'assistance-annuaire, les annuaires imprimés et en ligne. Si vous ne souhaitez pas que vos informations soient disponibles dans l'assistance-annuaire, les annuaires en ligne ou imprimés, veuillez choisir non publié comme préférence.<br/><br/>Vous pouvez également choisir de supprimer votre adresse en totalité ou en partie de votre publication."
+                },
+                "name": "Yes",
+                "type": "TEXT_AREA"
+              },
+              {
+                "id": "1ef50a5f-e84b-4429-902d-e36c7f4b481e",
+                "localizedValues": {
+                  "en": "DirectoryListingTemplate"
+                },
+                "name": "Mandatory_question_HP",
+                "type": "TEXT"
+              },
+              {
+                "id": "66f64701-6ebb-4c3c-a9cb-d199c79f48e9",
+                "localizedValues": {
+                  "en": "Primary Residential telephone number published in the phone directory and 411 database."
+                },
+                "name": "offeringShortDescription",
+                "type": "TEXT_AREA"
+              },
+              {
+                "id": "b76c7023-2a51-469e-be9d-9df4a1dc70b5",
+                "localizedValues": {
+                  "fr": "Inscription à l’annuaire"
+                },
+                "name": "offer_display_name",
+                "type": "TEXT"
+              },
+              {
+                "id": "b6954845-31e4-408e-81a5-cb3e1e67a3db",
+                "localizedValues": {
+                  "fr": "Inscription à l’annuaire"
+                },
+                "name": "name",
+                "type": "TEXT"
+              }
+            ]
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  }

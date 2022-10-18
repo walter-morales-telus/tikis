@@ -1,0 +1,24 @@
+************134
+Discount Activation Fee Component Absolute/Percentage Alteration-1000 Extended Entity
+AlterationPriceOverride
+Discount Activation Fee Component Absolute/Percentage Alteration-1000
+100
+{"tax_code": [], "source_id": ["9158397432313447184"], "billing_offer_id": ["41111791"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["Ax0J"]}
+************
+
+************135
+$50 Price Component-16 Extended Entity
+AlterationPriceOverride
+$50 Price Component-16
+50
+{"tax_code": [], "source_id": ["9158784839513258673"], "billing_offer_id": ["41116521"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["A1Xf"]}
+************
+
+************137
+Discount Activation Fee Component Absolute/Percentage Alteration-69 Extended Entity
+AlterationPriceOverride
+Discount Activation Fee Component Absolute/Percentage Alteration-69
+50
+{"tax_code": [], "source_id": ["9158805239013113720"], "billing_offer_id": ["41116521"], "sync_to_legacy_system": ["true"], "assigned_product_id_prefix": ["AxBI"]}
+************
+

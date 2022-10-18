@@ -1,0 +1,60 @@
+Create new OSR rule with the following parameters:
+Name/Display Name: [6E] Set delivery mode of 6E equipment to software when HSIA is Software
+Enabled: Yes
+Sync to legacy system: Yes
+
+Extended Parameters:
+priority: 10
+execute_on: FE
+execution_scope: last_customize
+notification_type: Info
+text_rule_parameter: [{"Actions to Check SetCharacteristicValueRule":"Add"}] 
+reference_rule_parameter: 
+[{"Characteristic Value":["a190e2d6-e638-4f2a-ad0d-1e07d08655cf"]},{"Category to Set":["2f492106-5a1d-4475-9cf8-1dad6881c08f"]},{"Characteristic to Fill":["3bfc9f75-2667-2373-b6cf-a05cc7426103"]}] 
+rule_action: Ignore
+ignoreAlertLevel: TRUE
+
+Policy Action:
+Use this policy action: 512b4b1f-d755-81e1-f00f-e94499da5bd2
+
+Condition #1
+Name: HSIA is existing
+Condition Criteria: Existing
+Min Count: 1
+Max Count: 999
+Statements:
+
+Name:Product Offering Category  equals HSIA
+Variable type: Product Offering Technical Category
+Operator: equals
+Value: High Speed Home (9137773148713852470)
+
+Name: Delivery method is software
+Variable type: Product Offering Characteristic
+Characteristic: 1e3f5408-99b0-2fa9-e7a0-e5d164472ade
+Operator: equals
+Value: Software (cc2d865b-f181-0b38-9010-a2b1147a1e72)
+
+
+Condition #2
+Name: 6E Extender is selected and not software
+Condition Criteria: Newly Added
+Min Count: 1
+Max Count: 999
+Statements:
+
+Name:Product Offering  equals 6E Extender
+Variable type: Product Offering
+Operator: equals
+Value: 9163434102534517613
+
+Name: Delivery mode is not software
+Variable type: Product Offering Characteristic
+Characteristic: 3bfc9f75-2667-2373-b6cf-a05cc7426103
+Operator: not equals
+Value: a190e2d6-e638-4f2a-ad0d-1e07d08655cf
+
+Conditions Boolean Expression:
+Condition #1
+AND
+Condition #2
