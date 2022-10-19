@@ -1,3 +1,5 @@
+
+
 # *************************************************************************************************************************************************************
 # TAFT 2.0 Delivery TAFT2-7052 - [PC] TFP-2114/ Add Display Block feature offer
 
@@ -7,13 +9,36 @@
 - https://jira.tsl.telus.com/browse/TAFT2-7052
 - [link](./stuff/TAFT2-7052/index.md)  
 
-- Home Phone Lite 9162909276385310484
+//Original Template
+Display Block-Portal Configuration 
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/6daf2e18-b45a-bb87-a279-78d76fd4434c/207762ee-dd0a-4386-bdd4-74a967836320
 
+//Original Offer
+Display Block
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
+
+
+
+//Cloned Template
 Add Disp Block feature offer Template
-e6ae5010-dfce-4979-8f05-40acbd3df173
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/90d365a0-780c-42ea-9ef9-a19a267c501d/3818118c-53ab-4acf-9e61-7c0a25418318
 
+//New Product Offering
 Add Disp Block feature offer
-94ed0602-a801-403a-8256-6aa5427c5e3b
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
+
+//Extended Parameters
+
+source_id	                      
+sku_char_id	
+suspendable	                     Yes
+reliable_asset	                 Yes 
+billing_offer_id	
+sync_to_legacy_system            false 
+assigned_product_id_prefix	     A1kB 
+can_be_automatically_moved_to	
+applicable_for_manual_discount	 Yes 
+
 
 TQ Home phone-Template
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
@@ -21,6 +46,10 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/prod
 Home Phone Lite
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
+
+
+TELUS_Offering_External_IDs (TELUS BAU)
+https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_SMA/edit#gid=1920647907
 # *************************************************************************************************************************************************************
 
 
@@ -89,6 +118,8 @@ propagate_override_to_all_child_offerings   Do not override
 - frienxin frienxin
 
 # *************************************************************************************************************************************************************
+
+
 
 
 
