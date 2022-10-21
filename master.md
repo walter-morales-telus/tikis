@@ -1,3 +1,106 @@
+# *************************************************************************************************************************************************************
+# FIFA FNDA-25579 - [DMT_ITN02_E2E] LWC Create Subscriber Error - No rows returned for 4120617
+
+##     CR: [TAFT] ITSS-5487 LWC Price Increase
+## Branch: [TAFT] ITSS-5487 LWC Price Increase 
+
+
+- https://jira.tsl.telus.com/browse/FNDA-25579
+- [link](./stuff/FNDA-25579/index.md)
+
+
+LivingWell Companion Go - With App
+https://flcncapp-itn02.tsl.telus.com/common/uobject.jsp?tab=_Price&object=9163210145801646781
+
+select * from nc_params where object_id = 9164750501316234960 and attr_id = 9141216061213794878;
+update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and attr_id = 9141216061213794878;
+
+# *************************************************************************************************************************************************************
+
+
+
+
+
+
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- https://jira.tsl.telus.com/browse/TAFT2-7056
+- [link](./stuff/TAFT2-7056/index.md)  
+
+
+//Original Rule
+9161888540013697087
+Warn when “Software” delivery method is selected for LWC_CPQ
+
+//New Rule
+Warn when “Remove” 900 Block & Toll Block because of additional fee
+# *************************************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7133 - [PC] TFP-2116/ 3rd Number Block
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- https://jira.tsl.telus.com/browse/TAFT2-7133
+- [link](./stuff/TAFT2-7133/index.md)  
+
+//Original Template
+Call Guardian - 3rd Number Billing Block-Portal Configuration-2
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/ba1fc613-6497-20cd-6a4c-c6c928574111/207762ee-dd0a-4386-bdd4-74a967836320
+
+//Original Offer
+Call Guardian - 3rd Number Billing Block-1
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/7d7ebec3-7bee-c833-e75d-5d31b07b615a/207762ee-dd0a-4386-bdd4-74a967836320
+
+
+//Cloned Template
+3rd Number Block Template
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/afc9e6a6-386a-42e0-a82e-46d867b41955/3818118c-53ab-4acf-9e61-7c0a25418318
+
+//New Product Offering
+3rd Number Block feature offer
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c0012f52-866f-44e5-9be3-17d1aba7bb29/3818118c-53ab-4acf-9e61-7c0a25418318
+
+# *** TOP OFFERS ***
+
+## Extended Parameters of Relation
+
+override_type                               Do not override 
+child_behavior                              Retain 
+sync_to_legacy_system                       true 
+action_to_modify_parent                     Add,Delete,Modify
+propagate_modify_to_parent                  No 
+propagate_override_to_all_child_offerings   Do not override 
+
+TQ Home phone-Template
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+
+Home Phone Lite
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+
+
+TQ Home phone-Template
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+
+Home Phone-7
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/4087486a-ed6c-4e8a-b5e3-8fdf2f4d8375/191b45ba-1c88-4af8-86c7-03be9fd3b7e9
+
+# *************************************************************************************************************************************************************
 
 
 # *************************************************************************************************************************************************************
@@ -16,7 +119,6 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/prod
 //Original Offer
 Display Block
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
-
 
 
 //Cloned Template
@@ -57,16 +159,6 @@ https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_
 
 
 
-# *************************************************************************************************************************************************************
-# TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
-
-##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
-## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
-
-- https://jira.tsl.telus.com/browse/TAFT2-7056
-- [link](./stuff/TAFT2-7056/index.md)  
-
-# *************************************************************************************************************************************************************
 
 
 
