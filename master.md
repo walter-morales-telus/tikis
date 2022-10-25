@@ -1,4 +1,113 @@
 # *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- https://jira.tsl.telus.com/browse/TAFT2-7056
+- [link](./stuff/TAFT2-7056/index.md)  
+
+
+//Original Rule
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/business-rule/fdd9aa0d-6ec2-4490-91cf-1fd75b746ab9/f3bbd3af-88aa-4527-ae88-cf6feb1ea2d0
+Warn when “Software” delivery method is selected for LWC_CPQ
+
+//Original Action
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/94258b33-f9c7-43ff-97bc-c61c94325614/f6d6157d-d9a0-4a2e-88e4-e0a93ccd40c1
+
+//New Rule
+Warn when “Remove” 900 Block & Toll Block because of additional fee
+
+//New Action
+Warning message when “Remove” 900 Block & Toll Block
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/4641ad95-dca0-4300-96b1-c7a77b21a64a/d34aaf3e-25ea-49d3-9352-44a6b86aaa31
+
+//Action Message
+Additional fee will be added if remove
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action-message/3d4ba4f7-3120-4977-b783-74e581ff104a/d34aaf3e-25ea-49d3-9352-44a6b86aaa31
+A $10 fee is applicable for removing the blocking feature.
+# *************************************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+# *************************************************************************************************************************************************************
+# FIFA FNDA-25620 - [BVT_ITN02] ITSS-5487 Price is not reflecting in enabler.
+
+##     CR: [TAFT] ITSS-5487 LWC Price Increase 
+## Branch: 2022F11-NovemberMRBranch
+
+- https://jira.tsl.telus.com/browse/FNDA-25620
+- [link](./stuff/FNDA-25620/index.md)  
+
+- LivingWell Companion Home - Cellular (V2):                       9161505363905984296
+- LivingWell Companion Home with Fall Detection - Cellular (V2):   9161505374995984301
+- LivingWell Companion Go (V2):                                    9161482788965984291
+
+
+Old BOID   Billing Offer Id	    Billing Offer Name
+41161911   41226321	            LivingWell Companion Home - Cellular (V2)
+41161921   41226331	            LivingWell Companion Home with Fall Detection - Cellular (V2)
+41161931   41226341	            LivingWell Companion Go (V2)
+
+Old Billing Offer ID
+
+
+//Testing
+CCBPlwc RBOcttwooneFOUR (no price in enabler)
+124912247
+telusbvt-09itssLWC@yahoo.com
+32764, HAIDA DR Drive ABBOTSFORD, BC Canada
+
+CCBPlwc RBOcttwooneTHREE(no price in enabler)
+124912217
+telusbvt-08itssLWC@yahoo.com
+32765, HAIDA DR Drive ABBOTSFORD, BC Canada
+
+CCBPlwc RBOcttwentyONE (no price in enabler)
+124912175
+telusbvt-06itssLWC@yahoo.com
+32739, HAIDA DR Drive ABBOTSFORD, BC Canada
+
+# *************************************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# *************************************************************************************************************************************************************
 # FIFA FNDA-25579 - [DMT_ITN02_E2E] LWC Create Subscriber Error - No rows returned for 4120617
 
 ##     CR: [TAFT] ITSS-5487 LWC Price Increase
@@ -22,24 +131,6 @@ update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and 
 
 
 
-
-# *************************************************************************************************************************************************************
-# TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
-
-##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
-## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
-
-- https://jira.tsl.telus.com/browse/TAFT2-7056
-- [link](./stuff/TAFT2-7056/index.md)  
-
-
-//Original Rule
-9161888540013697087
-Warn when “Software” delivery method is selected for LWC_CPQ
-
-//New Rule
-Warn when “Remove” 900 Block & Toll Block because of additional fee
-# *************************************************************************************************************************************************************
 
 
 

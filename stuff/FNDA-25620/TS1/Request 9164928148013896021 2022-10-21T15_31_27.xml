@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cre="http://www.ibm.com/xmlns/prod/websphere/fabric/2009/12/telecom/operations/inventory/CreateProduct" xmlns:prod="http://www.ibm.com/xmlns/prod/websphere/fabric/2009/12/telecom/operations/inventory/schema/ProductOrderMessage" xmlns:v3="http://www.ibm.com/telecom/common/schema/mtosi/v3_0">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <cre:createProduct>
+			
+            <prod:productOrder>
+                <Id>NC_006rq63</Id>
+                <Name>New TELUS Personal Alerts Product Order #0006876227</Name>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>customerId</Name>
+                    </Characteristic>
+					
+                    <Value>124912247</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>orderType</Name>
+                    </Characteristic>
+                    <Value>New</Value>
+                </CharacteristicValue>
+				 <CharacteristicValue>
+                    <Characteristic>
+                        <Name>offerAttachmentLevel</Name>
+                    </Characteristic>
+						<Value>Product</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>billingAccountNumber</Name>
+                    </Characteristic>
+					
+                    <Value>726163859</Value>
+                    
+                </CharacteristicValue>
+				<CharacteristicValue>
+                    <Characteristic>
+                        <Name>billingAccountSystemCode</Name>
+                    </Characteristic>
+					
+                    <Value>1001</Value>
+                    
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>customerOfferCurrency</Name>
+                    </Characteristic>
+                    <Value>CAD</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>productType</Name>
+                    </Characteristic>
+                    <Value>SMHM</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>productExternalId</Name>
+                    </Characteristic>
+                    <Value>1211497817</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>suspendStatus</Name>
+                    </Characteristic>
+                    <Value>NA</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>forborneStatus</Name>
+                    </Characteristic>
+                    <Value>N</Value>
+                </CharacteristicValue>
+                
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>activityReason</Name>
+                    </Characteristic>
+                    <Value>CREQ</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>activityCode</Name>
+                    </Characteristic>
+                    <Value>PR</Value>
+                </CharacteristicValue>
+                <CharacteristicValue>
+                    <Characteristic>
+                        <Name>activityOrigin</Name>
+                    </Characteristic>
+                    <Value>OMS</Value>
+                </CharacteristicValue>
+                
+							<CharacteristicValue>
+								<Characteristic>
+									<Name>activityDate</Name>
+								</Characteristic>
+								<Value>2022-10-21T00:00:00Z</Value>
+							</CharacteristicValue>
+						
+                <Specification>
+                    <Name>Consumer</Name>
+					
+						<Type>Billing</Type>
+					 
+                    <Category>Product Order</Category>
+                </Specification>
+                <SiteOrderItem>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>addressType</Name>
+                        </Characteristic>
+                        <Value>S</Value>
+                    </CharacteristicValue>
+                    <Address>
+                        
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>externalServiceAddressId</Name>
+                            </Characteristic>
+                            
+                            <Value>BC004448470</Value>
+                        </CharacteristicValue>
+                        
+                        
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>streetNumber</Name>
+                            </Characteristic>
+                            <Value>32764</Value>
+                        </CharacteristicValue>
+                        
+                        
+                        
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>streetName</Name>
+                            </Characteristic>
+                            
+                            <Value>HAIDA DR</Value>
+                        </CharacteristicValue>
+                        
+						
+						
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>municipality</Name>
+                            </Characteristic>
+                            <Value>ABBOTSFORD</Value>
+                        </CharacteristicValue>
+						
+						
+						
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>province</Name>
+                            </Characteristic>
+                            <Value>BC</Value>
+                        </CharacteristicValue>
+						
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>postalCode</Name>
+                            </Characteristic>
+                            <Value/>
+                        </CharacteristicValue>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>locationPDSId</Name>
+                            </Characteristic>
+                            <Value>4005421</Value>
+                        </CharacteristicValue>
+                    </Address>
+                </SiteOrderItem>
+                
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->            
+                    <Id>A0001JzJvN</Id>
+                    <Name>TELUS Personal Alerts Product</Name>					
+													
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>PrimaryPricePlan</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>
+                        <Value>40798071</Value>
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895751</Value>
+                    </CharacteristicValue>
+                    
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Resource ID - used for primary resource only</Name>
+                            </Characteristic>
+                            
+                            <Value>1001843924</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Product</Type>
+                            <Category>Resource</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                    
+                </ProductOrderItem>
+                
+                
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1Rv00nYT4</Id>
+                    <Name>LWC Home - Cellular #0003221561</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895734</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>MIC code</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2398205</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Original Offer Effective Date</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2022-10-21T15:31:14</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1n700nYT5</Id>
+                    <Name>LivingWell Companion Home - Cellular #0003221560</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value>41226321</Value>
+									
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895733</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928088913894124</Value>
+					  
+					</CharacteristicValue>
+                    
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Original Offer Effective Date</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2022-10-21T15:31:25</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1nk00nYT8</Id>
+                    <Name>Emergency Contact #0003221565</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895738</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1nl00nYT9</Id>
+                    <Name>LWC Direct Ship #0003221564</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895737</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>MIC code</Name>
+                            </Characteristic>
+
+                            
+                                
+                                    <Value/>
+                                
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Original Offer Effective Date</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2022-10-21T15:31:14</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1nC00nYT6</Id>
+                    <Name>LivingWell Companion Activation Fee #0003221563</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895736</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1Rq00nYT7</Id>
+                    <Name>Home Help Pendant Cellular #0003221562</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895735</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>MIC code</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2398206</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Original Offer Effective Date</Name>
+                            </Characteristic>
+
+                            
+                            <Value>2022-10-21T15:31:15</Value>
+                            
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                
+					</ProductOrderItem>
+        
+                <ProductOrderItem>
+                    <!--Assigned Product Id-->
+                    <Id>A1nk00nYTV</Id>
+                    <Name>Emergency Contact #0003221566</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>						
+						
+								<Value/>
+								
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895739</Value>
+                    </CharacteristicValue>
+					<CharacteristicValue>
+					  <Characteristic>
+						 <Name>orderItemParentId</Name>
+					  </Characteristic>
+					  
+						<Value>9164928147013895733</Value>
+					  
+					</CharacteristicValue>
+                    
+					</ProductOrderItem>
+        
+								
+				
+                <ProductOrderItem>
+                    <!--Promotional Instance -->
+                    <Id>A1DE00nYTY</Id>
+                    <Name>LWC Promo Promotion Instance</Name>
+					
+                    <Action>Add</Action>
+					
+                    <Specification>
+                        <Category>Offer</Category>
+                        <Type>Promotion</Type>
+                    </Specification>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>billingOfferId</Name>
+                        </Characteristic>
+                        <Value/>
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895744</Value>
+                    </CharacteristicValue>
+                    <CharacteristicValue>
+                        <Characteristic>
+                            <Name>orderItemParentId</Name>
+                        </Characteristic>
+                        <Value>9164928147013895733</Value>
+                    </CharacteristicValue>      
+					
+                    <ComponentProductOrderItem>
+                        <CharacteristicValue>
+                            <Characteristic>
+                                <Name>Original Offer Effective Date</Name>
+                            </Characteristic>
+							
+							
+                            <Value>2022-10-21T15:31:25</Value>
+							
+                        </CharacteristicValue>
+                        <Specification>
+                            <Type>Offer</Type>
+                            <Category>Parameter</Category>
+                        </Specification>
+                    </ComponentProductOrderItem>
+                                  
+                </ProductOrderItem>    
+				                
+                
+            </prod:productOrder>
+        </cre:createProduct>
+    </soapenv:Body>
+</soapenv:Envelope>
