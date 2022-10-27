@@ -1,4 +1,22 @@
 # *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7072 - [PC] [PC] Enable Dormancy for LWC Price Increase ITSS-5487
+
+##     CR: 
+## Branch: 
+
+- https://jira.tsl.telus.com/browse/TAFT2-7072
+- [link](./stuff/TAFT2-7072/index.md) 
+
+
+
+
+
+# *************************************************************************************************************************************************************
+
+
+
+
+# *************************************************************************************************************************************************************
 # TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -6,6 +24,8 @@
 
 - https://jira.tsl.telus.com/browse/TAFT2-7056
 - [link](./stuff/TAFT2-7056/index.md)  
+
+https://github.com/telus/nc-telus-fifa/pull/9401
 
 
 //Original Rule
@@ -15,17 +35,55 @@ Warn when “Software” delivery method is selected for LWC_CPQ
 //Original Action
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/94258b33-f9c7-43ff-97bc-c61c94325614/f6d6157d-d9a0-4a2e-88e4-e0a93ccd40c1
 
+
 //New Rule
 Warn when “Remove” 900 Block & Toll Block because of additional fee
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/business-rule/eb1739ca-a3c3-4930-a29b-401c101088b6/3818118c-53ab-4acf-9e61-7c0a25418318
+
+
+    //Condition 1
+    TQ Voice plans (9159722947713609854) are new/current
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/e4c2f30a-5331-4f84-82a3-6d917ed8f37d/3818118c-53ab-4acf-9e61-7c0a25418318
+
+    //Condition 2
+    900 Block (9136923654113578850) is deleted/selected
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/d1a185f8-a8a2-4c11-a62d-470d8a33d33d/3818118c-53ab-4acf-9e61-7c0a25418318
+
+    //Contidion 3
+    Call Guardian - Toll Block (9136923654113578856) is deleted/selected
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/bc8d330a-d953-4366-8ea3-c15ec57bd207/3818118c-53ab-4acf-9e61-7c0a25418318
+
+
+    priority	               10 
+    execute_on	               BE 
+    is_bundle_only	           false 
+    notification_type	       Warning  
+    text_rule_parameter	       [{"CancelButton":"Cancel"}, {"ContinueButton":"Continue"}, {"Redirect URL":"/checkout"}]    
+    sync_to_legacy_system	   true 
+    execution_scope            customize_phone 
+
+
 
 //New Action
-Warning message when “Remove” 900 Block & Toll Block
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/4641ad95-dca0-4300-96b1-c7a77b21a64a/d34aaf3e-25ea-49d3-9352-44a6b86aaa31
+Warn msg if “Remove” 900 Block & Toll Block
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/52f8ccfc-53c7-4ff4-a5a9-04e498f31e2e/3818118c-53ab-4acf-9e61-7c0a25418318
 
 //Action Message
-Additional fee will be added if remove
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action-message/3d4ba4f7-3120-4977-b783-74e581ff104a/d34aaf3e-25ea-49d3-9352-44a6b86aaa31
-A $10 fee is applicable for removing the blocking feature.
+Fee will be added if remove 900 Block or Toll Block
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action-message/51df4535-b658-428b-b542-62b2140725d9/3818118c-53ab-4acf-9e61-7c0a25418318
+Reminder: A $10 fee is applicable for removing the blocking feature
+
+
+
+
+qcntest qcntest
+1 289 RUE GOSSELIN ST, RIMOUSKI, QC
+
+dtestuser dtestuser
+9164963017313198041
+313903024
+1 274 RUE GOSSELIN ST, RIMOUSKI, QC
+
 # *************************************************************************************************************************************************************
 
 
@@ -486,15 +544,17 @@ propagate_override_to_all_child_offerings   Do not override
 ## Branch: [TAFT] FNDA - 24592 Directory Listing Missing Other
 
 # Directory Listing
-- https://flcncapp-dv17.tsl.telus.com/ncobject.jsp?id=9164020405428562786 
+- https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164020405428562786 
 
 # Additional Directory Listing
-- https://flcncapp-dv17.tsl.telus.com/ncobject.jsp?id=9164022378661450533
+- https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164022378661450533
 
 - https://flcncapp-pr.tsl.telus.com/common/uobject.jsp?object=1000
 
 B 4 RUE JULES-A.-BRILLANT, RIMOUSKI, QC
 qctigon
+
+
 
 # *************************************************************************************************************************************************************
 

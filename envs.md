@@ -79,18 +79,18 @@ https://flcncapp-dv51.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=creat
 
 
 # [SCM] Change Tracker Listener
-https://flcncapp-dv52.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
+https://flcncapp-dv27.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
 
 # BOE Offering Catalog Rules (is Automatic NO)
-https://flcncapp-dv52.tsl.telus.com/ncobject.jsp?id=9134849870013241642
+https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 
 # Change Request
-https://flcncapp-dv52.tsl.telus.com/ncobject.jsp?id=9146586162313643063
+https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 
 # Reset Cache
-https://flcncapp-dv17.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-dv27.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-itn02.tsl.telus.com/tools/cache_manager.jsp?tab=0
 
