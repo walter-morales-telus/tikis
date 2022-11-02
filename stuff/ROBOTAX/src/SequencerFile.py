@@ -2,6 +2,7 @@ import sys
 import time
 
 import pyautogui
+import pyperclip
 from DocHandlerFile import DocHandler
 from DrawFile import Draw
 from LocatorFile import Locator
@@ -39,21 +40,30 @@ class Sequencer:
 
 
     def do_task_check_price_alteratio(self,ncobject):
-        print(ncobject)
 
-        #NC Search Location
-        time.sleep(3)
-        pyautogui.click(140,140) 
-        
         Lc = Locator()
         Dw = Draw()
 
-        rectangles = Lc.multi_scale_locator(IMGTemplates.NC_TXT_SEARCH,0.99)
+        print(ncobject)
+
+        Dw.draw_small_x(130,90,Dw.purple)
+        pyautogui.click(130,90) 
+        #time.sleep(3)
+        
+        rectangles = Lc.multi_scale_locator(IMGTemplates.NC_TXT_SEARCH,0.85013)
         Dw.draw_rectangles(rectangles)
         x,y = self.get_middle_point(rectangles)
-        Dw.draw_small_square(x,y,Dw.purple)
+        Dw.draw_small_x(x,y,Dw.purple)
+        pyautogui.click(x,y)
 
-        sys.exit()
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press('backspace')
+        pyperclip.copy(ncobject['object_id'])
+        pyautogui.hotkey('ctrl', 'v')
+        time.sleep(3)
+        
+
+       
 
 
         '''

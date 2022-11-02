@@ -1,3 +1,4 @@
+import sys
 import cv2
 import pyautogui
 import numpy as np
@@ -45,8 +46,11 @@ class Locator:
             rectangles.append([int(x), int(y), int(h), int(w)])
 
         print("loc: ", len(xloc))
+        if(len(xloc) > 1 or len(xloc) == 0):
+            sys.exit()
             
         rectangles, weights = cv2.groupRectangles(rectangles, 1, 0.9)
+        
         return rectangles
 
     def locate(self, image):

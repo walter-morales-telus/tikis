@@ -14,13 +14,13 @@ class Draw:
         self.purple = win32api.RGB(255, 0, 255)
         self.cyan   = win32api.RGB(0, 255, 255)
 
-    def draw_small_square(self,x, y,color):
+    def draw_small_x(self,x, y,color):
         dc = win32gui.GetDC(0)
 
         for i in range(10):
             win32gui.SetPixel(dc, x + i, y + i, color)
         x += 10
-        
+
         for j in range(10):
             win32gui.SetPixel(dc, x - j, y + j, color)
 
