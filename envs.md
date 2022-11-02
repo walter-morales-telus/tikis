@@ -50,7 +50,7 @@ https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158
 https://flcncapp-dv27.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158367376113476115;
 
 cpq-admin@netcracker.com
-MARket1234!
+  
 
 # CSR
 https://flcncapp-dv51-csr.tsl.telus.com/
@@ -203,3 +203,14 @@ https://sites.google.com/telus.com/iofgepublic/releases/2022-fifa-releases/2022-
 
 # Merlin
 https://docs.google.com/spreadsheets/d/1P67AssLp9FhHCpSjbuXfL3uZLy77oZGa/edit#gid=1652481044
+
+# Code Freeze
+https://sites.google.com/telus.com/iofgepublic/releases/2022-fifa-releases
+
+# Oracle Version
+SELECT * FROM v$version WHERE banner LIKE 'Oracle%';
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+
+# Icons
+https://icons8.com/icons/set/clock-in
+https://convertico.com/
