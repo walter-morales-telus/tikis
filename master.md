@@ -1,22 +1,15 @@
 # *************************************************************************************************************************************************************
-# TAFT 2.0 Delivery / TAFT2-7200 - [DMT_DV27_ST] Display Block should be available on csr
+# TAFT 2.0 Delivery B O T
 
-##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
-## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+##     CR: CR BOT Execution
+## Branch: ITSS-4936 - Alignment of Tax Included Credits 
 
-- https://jira.tsl.telus.com/browse/TAFT2-7200
-
-
-     CA: ccbp ccbp provNetTwo 
-Address:  1 10 RUE DE L'ÉVÊCHÉ E, RIMOUSKI, QC
-
-override_type	                            Do not override 
-child_behavior	                            Retain 
-sync_to_legacy_system	                    true 
-action_to_modify_parent	                    Add,Delete 
-propagate_modify_to_parent	                No 
-propagate_override_to_all_child_offerings	Do not override 
+- DV35
+- [link](./stuff/ROBOTAX/index.md)
+- 
 # *************************************************************************************************************************************************************
+
+
 
 
 # *************************************************************************************************************************************************************
@@ -38,6 +31,26 @@ propagate_override_to_all_child_offerings	Do not override
 - Rollback https://oracle-base.com/articles/misc/sql-for-beginners-the-insert-statement
 # *************************************************************************************************************************************************************
 
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery / TAFT2-7200 - [DMT_DV27_ST] Display Block should be available on csr
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- https://jira.tsl.telus.com/browse/TAFT2-7200
+
+
+     CA: ccbp ccbp provNetTwo 
+Address:  1 10 RUE DE L'ÉVÊCHÉ E, RIMOUSKI, QC
+
+override_type	                            Do not override 
+child_behavior	                            Retain 
+sync_to_legacy_system	                    true 
+action_to_modify_parent	                    Add,Delete 
+propagate_modify_to_parent	                No 
+propagate_override_to_all_child_offerings	Do not override 
+# *************************************************************************************************************************************************************
 
 
 # *************************************************************************************************************************************************************

@@ -1,13 +1,14 @@
 DECLARE
-    exrow BOOLEAN:=true;
+    cnt NUMBER := 0;
 BEGIN
-    exrow := EXISTS (SELECT * FROM nc_references where attr_id = 9142883780313111933 and reference = 9153786500813327277 and object_id = 9165017978815046657)
-    IF exrow 
-    THEN
+    SELECT COUNT(*) INTO cnt FROM nc_references where attr_id = 9142883780313111933 and reference = 9153786500813327277 and object_id = 9165017978815046657;
+    IF cnt = 0 THEN
         DBMS_OUTPUT.PUT_LINE('Hey look, ma!');
+
     END IF;
 END;
 /
+
 
 
 
