@@ -9,7 +9,7 @@ class Locator:
         self.x = -1
         self.y = -1
     
-    def multi_scale_locator(self, template_url):
+    def multi_scale_locator(self, template_url,threshold):
 
         #original = cv2.imread(enviroment_url)
 
@@ -26,25 +26,25 @@ class Locator:
         enviroment_height, enviromente_width = enviroment.shape[:2]
 
         rectangles = []
-        threshold = 0.40
+        #threshold = 0.40
         
-        for scale in np.linspace(0.2, 1.0, 20)[::-1]:
+        #for scale in np.linspace(0.2, 1.0, 20)[::-1]:
 
-            # Redimension de la imagen con base a la escala actual.
-            resized = imutils.resize(template, width=int(template.shape[1] * scale))
-            w, h = resized.shape[:2]
+        # Redimension de la imagen con base a la escala actual.
+        resized = imutils.resize(template, width=int(template.shape[1]))
+        w, h = resized.shape[:2]
 
-            #result = cv2.matchTemplate(enviroment,resized, cv2.TM_CCOEFF_NORMED)
+        #result = cv2.matchTemplate(enviroment,resized, cv2.TM_CCOEFF_NORMED)
 
-            result = cv2.matchTemplate(enviroment,resized, cv2.TM_CCOEFF_NORMED)
-            #min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
+        result = cv2.matchTemplate(enviroment,resized, cv2.TM_CCOEFF_NORMED)
+        #min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 
-            yloc, xloc = np.where(result >= threshold)
-            for (x, y) in zip(xloc, yloc):
-                rectangles.append([int(x), int(y), int(w), int(h)])
-                rectangles.append([int(x), int(y), int(w), int(h)])
+        yloc, xloc = np.where(result >= threshold)
+        for (x, y) in zip(xloc, yloc):
+            rectangles.append([int(x), int(y), int(h), int(w)])
+            rectangles.append([int(x), int(y), int(h), int(w)])
 
-            print("loc: ", len(xloc))
+        print("loc: ", len(xloc))
             
         rectangles, weights = cv2.groupRectangles(rectangles, 1, 0.9)
         return rectangles

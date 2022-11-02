@@ -26,6 +26,10 @@ class DocHandler:
                 promc = row['Promo Categories']
                 tmp['promo_categories']                    = None if promc == '[NULL]' else row['Promo Categories']
 
+                tmp['has_price_alteration']        = None
+                tmp['is_sync_to_legacy']           = None
+                tmp['has_charge_or_revenue']       = None
+
                 ncobjects.append(tmp)
         
         self.create_json_file(content,'./Docs/offerings.json')

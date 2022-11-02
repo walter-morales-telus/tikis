@@ -16,10 +16,13 @@ class Draw:
 
     def draw_small_square(self,x, y,color):
         dc = win32gui.GetDC(0)
-        win32gui.SetPixel(dc, x, y, color)
-        win32gui.SetPixel(dc, x + 1, y + 1, color)
-        win32gui.SetPixel(dc, x + 2, y + 2, color)
-        win32gui.SetPixel(dc, x + 3, y + 3, color)
+
+        for i in range(10):
+            win32gui.SetPixel(dc, x + i, y + i, color)
+        x += 10
+        
+        for j in range(10):
+            win32gui.SetPixel(dc, x - j, y + j, color)
 
     def draw_rectangles(self,rectangles):
         for (x,y,w,h) in rectangles:
