@@ -1,0 +1,26 @@
+{
+    "correlative": 3,
+    "object_id": 9162796246682662086,
+    "sequence_name": "Check Price Alteration",
+    "step_list": [
+        {
+            "name": "search_by_object_id",
+            "micro_tasks_list": [
+                {
+                    "name": "Click to TextBox",
+                    "template": "./Img/Templates/tboxsearch.png",
+                    "description": "Template ./Img/Templates/tboxsearch.png Found",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "Paste from Clipboard",
+                    "template": "",
+                    "description": "",
+                    "exeption": "",
+                    "success": true
+                }
+            ]
+        }
+    ]
+}

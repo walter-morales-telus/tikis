@@ -1,4 +1,5 @@
 import copy
+import json
 import sys
 import time
 import cv2
@@ -31,21 +32,23 @@ class Sequencer:
             self.do_task_check_price_alteratio(ncobject)
 
     def do_task_check_price_alteratio(self,ncobject):
-        print("correlative: " + str(ncobject['correlative']) + "object_id:" + str(ncobject['object_id']) + " promo_name:" + ncobject['promo_name'])
+        print("*** correlative: " + str(ncobject['correlative']) + " object_id:" + str(ncobject['object_id']) + " promo_name:" + ncobject['promo_name']+" ***")
 
         Recorder.stLog.sequence_name = "Check Price Alteration"
         Recorder.stLog.correlative   = ncobject['correlative']
         Recorder.stLog.object_id     = ncobject['object_id']
         
         stp01 = self.Stp.search_by_object_id(130,90,ncobject['object_id'])
-        log_stp01 = copy.deepcopy(Recorder.stLogStepper)
-        Recorder.stLog.Stepper_list.append(log_stp01)
-        
+        lgs = copy.deepcopy(Recorder.stLogStepper)
+        Recorder.stLog.Stepper_list.append(lgs)
+
         if not stp01:
-            print("Estos son los logs: ----->", Recorder.stLog)
             sys.exit()
 
         stp02 = self.Stp.select_first_ProdOfferingPriceAlterationDiscount()
+        lgs = copy.deepcopy(Recorder.stLogStepper)
+        Recorder.stLog.Stepper_list.append(lgs)
+        
         if not stp02:
             ncobject['has_price_alteration'] = False
         else:
@@ -53,6 +56,10 @@ class Sequencer:
         
         self.Dh.update_json_file(self.json_url,ncobject['object_id'],ncobject)
         time.sleep(2)
+
+        self.Dh.print_logs()
+
+        sys.exit()
 
         
 

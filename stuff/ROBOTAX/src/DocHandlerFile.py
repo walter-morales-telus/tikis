@@ -1,6 +1,9 @@
+import copy
 import csv
 import json
 import sys
+
+from LogFile import Log, LogMicroTask, LogStepper, Recorder
 
 class DocHandler:
     
@@ -68,4 +71,49 @@ class DocHandler:
         with open(json_url, 'r') as openfile:
             json_object = json.load(openfile)
         return json_object
+    
+    def create_json_file_from_python_object(self,object,json_url):
+        with open(json_url, 'w') as jsf:
+            json.dump(object, jsf)
+
+
+    
+    def print_logs(self):
+
+        tmp = copy.deepcopy(Recorder.stLog)
+
+        sequence = {}
+        sequence['correlative']   = tmp.correlative
+        sequence['object_id']     = tmp.object_id
+        sequence['sequence_name'] = tmp.sequence_name
+
+        sequence['step_list'] = []
+
+        for step_item in tmp.Stepper_list:
+            step = {}
+            step['name'] = step_item.name
+            step['micro_tasks_list'] = []
+
+            for task_item in step_item.micro_tasks_list:
+                task = {}
+                task['name']        = task_item.name
+                task['template']    = task_item.template
+                task['description'] = task_item.description
+                task['exeption']    = task_item.exeption
+                task['success']     = task_item.success
+                step['micro_tasks_list'].append(task)
+            
+        sequence['step_list'].append(step)
+
+        self.create_json_file_from_python_object(sequence,'./Docs/logs.json')
+
+        Recorder.stLog          = Log()
+        Recorder.stLogStepper   = LogStepper()
+        Recorder.stLogMicroTask = LogMicroTask()
+                
+
+            
+
+
+
 
