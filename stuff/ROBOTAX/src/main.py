@@ -17,7 +17,7 @@ def main():
     #Dw.draw_rectangles(rectangles)
 
     json_url = './Docs/offerings.json'
-    Sq = Sequencer()
+    Sq = Sequencer(json_url)
     Sq.start_automata(json_url)
 
 if __name__ == "__main__":

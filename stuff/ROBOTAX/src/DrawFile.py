@@ -23,7 +23,7 @@ class Draw:
 
         for j in range(10):
             win32gui.SetPixel(dc, x - j, y + j, color)
-
+        
     def draw_rectangles(self,rectangles):
         for (x,y,w,h) in rectangles:
             self.draw_frame_by_sup_left_corner(x,y,w,h,self.red)

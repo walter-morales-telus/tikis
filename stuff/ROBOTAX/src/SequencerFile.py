@@ -1,8 +1,11 @@
 import sys
 import time
+import cv2
 
 import pyautogui
 import pyperclip
+import win32gui
+import win32con
 from DocHandlerFile import DocHandler
 from DrawFile import Draw
 from LocatorFile import Locator
@@ -10,26 +13,33 @@ from IMGTemplatesFile import IMGTemplates
 
 class Sequencer:
 
-    def __init__(self):
-        self.x = -1
-        self.y = -1
+    
+
+    def __init__(self,json_url):
+        self.json_url = json_url
+        self.Dw = Draw()
+        self.Dh = DocHandler()
     
     def start_automata(self,json_url):
-        Dh = DocHandler()
-        json_content = Dh.load_json_file(json_url)
-
+        
+        json_content = self.Dh.load_json_file(json_url)
+        #print(len(json_content['ncobjects']))
         for ncobject in json_content['ncobjects']:
+            #print(ncobject)
+            #sys.exit()
             self.split_cases(ncobject)
 
     def split_cases(self,ncobject):
 
-        self.do_task_check_price_alteratio(ncobject)
         '''
         Action 1:
         Condition: If promotion does not have price alteration
         Actions: 
             a- Skip it and mark it for review
         '''
+
+        self.do_task_check_price_alteratio(ncobject)
+        
     def get_middle_point(self,rectangles):
         
         middle = -1,-1
@@ -38,69 +48,84 @@ class Sequencer:
         #middle = rectangles[0] + (rectangles[0].w // 2),rectangles[0].y + (rectangles[0].h // 2)
         return middle
 
+    def click_on(self,template,confidence,x_displacement,y_displacement):
+
+        #ci[1] == 65543 = Text
+        #ci[1] == 65541 = Cursor
+        #ci[1] == 65569 = Hand
+
+        ncsearch = pyautogui.locateCenterOnScreen(template, confidence = confidence)
+        if(ncsearch == None):
+            print("Template: "+template+" Not Found")
+            return False
+        else:
+            print(ncsearch)
+        x,y = ncsearch
+
+        img = cv2.imread(template)
+        h, w = img.shape[:2]
+
+        self.Dw.draw_frame_by_center(x,y,w,h,self.Dw.blue)
+        self.Dw.draw_small_x(x + x_displacement,y + y_displacement,self.Dw.red)
+        time.sleep(2)
+
+        pyautogui.moveTo(x + x_displacement,y + y_displacement)
+        time.sleep(2)
+
+        hc = win32gui.LoadCursor(0,win32con.IDC_HAND)  #Get the handle of cursor you need
+        ci = win32gui.GetCursorInfo()  #Get the handle of the current cursor
+
+        if(ci[1] == hc):
+            print("Hand is On")
+            pyautogui.click()
+        else:
+            print("Hand is Off")
+            self.Dw.draw_small_x(x + x_displacement,y + y_displacement,self.Dw.green)
+            pyautogui.click(x + x_displacement,y + y_displacement + 10)
+
+        time.sleep(2)
+        return True
+        9163410821067963319
 
     def do_task_check_price_alteratio(self,ncobject):
-
-        Lc = Locator()
-        Dw = Draw()
-
         print(ncobject)
 
-        Dw.draw_small_x(130,90,Dw.purple)
+        self.Dw.draw_small_x(130,90,self.Dw.purple)
         pyautogui.click(130,90) 
-        #time.sleep(3)
+        time.sleep(2)
         
-        rectangles = Lc.multi_scale_locator(IMGTemplates.NC_TXT_SEARCH,0.85013)
-        Dw.draw_rectangles(rectangles)
-        x,y = self.get_middle_point(rectangles)
-        Dw.draw_small_x(x,y,Dw.purple)
-        pyautogui.click(x,y)
+        self.click_on(IMGTemplates.NC_TXT_SEARCH,0.60,0,0)
 
         pyautogui.hotkey('ctrl', 'a')
         pyautogui.press('backspace')
+        print("estesi :V:V:S")
+        print(type(ncobject['object_id']))
         pyperclip.copy(ncobject['object_id'])
         pyautogui.hotkey('ctrl', 'v')
-        time.sleep(3)
-        
+        time.sleep(2)
 
-       
+        self.click_on(IMGTemplates.NAME,0.70,25,53)
 
-
-        '''
-        ncsearch = pyautogui.locateCenterOnScreen("./imuno/GPic/tboxsearch.png", confidence = 0.60)
-        pyautogui.click(ncsearch)  
-        time.sleep(3)
-
-        pyautogui.hotkey('ctrl', 'a')
-        pyautogui.press('backspace')
-        pyperclip.copy(obj['obj'])
-        pyautogui.hotkey('ctrl', 'v')
-        time.sleep(3)
-
-        res = pyautogui.locateOnScreen("./imuno/GPic/name.png", confidence = 0.7)
-        draw_frame(res.left, res.top, res.width, res.height)
-        draw_frame(res.left + 25, res.top+60, 5, 5)
-        pyautogui.click(res.left + 25, res.top + 60)
-        time.sleep(3)
-
-        ncsearch = pyautogui.locateCenterOnScreen("./imuno/GPic/promop.png", confidence = 0.70)
-        pyautogui.click(ncsearch) 
-        time.sleep(3)
+        self.click_on(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
 
         pyautogui.scroll(-500) 
-        time.sleep(3)
+        time.sleep(2)
 
-        ncsearch = pyautogui.locateCenterOnScreen("./imuno/GPic/actions.png", confidence = 0.70)
-        pyautogui.click(ncsearch) 
-        time.sleep(3)
+        self.click_on(IMGTemplates.ACTIONS,0.70,0,0)
 
-        res = pyautogui.locateOnScreen("./imuno/GPic/award.png", confidence = 0.80)
-        draw_frame(res.left+25, res.top+60, 5, 5)
-        pyautogui.click(res.left+25, res.top+60) 
-        time.sleep(3)
-        '''
+        self.click_on(IMGTemplates.AWARD,0.80,25,60)
 
+        price_alteration_exists = self.click_on(IMGTemplates.BLUE_DETAILS,0.80,0,0)
+
+        if price_alteration_exists:
+            ncobject['has_price_alteration'] = True
+        else:
+            ncobject['has_price_alteration'] = False
         
+        self.Dh.update_json_file(self.json_url,ncobject['object_id'],ncobject)
+        time.sleep(2)
+
+       
 
 
 

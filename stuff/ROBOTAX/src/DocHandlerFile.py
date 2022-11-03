@@ -11,11 +11,13 @@ class DocHandler:
         content = {}
         ncobjects = []
         content['ncobjects'] = ncobjects
+        cnt = 3
 
         with open(csv_url, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 tmp = {}
+                tmp['correlative']                         = cnt  
                 tmp['object_id']                           = int(row['NC Object Id'])
                 tmp['promo_name']                          = row['Promo name']
                 tmp['billing_offer_id']                    = int(row['Billing Offer Id'])
@@ -31,6 +33,8 @@ class DocHandler:
                 tmp['has_charge_or_revenue']       = None
 
                 ncobjects.append(tmp)
+
+                cnt += 1
         
         self.create_json_file(content,'./Docs/offerings.json')
 
@@ -40,17 +44,20 @@ class DocHandler:
             
     
     def update_json_file(self,json_url,object_id,updated_object):
+
+        print("objec_id es:",object_id)
+
         
         with open(json_url, 'r') as openfile:
             json_object = json.load(openfile)
+        openfile.close()
 
         for ncobjects in json_object['ncobjects']:
             if(ncobjects['object_id'] == object_id):
                 try:
-                    ncobjects['object_id'] = updated_object
+                    ncobjects['has_price_alteration'] = updated_object['has_price_alteration']
                     with open(json_url, 'w') as jsf:
                         json.dump(json_object, jsf)
-                    sys.exit()
                 except Exception:
                     print(Exception)
                     sys.exit()
@@ -62,47 +69,3 @@ class DocHandler:
             json_object = json.load(openfile)
         return json_object
 
-
-
-
-'''
-        json_file = './db/db.json'
-
-        with open(json_file, 'r') as openfile:
-            json_object = json.load(openfile)
-
-        tmp = {}
-        plus = 1
-        listing = []
-        for ncobjects in json_object['ncobjects']: 
-            
-            listing.append(ncobjects)
-            if(ncobjects['correl'] / 10 == plus):
-                
-                name = './db/comp/file'+str(plus - 1)+'.json'
-                tmp['ncobjects']=listing
-                with open(name, 'w') as jsf:
-                    json.dump(tmp, jsf)
-                tmp = {}
-                listing = []
-                plus = plus + 1
-     
-    def json_handler(json_file):
-
-        #json_file = './db/db.json'
-
-        with open(json_file, 'r') as openfile:
-            json_object = json.load(openfile)
-
-        for ncobjects in json_object['ncobjects']:
-            if(ncobjects['completed']==False and ncobjects['tax_code'] == '9999'):
-                try:
-                    start_automata(ncobjects)
-                    ncobjects['completed'] = True
-                    with open(json_file, 'w') as jsf:
-                        json.dump(json_object, jsf)
-                    sys.exit()
-                except Exception:
-                    print(Exception)
-                    sys.exit()
-'''
