@@ -1,13 +1,6 @@
 class LogMicroTask:
-
-    def __init__(self):
-        self.name             = ""
-        self.template         = ""
-        self.description      = ""
-        self.exeption         = ""
-        self.success          = False
     
-    def __init__(self,name,template,description,exeption,success):
+    def __init__(self,name="",template="",description="",exeption="",success=False):
         self.name             = name
         self.template         = template
         self.description      = description
@@ -16,11 +9,7 @@ class LogMicroTask:
 
 class LogStepper:
 
-    def __init__(self):
-        self.name             = ""
-        self.micro_tasks_list = []
-    
-    def __init__(self,name,micro_tasks_list):
+    def __init__(self,name = "", micro_tasks_list = []):
         self.name             = name
         self.micro_tasks_list = micro_tasks_list
 

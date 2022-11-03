@@ -9,7 +9,6 @@ from UInteractionFile import UInteraction
 
 class Stepper:
 
-
     def __init__(self):
         self.Dw = Draw()
         self.Ui = UInteraction()

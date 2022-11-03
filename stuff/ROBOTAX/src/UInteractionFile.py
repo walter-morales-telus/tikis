@@ -6,6 +6,7 @@ import win32gui
 import win32con
 
 import copy
+from DrawFile import Draw
 
 from IMGTemplatesFile import IMGTemplates
 from LogFile import LogMicroTask, Recorder
@@ -14,14 +15,14 @@ from LogFile import LogMicroTask, Recorder
 class UInteraction:
 
     def __init__(self):
-        pass
+        self.Dw  = Draw()
 
     def paste_value_to_textbox(self,template,confidence,value):
         
         # Click to TextBox
         passed = self.click(template,confidence)
         Recorder.stLogMicroTask.name = "Click to TextBox"
-        lmtask01 = copy(Recorder.stLogMicroTask)
+        lmtask01 = copy.copy(Recorder.stLogMicroTask)
         Recorder.stLogStepper.micro_tasks_list.append(lmtask01)
 
         if not passed:
@@ -39,26 +40,27 @@ class UInteraction:
             Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
         except Exception as e: 
             Recorder.stLogMicroTask = LogMicroTask("Paste from Clipboard","","",str(e),False)
-            lmtask02 = copy(Recorder.stLogMicroTask)
+            lmtask02 = copy.copy(Recorder.stLogMicroTask)
             Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
             return False
         
         return True
         
 
-    def click(self,template,confidence):
-        return self.click(template,confidence,0,0)
+    
 
-    def click(self,template,confidence,x_displacement,y_displacement):
+    def click(self,template,confidence,x_displacement = 0,y_displacement = 0):
 
         #ci[1] == 65543 = Text
         #ci[1] == 65541 = Cursor
         #ci[1] == 65569 = Hand
+
+        tmp = template.split("\\")
+        template_file_name = tmp[len(tmp) - 1]
         
         ncsearch = pyautogui.locateCenterOnScreen(template, confidence = confidence)
         if(ncsearch == None):
-            tmp = template.split("\\")
-            template_file_name = tmp[len(tmp) - 1]
+            
             Recorder.stLogMicroTask = LogMicroTask("",template,"Template " + template_file_name +" Not Found","",False)
             print("Template: " + template + " Not Found")
             return False
