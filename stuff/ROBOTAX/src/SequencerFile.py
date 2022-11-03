@@ -1,3 +1,4 @@
+import copy
 import sys
 import time
 import cv2
@@ -10,37 +11,80 @@ from DocHandlerFile import DocHandler
 from DrawFile import Draw
 from LocatorFile import Locator
 from IMGTemplatesFile import IMGTemplates
+from LogFile import Log, Recorder
+from StepperFile import Stepper
+from UInteractionFile import UInteraction
 
 class Sequencer:
 
-    
-
     def __init__(self,json_url):
         self.json_url = json_url
-        self.Dw = Draw()
-        self.Dh = DocHandler()
+        self.Dw  = Draw()
+        self.Dh  = DocHandler()
+        self.Stp = Stepper()
+        self.Lg  = Log()
+       
     
     def start_automata(self,json_url):
-        
         json_content = self.Dh.load_json_file(json_url)
-        #print(len(json_content['ncobjects']))
         for ncobject in json_content['ncobjects']:
-            #print(ncobject)
-            #sys.exit()
-            self.split_cases(ncobject)
+            self.do_task_check_price_alteratio(ncobject)
 
-    def split_cases(self,ncobject):
+    def do_task_check_price_alteratio(self,ncobject):
+        print("correlative: " + ncobject['correlative'] + "object_id:" + ncobject['object_id'] + " promo_name:" + ncobject['promo_name'])
 
-        '''
-        Action 1:
-        Condition: If promotion does not have price alteration
-        Actions: 
-            a- Skip it and mark it for review
-        '''
-
-        self.do_task_check_price_alteratio(ncobject)
+        Recorder.stLog.sequence_name = "Check Price Alteration"
+        Recorder.stLog.correlative   = ncobject['correlative']
+        Recorder.stLog.object_id     = ncobject['object_id']
         
-    def get_middle_point(self,rectangles):
+        stp01 = self.Stp.search_by_object_id(ncobject['object_id'])
+        log_stp01 = copy.deepcopy(Recorder.stLogStepper)
+        Recorder.stLog.Stepper_list.append(log_stp01)
+        
+        if not stp01:
+            sys.exit()
+
+        stp02 = self.Stp.select_first_ProdOfferingPriceAlterationDiscount()
+        if not stp02:
+            ncobject['has_price_alteration'] = False
+        else:
+            ncobject['has_price_alteration'] = True
+        
+        self.Dh.update_json_file(self.json_url,ncobject['object_id'],ncobject)
+        time.sleep(2)
+
+        #self.Dw.draw_small_x(130,90,self.Dw.purple)
+        #pyautogui.click(130,90) 
+        #time.sleep(2)
+        
+        #self.click_on(IMGTemplates.NC_TXT_SEARCH,0.60,0,0)
+
+        #pyautogui.hotkey('ctrl', 'a')
+        #pyautogui.press('backspace')
+        #pyperclip.copy(ncobject['object_id'])
+        #pyautogui.hotkey('ctrl', 'v')
+        #time.sleep(2)
+
+        #self.click_on(IMGTemplates.NAME,0.70,25,53)
+        #self.click_on(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
+
+        #pyautogui.scroll(-500) 
+        #time.sleep(2)
+
+        #self.click_on(IMGTemplates.ACTIONS,0.70,0,0)
+
+        #elf.click_on(IMGTemplates.AWARD,0.80,25,60)
+
+        #price_alteration_exists = self.click_on(IMGTemplates.BLUE_DETAILS,0.80,0,0)
+
+        #if price_alteration_exists:
+            #ncobject['has_price_alteration'] = True
+        #else:
+            #ncobject['has_price_alteration'] = False
+        
+        
+'''
+def get_middle_point(self,rectangles):
         
         middle = -1,-1
         for (x,y,w,h) in rectangles:
@@ -85,46 +129,7 @@ class Sequencer:
 
         time.sleep(2)
         return True
-        9163410821067963319
-
-    def do_task_check_price_alteratio(self,ncobject):
-        print(ncobject)
-
-        self.Dw.draw_small_x(130,90,self.Dw.purple)
-        pyautogui.click(130,90) 
-        time.sleep(2)
-        
-        self.click_on(IMGTemplates.NC_TXT_SEARCH,0.60,0,0)
-
-        pyautogui.hotkey('ctrl', 'a')
-        pyautogui.press('backspace')
-        print("estesi :V:V:S")
-        print(type(ncobject['object_id']))
-        pyperclip.copy(ncobject['object_id'])
-        pyautogui.hotkey('ctrl', 'v')
-        time.sleep(2)
-
-        self.click_on(IMGTemplates.NAME,0.70,25,53)
-
-        self.click_on(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
-
-        pyautogui.scroll(-500) 
-        time.sleep(2)
-
-        self.click_on(IMGTemplates.ACTIONS,0.70,0,0)
-
-        self.click_on(IMGTemplates.AWARD,0.80,25,60)
-
-        price_alteration_exists = self.click_on(IMGTemplates.BLUE_DETAILS,0.80,0,0)
-
-        if price_alteration_exists:
-            ncobject['has_price_alteration'] = True
-        else:
-            ncobject['has_price_alteration'] = False
-        
-        self.Dh.update_json_file(self.json_url,ncobject['object_id'],ncobject)
-        time.sleep(2)
-
+'''
        
 
 
