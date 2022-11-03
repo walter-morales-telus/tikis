@@ -25,6 +25,8 @@ class Stepper:
         if not passed:
             return False
         
+        return True
+        
     #Step
     def select_first_ProdOfferingPriceAlterationDiscount(self):
         

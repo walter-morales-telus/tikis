@@ -30,20 +30,21 @@ class UInteraction:
 
         # Paste from Clipboard
         try:
+            
             pyautogui.hotkey('ctrl', 'a')
             pyautogui.press('backspace')
             pyperclip.copy(value)
             pyautogui.hotkey('ctrl', 'v')
             time.sleep(1)
             Recorder.stLogMicroTask = LogMicroTask("Paste from Clipboard","","","",True)
-            lmtask02 = copy(Recorder.stLogMicroTask)
+            lmtask02 = copy.copy(Recorder.stLogMicroTask)
             Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
         except Exception as e: 
+            print(e)
             Recorder.stLogMicroTask = LogMicroTask("Paste from Clipboard","","",str(e),False)
             lmtask02 = copy.copy(Recorder.stLogMicroTask)
             Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
             return False
-        
         return True
         
 
@@ -60,7 +61,6 @@ class UInteraction:
         
         ncsearch = pyautogui.locateCenterOnScreen(template, confidence = confidence)
         if(ncsearch == None):
-            
             Recorder.stLogMicroTask = LogMicroTask("",template,"Template " + template_file_name +" Not Found","",False)
             print("Template: " + template + " Not Found")
             return False
