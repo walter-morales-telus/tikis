@@ -9,7 +9,7 @@
                 {
                     "name": "Click to TextBox",
                     "template": "./Img/Templates/tboxsearch.png",
-                    "description": "Template ./Img/Templates/tboxsearch.png Found",
+                    "description": "Template tboxsearch.png Found",
                     "exeption": "",
                     "success": true
                 },

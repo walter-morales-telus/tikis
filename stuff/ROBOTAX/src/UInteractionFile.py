@@ -30,7 +30,6 @@ class UInteraction:
 
         # Paste from Clipboard
         try:
-            
             pyautogui.hotkey('ctrl', 'a')
             pyautogui.press('backspace')
             pyperclip.copy(value)
@@ -56,17 +55,17 @@ class UInteraction:
         #ci[1] == 65541 = Cursor
         #ci[1] == 65569 = Hand
 
-        tmp = template.split("\\")
+        tmp = template.split("/")
+        
         template_file_name = tmp[len(tmp) - 1]
         
         ncsearch = pyautogui.locateCenterOnScreen(template, confidence = confidence)
         if(ncsearch == None):
-            Recorder.stLogMicroTask = LogMicroTask("",template,"Template " + template_file_name +" Not Found","",False)
+            Recorder.stLogMicroTask = LogMicroTask("",template_file_name,"Template " + template_file_name +" Not Found","",False)
             print("Template: " + template + " Not Found")
             return False
         else:
-            Recorder.stLogMicroTask = LogMicroTask("",template,"Template " + template_file_name +" Found","",True)
-            print(ncsearch)
+            Recorder.stLogMicroTask = LogMicroTask("",template_file_name,"Template " + template_file_name +" Successfully Found","",True)
         x,y = ncsearch
 
         img = cv2.imread(template)
@@ -83,10 +82,8 @@ class UInteraction:
         ci = win32gui.GetCursorInfo()                  #Get the handle of the current cursor
 
         if(ci[1] == hc):
-            print("Hand is On")
             pyautogui.click()
         else:
-            print("Hand is Off")
             self.Dw.draw_small_x(x + x_displacement,y + y_displacement,self.Dw.green)
             pyautogui.click(x + x_displacement,y + y_displacement + 10)
 

@@ -1,3 +1,4 @@
+import copy
 import time
 import pyautogui
 from DrawFile import Draw
@@ -29,12 +30,20 @@ class Stepper:
         
     #Step
     def select_first_ProdOfferingPriceAlterationDiscount(self):
+
+        Recorder.stLogStepper.name="select_first_ProdOfferingPriceAlterationDiscount"
         
         passed = self.Ui.click(IMGTemplates.NAME,0.70,25,53)
+        template = Recorder.stLogMicroTask.template
+        Recorder.stLogMicroTask.name = "Click to " + template
+        lmtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
         if not passed:
             return False
 
         passed = self.Ui.click(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
+        lmtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
         if not passed:
             return False
         
@@ -42,13 +51,19 @@ class Stepper:
         time.sleep(2)
         
         passed = self.Ui.click(IMGTemplates.ACTIONS,0.70,0,0)
+        lmtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
         if not passed:
             return False
 
         passed = self.Ui.click(IMGTemplates.AWARD,0.80,25,60)
+        lmtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
         if not passed:
             return False
         
+        lmtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
         price_alteration_exists = self.Ui.click(IMGTemplates.BLUE_DETAILS,0.80,0,0)
         if price_alteration_exists:
             return True
