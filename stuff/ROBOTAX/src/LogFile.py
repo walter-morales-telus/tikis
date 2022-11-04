@@ -33,29 +33,17 @@ class Recorder:
     def __init__(self):
         pass
 
-    def add_new_task_to_step(self,task_name,micro_task:LogMicroTask):
-        self.stLogMicroTask.name = task_name
+    def add_new_task_to_step():
+        lg_mtask = copy.copy(Recorder.stLogMicroTask)
+        Recorder.stLogStepper.micro_tasks_list.append(lg_mtask)
 
-        template = Recorder.stLogMicroTask.template
-        Recorder.stLogMicroTask.name = "Click to " + template
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
-
-        pass
-
-    def updateTask(self,name="",template="",description="",exeption="",success=None):
-        if name != "":
-            self.stLogMicroTask = name
-        
-        if template != "":
-            self.stLogMicroTask = template
-
-        if description != "":
-            self.stLogMicroTask = exeption
-        
-        if success != None:
-            self.stLogMicroTask = success
-
-
-    def updateSequence():
-        pass
+    def add_new_step_to_sequence():
+        lg_stp = copy.deepcopy(Recorder.stLogStepper)
+        Recorder.stLog.Stepper_list.append(lg_stp)
+        sksk = 0
+    
+    def reset_recorder():
+        Recorder.stLog          = Log()
+        Recorder.stLogStepper   = LogStepper()
+        Recorder.stLogMicroTask = LogMicroTask()
+    

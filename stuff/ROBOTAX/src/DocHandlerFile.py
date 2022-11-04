@@ -103,7 +103,9 @@ class DocHandler:
                 task['success']     = task_item.success
                 step['micro_tasks_list'].append(task)
             
-        sequence['step_list'].append(step)
+            sequence['step_list'].append(step)
+            
+        
 
         self.create_json_file_from_python_object(sequence,'./Docs/logs.json')
 

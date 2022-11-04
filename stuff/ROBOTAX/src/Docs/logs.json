@@ -7,18 +7,65 @@
             "name": "search_by_object_id",
             "micro_tasks_list": [
                 {
-                    "name": "Click to TextBox",
-                    "template": "./Img/Templates/tboxsearch.png",
-                    "description": "Template tboxsearch.png Found",
+                    "name": "cv_click",
+                    "template": "tboxsearch.png",
+                    "description": "Template tboxsearch.png Successfully Found",
                     "exeption": "",
                     "success": true
                 },
                 {
-                    "name": "Paste from Clipboard",
-                    "template": "",
-                    "description": "",
+                    "name": "cv_paste",
+                    "template": "tboxsearch.png",
+                    "description": "value is -> 9162796246682662086",
                     "exeption": "",
                     "success": true
+                }
+            ]
+        },
+        {
+            "name": "select_first_ProdOfferingPriceAlterationDiscount",
+            "micro_tasks_list": [
+                {
+                    "name": "cv_click",
+                    "template": "tboxsearch.png",
+                    "description": "Template tboxsearch.png Successfully Found",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "cv_paste",
+                    "template": "tboxsearch.png",
+                    "description": "value is -> 9162796246682662086",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "cv_click",
+                    "template": "name.png",
+                    "description": "Template name.png Successfully Found",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "cv_click",
+                    "template": "promotion_patterns.png",
+                    "description": "Template promotion_patterns.png Successfully Found",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "cv_click",
+                    "template": "actions.png",
+                    "description": "Template actions.png Successfully Found",
+                    "exeption": "",
+                    "success": true
+                },
+                {
+                    "name": "cv_click",
+                    "template": "award.png",
+                    "description": "Template award.png Not Found",
+                    "exeption": "",
+                    "success": false
                 }
             ]
         }

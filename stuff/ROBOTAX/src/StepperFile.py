@@ -22,7 +22,7 @@ class Stepper:
         pyautogui.click(130,90)
         time.sleep(1)
 
-        passed = self.Ui.paste_value_to_textbox(IMGTemplates.NC_TXT_SEARCH,0.60,object_id)
+        passed = self.Ui.cv_paste(IMGTemplates.NC_TXT_SEARCH,0.60,object_id)
         if not passed:
             return False
         
@@ -33,38 +33,26 @@ class Stepper:
 
         Recorder.stLogStepper.name="select_first_ProdOfferingPriceAlterationDiscount"
         
-        passed = self.Ui.click(IMGTemplates.NAME,0.70,25,53)
-        template = Recorder.stLogMicroTask.template
-        Recorder.stLogMicroTask.name = "Click to " + template
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
+        passed = self.Ui.cv_click(IMGTemplates.NAME,0.70,25,53)
         if not passed:
             return False
 
-        passed = self.Ui.click(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
+        passed = self.Ui.cv_click(IMGTemplates.PROMOTION_PATTERNS,0.70,0,0)
         if not passed:
             return False
         
         pyautogui.scroll(-500) 
         time.sleep(2)
         
-        passed = self.Ui.click(IMGTemplates.ACTIONS,0.70,0,0)
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
+        passed = self.Ui.cv_click(IMGTemplates.ACTIONS,0.70,0,0)
         if not passed:
             return False
 
-        passed = self.Ui.click(IMGTemplates.AWARD,0.80,25,60)
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
+        passed = self.Ui.cv_click(IMGTemplates.AWARD,0.80,25,60)
         if not passed:
             return False
-        
-        lmtask = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask)
-        price_alteration_exists = self.Ui.click(IMGTemplates.BLUE_DETAILS,0.80,0,0)
+
+        price_alteration_exists = self.Ui.cv_click(IMGTemplates.BLUE_DETAILS,0.80,0,0)
         if price_alteration_exists:
             return True
 

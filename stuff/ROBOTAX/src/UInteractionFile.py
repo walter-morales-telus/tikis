@@ -17,13 +17,13 @@ class UInteraction:
     def __init__(self):
         self.Dw  = Draw()
 
-    def paste_value_to_textbox(self,template,confidence,value):
+    def cv_paste(self,template,confidence,value):
+
+        tmp = template.split("/")
+        template_file_name = tmp[len(tmp) - 1]
         
         # Click to TextBox
-        passed = self.click(template,confidence)
-        Recorder.stLogMicroTask.name = "Click to TextBox"
-        lmtask01 = copy.copy(Recorder.stLogMicroTask)
-        Recorder.stLogStepper.micro_tasks_list.append(lmtask01)
+        passed = self.cv_click(template,confidence)
 
         if not passed:
             return False
@@ -35,37 +35,36 @@ class UInteraction:
             pyperclip.copy(value)
             pyautogui.hotkey('ctrl', 'v')
             time.sleep(1)
-            Recorder.stLogMicroTask = LogMicroTask("Paste from Clipboard","","","",True)
-            lmtask02 = copy.copy(Recorder.stLogMicroTask)
-            Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
+            Recorder.stLogMicroTask = LogMicroTask("cv_paste",template_file_name,"value is -> "+str(value),"",True)
+            Recorder.add_new_task_to_step()
         except Exception as e: 
             print(e)
-            Recorder.stLogMicroTask = LogMicroTask("Paste from Clipboard","","",str(e),False)
-            lmtask02 = copy.copy(Recorder.stLogMicroTask)
-            Recorder.stLogStepper.micro_tasks_list.append(lmtask02)
+            Recorder.stLogMicroTask = LogMicroTask("cv_paste",template_file_name,"value is -> "+str(value),str(e),False)
+            Recorder.add_new_task_to_step()
             return False
         return True
         
 
     
 
-    def click(self,template,confidence,x_displacement = 0,y_displacement = 0):
+    def cv_click(self,template,confidence,x_displacement = 0,y_displacement = 0):
 
         #ci[1] == 65543 = Text
         #ci[1] == 65541 = Cursor
         #ci[1] == 65569 = Hand
 
         tmp = template.split("/")
-        
         template_file_name = tmp[len(tmp) - 1]
         
         ncsearch = pyautogui.locateCenterOnScreen(template, confidence = confidence)
         if(ncsearch == None):
-            Recorder.stLogMicroTask = LogMicroTask("",template_file_name,"Template " + template_file_name +" Not Found","",False)
-            print("Template: " + template + " Not Found")
+            Recorder.stLogMicroTask = LogMicroTask("cv_click",template_file_name,"Template " + template_file_name +" Not Found","",False)
+            Recorder.add_new_task_to_step()
+            print("Template: " + template_file_name + " Not Found")
             return False
         else:
-            Recorder.stLogMicroTask = LogMicroTask("",template_file_name,"Template " + template_file_name +" Successfully Found","",True)
+            Recorder.stLogMicroTask = LogMicroTask("cv_click",template_file_name,"Template " + template_file_name +" Successfully Found","",True)
+            Recorder.add_new_task_to_step()
         x,y = ncsearch
 
         img = cv2.imread(template)
