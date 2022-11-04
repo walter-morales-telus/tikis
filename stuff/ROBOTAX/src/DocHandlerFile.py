@@ -105,13 +105,9 @@ class DocHandler:
             
             sequence['step_list'].append(step)
             
-        
-
         self.create_json_file_from_python_object(sequence,'./Docs/logs.json')
 
-        Recorder.stLog          = Log()
-        Recorder.stLogStepper   = LogStepper()
-        Recorder.stLogMicroTask = LogMicroTask()
+        
                 
 
             

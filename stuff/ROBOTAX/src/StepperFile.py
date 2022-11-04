@@ -42,13 +42,13 @@ class Stepper:
             return False
         
         pyautogui.scroll(-500) 
-        time.sleep(2)
+        time.sleep(1)
         
         passed = self.Ui.cv_click(IMGTemplates.ACTIONS,0.70,0,0)
         if not passed:
             return False
 
-        passed = self.Ui.cv_click(IMGTemplates.AWARD,0.80,25,60)
+        passed = self.Ui.cv_click(IMGTemplates.AWARD,0.80,0,60)
         if not passed:
             return False
 

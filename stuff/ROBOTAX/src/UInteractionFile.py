@@ -72,10 +72,10 @@ class UInteraction:
 
         self.Dw.draw_frame_by_center(x,y,w,h,self.Dw.blue)
         self.Dw.draw_small_x(x + x_displacement,y + y_displacement,self.Dw.red)
-        time.sleep(2)
+        time.sleep(1)
 
         pyautogui.moveTo(x + x_displacement,y + y_displacement)
-        time.sleep(2)
+        time.sleep(1)
 
         hc = win32gui.LoadCursor(0,win32con.IDC_HAND)  #Get the handle of cursor you need
         ci = win32gui.GetCursorInfo()                  #Get the handle of the current cursor
@@ -86,5 +86,5 @@ class UInteraction:
             self.Dw.draw_small_x(x + x_displacement,y + y_displacement,self.Dw.green)
             pyautogui.click(x + x_displacement,y + y_displacement + 10)
 
-        time.sleep(2)
+        time.sleep(1)
         return True

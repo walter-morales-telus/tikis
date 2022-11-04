@@ -1,7 +1,8 @@
 import sys
 
 from DocHandlerFile import DocHandler
-from LogFile import  Recorder
+from IMGTemplatesFile import IMGTemplates
+from LogFile import  Fallen, Recorder
 from StepperFile import Stepper
 
 class Sequencer:
@@ -13,11 +14,14 @@ class Sequencer:
         self.Stp = Stepper()
     
     def start_automata(self,json_url):
+        
         json_content = self.Dh.load_json_file(json_url)
         for ncobject in json_content['ncobjects']:
-            self.do_task_check_price_alteratio(ncobject)
+            if ncobject['correlative'] > 0:
+                self.do_task_check_price_alteratio(ncobject)
 
     def do_task_check_price_alteratio(self,ncobject):
+        print("")
         print("correlative:   " + str(ncobject['correlative']) + "\n  object_id:   " + str(ncobject['object_id']) + "\n promo_name:   " + ncobject['promo_name']+"\n")
 
         Recorder.stLog.sequence_name = "Check Price Alteration"
@@ -26,13 +30,18 @@ class Sequencer:
         
         stp01 = self.Stp.search_by_object_id(130,90,ncobject['object_id'])
         Recorder.add_new_step_to_sequence()
-
-        if not stp01:
+        all_steps_are_ok:Fallen = Recorder.validate_sequence()
+        
+        if not all_steps_are_ok.validation_result and not all_steps_are_ok.do_the_names_match:
             sys.exit()
 
         stp02 = self.Stp.select_first_ProdOfferingPriceAlterationDiscount()
         Recorder.add_new_step_to_sequence()
-        
+        all_steps_are_ok:Fallen = Recorder.validate_sequence(IMGTemplates.BLUE_DETAILS)
+
+        if not all_steps_are_ok.validation_result and not all_steps_are_ok.do_the_names_match:
+            sys.exit()
+
         if not stp02:
             ncobject['has_price_alteration'] = False
         else:
@@ -41,7 +50,9 @@ class Sequencer:
         self.Dh.update_json_file(self.json_url,ncobject['object_id'],ncobject)
         self.Dh.print_logs()
 
-        sys.exit()
+        Recorder.reset_recorder()
+
+        
 
 
     
