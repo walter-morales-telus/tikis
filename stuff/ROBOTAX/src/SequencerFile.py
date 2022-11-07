@@ -17,7 +17,7 @@ class Sequencer:
         
         json_content = self.Dh.load_json_file(json_url)
         for ncobject in json_content['ncobjects']:
-            if ncobject['correlative'] > 0:
+            if ncobject['correlative'] > 18:
                 self.do_task_check_price_alteratio(ncobject)
 
     def do_task_check_price_alteratio(self,ncobject):

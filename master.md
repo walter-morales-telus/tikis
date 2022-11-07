@@ -1,3 +1,66 @@
+
+# *************************************************************************************************************************************************************
+# FIFA FNDA-25025 WiFi 6E Extender not added to PODS
+
+
+
+- https://jira.tsl.telus.com/browse/FNDA-25025
+- [link](./stuff/FNDA-25025/index.md)
+  
+# *************************************************************************************************************************************************************
+
+
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7277 [DMT_ST_DV27] "One-time" is not translated to French in Shopping Cart
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- Order processing charge --> 9164913578769407851
+- Order processing charge --> 9164913548919303412
+
+Frais de traitement de dossier
+Frais de raccordement de ligne
+
+
+- https://jira.tsl.telus.com/browse/TAFT2-7277
+- [link](./stuff/TAFT2-7277/index.md)
+  
+# *************************************************************************************************************************************************************
+
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery TAFT2-7278 [DMT_ST_DV27] It is not possible to remove 900 Block feature
+
+##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
+
+- https://jira.tsl.telus.com/browse/TAFT2-7278
+- [link](./stuff/TAFT2-7277/index.md)
+  
+# *************************************************************************************************************************************************************
+
+
+
+
+
+
+# *************************************************************************************************************************************************************
+# TAFT 2.0 Delivery B O T
+
+##     CR: CR BOT Execution
+## Branch: ITSS-4936 - Alignment of Tax Included Credits 
+
+- DV35
+- [link](./stuff/ROBOTAX/index.md)
+  
+- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit#gid=8262681
+# *************************************************************************************************************************************************************
+
+
+
+
 # *************************************************************************************************************************************************************
 # TAFT 2.0 Delivery B O T
 
@@ -18,6 +81,7 @@
 
 ##     CR: 
 ## Branch: 2022F12-DecemberMRBranch
+
 - ITSS-4936 - Alignment of Tax Included Credits
 - 
 - https://jira.tsl.telus.com/browse/TAFT2-7173

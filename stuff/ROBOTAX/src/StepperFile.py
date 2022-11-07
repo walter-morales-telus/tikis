@@ -20,7 +20,7 @@ class Stepper:
 
         self.Dw.draw_small_x(x,y,self.Dw.purple)
         pyautogui.click(130,90)
-        time.sleep(1)
+        time.sleep(2)
 
         passed = self.Ui.cv_paste(IMGTemplates.NC_TXT_SEARCH,0.60,object_id)
         if not passed:
@@ -42,7 +42,7 @@ class Stepper:
             return False
         
         pyautogui.scroll(-500) 
-        time.sleep(1)
+        #time.sleep(2)
         
         passed = self.Ui.cv_click(IMGTemplates.ACTIONS,0.70,0,0)
         if not passed:

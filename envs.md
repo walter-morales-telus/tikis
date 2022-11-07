@@ -50,7 +50,7 @@ https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158
 https://flcncapp-dv27.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158367376113476115;
 
 cpq-admin@netcracker.com
-  
+
 
 # CSR
 https://flcncapp-dv51-csr.tsl.telus.com/
