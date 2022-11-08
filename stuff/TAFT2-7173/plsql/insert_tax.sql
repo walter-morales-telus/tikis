@@ -194,7 +194,7 @@ DECLARE
     );
 BEGIN
     FOR i IN 1..nt.count LOOP
-        SELECT COUNT(*) INTO cnt FROM nc_references where attr_id = 9142883780313111933 and object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+        SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
         IF cnt = 0 THEN
             INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
             VALUES 
