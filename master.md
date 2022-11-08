@@ -83,7 +83,7 @@ Frais de raccordement de ligne
 ## Branch: 2022F12-DecemberMRBranch
 
 - ITSS-4936 - Alignment of Tax Included Credits
-- 
+  
 - https://jira.tsl.telus.com/browse/TAFT2-7173
 - [link](./stuff/TAFT2-7173/index.md) 
 

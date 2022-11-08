@@ -1,16 +1,5 @@
 DECLARE
     cnt NUMBER := 0;
-BEGIN
-    SELECT COUNT(*) INTO cnt FROM nc_references where attr_id = 9142883780313111933 and reference = 9153786500813327277 and object_id = 9165017978815046657;
-    IF cnt = 0 THEN
-        DBMS_OUTPUT.PUT_LINE('Hey look, ma!');
-    END IF;
-END;
-/
-
-
-DECLARE
-    cnt NUMBER := 0;
     TYPE nt_type IS TABLE of NUMBER;
     nt nt_type := nt_type 
     (
@@ -186,11 +175,26 @@ DECLARE
         9160004013513176209,
         9160554850813311283,
         9160554958313311290,
-        9160555015713311295
+        9160555015713311295,
+        /*---------------*/
+        9154691807313568794,
+        9154692001813568798,
+        9154692001813568853,
+        9154696399613572369,
+        9158639877213023859,
+        9158794763513573288,
+        9158855419713694859,
+        9158860879013728466,
+        9150145284413952802,
+        9150145324513952807,
+        9150145381213952812,
+        9150145498213952917,
+        9150145579913952922,
+        9150145600313952927
     );
 BEGIN
     FOR i IN 1..nt.count LOOP
-        SELECT COUNT(*) INTO cnt FROM nc_references where attr_id = 9142883780313111933 and reference = 9153786500813327277 and object_id = nt(i);
+        SELECT COUNT(*) INTO cnt FROM nc_references where attr_id = 9142883780313111933 and object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
         IF cnt = 0 THEN
             INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
             VALUES 
@@ -200,16 +204,15 @@ BEGIN
                 /*9999 ref*/
                 9153786500813327277,
                 /*Alteration Price Component*/
-                (SELECT object_id  FROM nc_objects nco WHERE parent_id = 9150980333813849805),
+                (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i)),
                 1,
                 0,
                 0
             );
-            DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode 9999 Successfully added to:',nt(i)));
+            DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode 9999 Successfully added to: ',nt(i)));
         ELSE
-            DBMS_OUTPUT.PUT_LINE(CONCAT('Promotion has Already 9999 tax code:',nt(i)));
+            DBMS_OUTPUT.PUT_LINE(CONCAT('Alteration Price Component has already a TaxCode: ',nt(i)));
         END IF;
-        dbms_output.put_line(nt(i));
     END LOOP;
 END;
 /
@@ -218,19 +221,6 @@ END;
 
 
 
-INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
-VALUES 
-(
-    /*Tax Code attr*/
-    9142883780313111933,
-    /*9999 ref*/
-    9153786500813327277,
-    /*Alteration Price Component*/
-    (SELECT object_id  FROM nc_objects nco WHERE parent_id = 9150980333813849805),
-    1,
-    0,
-    0
-)
 
 
 
@@ -242,30 +232,13 @@ VALUES
 
 
 
-/*object_id of the price alteration of the promotion*/
-/*reference to tax code 9999*/
-insert into 
-nc_references (attr_id,reference,object_id) 
-values (9142883780313111933,9153786500813327277,)
 
 
 
 
 
-/*object_id of the price alteration of the promotion*/
-/*reference to tax code 9999*/
-update 
-nc_references 
-set attr_id = 9142883780313111933, reference = (9153786500813327277, object_id = ;
 
 
 
-/*object_id of the price alteration of the promotion*/
-/*reference to tax code 9998*/
-delete 
-from nc_references 
-where 
-attr_id = 9142883780313111933 
-and 
-reference = 9164799782513550301 
-and object_id = ;
+
+
