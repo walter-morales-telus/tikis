@@ -92,6 +92,7 @@ Frais de raccordement de ligne
 - https://drive.google.com/file/d/1fmhIjEqXSTAhzsG0FhuH6ihorSFw_ezy/view
 - Minute 27
 
+- Iteration https://stackoverflow.com/questions/10798161/loop-through-pre-defined-values
 
 - Rollback https://oracle-base.com/articles/misc/sql-for-beginners-the-insert-statement
 # *************************************************************************************************************************************************************
