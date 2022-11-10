@@ -31,13 +31,23 @@ DECLARE
         9163395308582517400
     );
 BEGIN
-    FOR i IN 1..nt.count LOOP
+    SAVEPOINT before_dormant;
+    FOR i IN 1..nt.count LOOP                                       /*Tax Code attr*/
         SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 and object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
-        IF cnt > 0 THEN
-            DELETE FROM nc_references attr_id = 9142883780313111933 AND WHERE reference = 9164799782513550301 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+        IF cnt = 1 THEN
+        BEGIN 
+            DELETE FROM nc_references WHERE 
+                    /*Tax Code attr*/                     /*9998 ref*/
+            attr_id = 9142883780313111933 AND reference = 9164799782513550301 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+            COMMIT;
             DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode 9998 successfully deleted: ',nt(i)));
+        EXCEPTION
+            WHEN OTHERS THEN
+                ROLLBACK TO before_dormant;
+                DBMS_OUTPUT.PUT_LINE('EXCEPTION WITH OBJECT_ID: ' || nt(i));
+            END;
         ELSE
-            DBMS_OUTPUT.PUT_LINE(CONCAT('Alteration Price has NO TaxCode: ',nt(i)));
+            DBMS_OUTPUT.PUT_LINE('Promotion: '|| nt(i) ||'; Alteration Price already has: ' || cnt || ' TaxCode References; NO delete was performed');
         END IF;
     END LOOP;
 END;

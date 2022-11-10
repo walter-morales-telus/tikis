@@ -132,6 +132,7 @@ BEGIN
             BEGIN                                  /*Tax Code attr*/                /*9999 ref*/
                 UPDATE nc_references SET attr_id = 9142883780313111933 , reference = 9153786500813327277 
                 WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = 9154271501413485945);
+                COMMIT;
                 DBMS_OUTPUT.PUT_LINE('Promotion: '|| nt(i) ||'; TaxCode Successfully updated to 9999' );
             EXCEPTION
             WHEN OTHERS THEN
