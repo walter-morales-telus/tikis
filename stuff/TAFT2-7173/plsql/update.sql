@@ -125,13 +125,21 @@ DECLARE
         9159885448613733037
     );
 BEGIN
-    FOR i IN 1..nt.count LOOP
+    SAVEPOINT before_dormant;
+    FOR i IN 1..nt.count LOOP                                       /*Tax Code attr*/
         SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 and object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
-        IF cnt > 0 THEN
-            UPDATE nc_references SET reference = 9153786500813327277 WHERE object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
-            DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode Successfully updated to 9999: ',nt(i)));
+        IF cnt = 1 THEN
+            BEGIN                                  /*Tax Code attr*/                /*9999 ref*/
+                UPDATE nc_references SET attr_id = 9142883780313111933 , reference = 9153786500813327277 
+                WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = 9154271501413485945);
+                DBMS_OUTPUT.PUT_LINE('Promotion: '|| nt(i) ||'; TaxCode Successfully updated to 9999' );
+            EXCEPTION
+            WHEN OTHERS THEN
+                ROLLBACK TO before_dormant;
+                DBMS_OUTPUT.PUT_LINE('EXCEPTION WITH OBJECT_ID: ' || nt(i));
+            END;
         ELSE
-            DBMS_OUTPUT.PUT_LINE(CONCAT('Alteration Price has NO TaxCode: ',nt(i)));
+            DBMS_OUTPUT.PUT_LINE('Promotion: '|| nt(i) ||'; Alteration Price already has: ' || cnt || ' TaxCode References; NO update was performed');
         END IF;
     END LOOP;
 END;
