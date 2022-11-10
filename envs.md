@@ -37,7 +37,7 @@ https://flcncapp-pr.tsl.telus.com/tools/db150.jsp
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/home
 
 # When Distribution
-https://flcncapp-dv52.tsl.telus.com/tools/db150.jsp
+https://flcncapp-dv16.tsl.telus.com/tools/db150.jsp
 
 select * from cloud_catalog_synchronization order by created_when desc;
 update cloud_catalog_synchronization set STATE = 'COMPLETED' where STATE is NULL or STATE = 'FAILED';
@@ -134,8 +134,10 @@ https://docs.google.com/spreadsheets/d/1LjVqj2djq8fLYFbZUUtK2qNfJJlQRkCeMWPanmcP
 https://flcncapp-dv27.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv17.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 
+https://flcncapp-dv16.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-itn02.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
+https://flcncapp-dv72.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 
 # Retrofit
 BE\COM\com_common\scm\com\netcracker\solutions\telus\greenfield\com\nc_objects
