@@ -1,3 +1,24 @@
+# *************************************************************************************************************************************************************
+# FIFA FNDA-26470 (TQBVT_PROD) CSR - (Home Phone, Additional Directory Listing), Designation does NOT keep the pre-selected option
+
+##     CR: CR Branch FNDA-26470 Designation does NOT keep the pre-selected option
+## Branch: BRANCH FNDA-26470 Designation does NOT keep the pre-selected option
+
+
+- https://jira.tsl.telus.com/browse/FNDA-26470
+- [link](./stuff/FNDA-26470/index.md)
+
+- NC Request to Flix Bulk: https://jira.tsl.telus.com/browse/FNDA-26599
+
+
+- https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9165100702613224672
+- erictest RBnovtenone
+
+
+# *************************************************************************************************************************************************************
+
+
+
 
 # *************************************************************************************************************************************************************
 # FIFA FNDA-25025 WiFi 6E Extender not added to PODS
@@ -22,6 +43,7 @@
 
 Frais de traitement de dossier
 Frais de raccordement de ligne
+
 
 
 - https://jira.tsl.telus.com/browse/TAFT2-7277
@@ -670,7 +692,7 @@ propagate_override_to_all_child_offerings   Do not override
 ## Branch: [TAFT] FNDA - 24592 Directory Listing Missing Other
 
 # Directory Listing
-- https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164020405428562786 
+- https://flcncapp-dv27.tsl.telus.com/ncobjesysct.jsp?id=9164020405428562786 
 
 # Additional Directory Listing
 - https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164022378661450533

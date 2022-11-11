@@ -221,3 +221,19 @@ https://convertico.com/
 
 # Cloud Object
 https://flcncapp-dv35.tsl.telus.com/ncobject.jsp?id=9156310643013937192
+
+# Find All Customers by Allocation of an Enviroment
+select o.object_id, o.name, pp.name, a.object_id
+from nc_objects o,
+nc_references r,
+nc_objects a,
+nc_objects p,
+nc_objects pp
+where o.object_type_id = 4063055943013004400
+and r.object_id = o.object_id
+and r.attr_id = 9132251685613889259
+and a.object_id = r.reference
+and p.object_id = a.parent_id
+and pp.object_id = p.parent_id
+order by o.object_id desc;
+select * from nc_objects where object_id = 9165101254913264003;

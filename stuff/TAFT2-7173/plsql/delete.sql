@@ -40,7 +40,7 @@ BEGIN
                     /*Tax Code attr*/                     /*9998 ref*/
             attr_id = 9142883780313111933 AND reference = 9164799782513550301 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
             COMMIT;
-            DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode 9998 successfully deleted: ',nt(i)));
+            DBMS_OUTPUT.PUT_LINE('TaxCode 9998 successfully deleted: ' || nt(i));
         EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK TO before_dormant;

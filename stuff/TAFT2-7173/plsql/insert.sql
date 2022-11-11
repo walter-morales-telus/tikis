@@ -1,4 +1,3 @@
-SAVEPOINT before_dormant;
 DECLARE
     cnt NUMBER := 0;
     TYPE nt_type IS TABLE of NUMBER;
@@ -213,14 +212,14 @@ BEGIN
                     0
                 );
                 COMMIT;
-                DBMS_OUTPUT.PUT_LINE(CONCAT('TaxCode 9999 Successfully added to: ',nt(i)));
+                DBMS_OUTPUT.PUT_LINE('TaxCode 9999 Successfully added to: ' || nt(i));
             EXCEPTION
             WHEN OTHERS THEN
                 ROLLBACK TO before_dormant;
-                DBMS_OUTPUT.PUT_LINE(CONCAT('EXCEPTION WITH OBJECT_ID: ',nt(i)));
+                DBMS_OUTPUT.PUT_LINE('EXCEPTION WITH OBJECT_ID: ' || nt(i));
             END;
         ELSE
-            DBMS_OUTPUT.PUT_LINE(CONCAT('Alteration Price Component has already a TaxCode: ',nt(i)));
+            DBMS_OUTPUT.PUT_LINE('Alteration Price Component has already a TaxCode: ' || nt(i)));
         END IF;
     END LOOP;
 END;
