@@ -151,7 +151,7 @@ propagate_override_to_all_child_offerings	Do not override
 - [link](./stuff/TAFT2-7072/index.md) 
 
 | Object_id           | Offer name                                               | Old billing offer id | Old price | New billing offer id | New price |
-| :------------------ | :------------------------------------------------------- | :------------------- | :-------- | :------------------- | :-------- |  
+| :------------------ | :------------------------------------------------------- | :------------------- | :-------- | :------------------- | :-------- |
 | 9161505374995984301 | LivingWell Companion Home with Fall Detection - Cellular | 41161921             | $50       | 41226331             | $55       |
 | 9161505363905984296 | LivingWell Companion Home - Cellular                     | 41161911             | $40       | 41226321             | $45       |
 | 9161482788965984291 | LivingWell Companion Go                                  | 41161931             | $60       | 41226341             | $65       |

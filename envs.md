@@ -79,18 +79,18 @@ https://flcncapp-dv51.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=creat
 
 
 # [SCM] Change Tracker Listener
-https://flcncapp-dv27.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
+https://flcncapp-dv16.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
 
 # BOE Offering Catalog Rules (is Automatic NO)
-https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9134849870013241642
+https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 
 # Change Request
-https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9146586162313643063
+https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 
 # Reset Cache
-https://flcncapp-dv27.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-dv16.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-itn02.tsl.telus.com/tools/cache_manager.jsp?tab=0
@@ -237,3 +237,33 @@ and p.object_id = a.parent_id
 and pp.object_id = p.parent_id
 order by o.object_id desc;
 select * from nc_objects where object_id = 9165101254913264003;
+
+# Touchpoints - Videos
+
+## 0: https://drive.google.com/file/d/1RjUoupcxMJCtQW7R8Y0YNFNBSjHTpYl7/view
+- Backuplan
+
+## 1: https://drive.google.com/file/d/1fibSu6kEcds0JxD31sd-zbkJ78YjObiC/view
+- Boost 6E Mini Free Rental - For Wi-Fi Plus
+- 
+
+## 2: https://drive.google.com/file/d/1Ne05WTTksPoldXsLbl7k8S3LG8B7wsuU/view
+- SWW Katerina 8:30 Check de logs
+- 
+## 3: https://drive.google.com/file/d/12HBDSWdtNZc21h0Lsy6MwVfbq6nJgctm/view
+- Bot demo i did
+- 
+## 4: https://drive.google.com/file/d/1-w9G_BGmlqFM5vojPlZucIDS7Pg-ZenO/view
+- Instructions for bot
+
+## 5: https://drive.google.com/file/d/1fmhIjEqXSTAhzsG0FhuH6ihorSFw_ezy/view
+- Dormancy explica 33:32
+
+## 6: https://drive.google.com/file/d/1iTN6TZLtdFyLZswHk7xfJFP4_bA8SRgB/view
+- El siguiente del mute
+- TOS
+
+## 7: https://drive.google.com/file/d/1abOYJS9Xk908RZ_f5bhFEj_EXymgaW8z/view
+- CSR PORTAL/ NGHP
+- CSAG 22:23
+- Inicia con Taxes: 23:40

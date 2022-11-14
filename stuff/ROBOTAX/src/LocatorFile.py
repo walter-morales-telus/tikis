@@ -8,23 +8,19 @@ from IMGTemplatesFile import IMGTemplates
 
 class Plane:
 
-    def __init__(self,image):
-        pass
+    def __init__(self,image = None, x_center = -1, y_center = -1):
 
-'''
-    def __init__(self,image,x_center,y_center):
-        image = image
+        self.width  = -1
+        self.height = -1
+        self.x_sup_left_corner = -1
+        self.y_sup_left_corner = -1
+        
         if(image != None):
             self.height, self.width = image.shape[:2]    
-        self.x_center = x_center
-        self.y_center = y_center
-        self.x_sup_left_corner = (self.x_center // 2)
-        self.y_sup_left_corner = (self.y_center // 2)
-
-        self.width  = 0
-        self.height = 0
-'''
-    
+            self.x_center = x_center
+            self.y_center = y_center
+            self.x_sup_left_corner = self.x_center - (self.width // 2)
+            self.y_sup_left_corner = self.y_center - (self.height // 2)
 
 class Locator:
 
@@ -48,7 +44,7 @@ class Locator:
         return pl
     '''
 
-    def locate_on_screen(self,template_png,confidence,x_extension=0,y_extension=0):
+    def locate_on_screen(self, template_png , confidence , x_extension = 0, y_extension = 0):
         pl = None
 
         template_url = IMGTemplates + template_png
