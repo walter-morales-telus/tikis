@@ -242,6 +242,7 @@ select * from nc_objects where object_id = 9165101254913264003;
 
 ## 0: https://drive.google.com/file/d/1RjUoupcxMJCtQW7R8Y0YNFNBSjHTpYl7/view
 - Backuplan
+- LivingWell Home 50:32
 
 ## 1: https://drive.google.com/file/d/1fibSu6kEcds0JxD31sd-zbkJ78YjObiC/view
 - Boost 6E Mini Free Rental - For Wi-Fi Plus
@@ -249,7 +250,7 @@ select * from nc_objects where object_id = 9165101254913264003;
 
 ## 2: https://drive.google.com/file/d/1Ne05WTTksPoldXsLbl7k8S3LG8B7wsuU/view
 - SWW Katerina 8:30 Check de logs
-- 
+
 ## 3: https://drive.google.com/file/d/12HBDSWdtNZc21h0Lsy6MwVfbq6nJgctm/view
 - Bot demo i did
 - 
@@ -267,3 +268,4 @@ select * from nc_objects where object_id = 9165101254913264003;
 - CSR PORTAL/ NGHP
 - CSAG 22:23
 - Inicia con Taxes: 23:40
+- Mute
