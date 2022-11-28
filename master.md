@@ -156,6 +156,20 @@ Frais de raccordement de ligne
 - Iteration https://stackoverflow.com/questions/10798161/loop-through-pre-defined-values
 
 - Rollback https://oracle-base.com/articles/misc/sql-for-beginners-the-insert-statement
+
+# If dormancy is required to be applied in f12 branch before release night
+  Remove CRs from f12 release branch:
+- 0b712f63-7f4d-41f7-86da-a31d04423a60
+- 78b5bca2-88f6-4015-9490-a03050e099e0
+
+# Apply Dormancy 
+- Execute Queries: delete.sql, insert.sql, update.sql in that order
+
+# Apply Undormancy
+- Execute Queries: undormant_delte.sql, undormant_insert.sql, undormant_update.sql in that order
+
+
+
 # *************************************************************************************************************************************************************
 
 

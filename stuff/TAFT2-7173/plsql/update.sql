@@ -122,16 +122,27 @@ DECLARE
         9150139523313950374,
         9154692129913569006,
         9156491914013119982,
-        9159885448613733037
+        9159885448613733037,
+        /* -- LEGACY ONLY -- */
+        9159401889813267197, /*Prod is 9999*/
+        9158380291113393795, /*Prod is 9999*/
+
+        /* NO TTV */
+        9150139887213950491, /*Prod is 9999*/
+        9150145172713952697, /*Prod is 9999*/
+        9159701381813227705, /*Prod is 9999*/
+        9159703387413229198, /*Prod is 9999*/
+        9160406943613922575  /*Prod is 9999*/
+
     );
 BEGIN
     SAVEPOINT before_dormant;
     FOR i IN 1..nt.count LOOP                                       /*Tax Code attr*/
         SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 and object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
         IF cnt = 1 THEN
-            BEGIN                                  /*Tax Code attr*/                /*9999 ref*/
-                UPDATE nc_references SET attr_id = 9142883780313111933 , reference = 9153786500813327277 
-                WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = 9154271501413485945);
+            BEGIN                                    /*9999 ref*/
+                UPDATE nc_references SET reference = 9153786500813327277 
+                WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
                 COMMIT;
                 DBMS_OUTPUT.PUT_LINE('Promotion: '|| nt(i) ||'; TaxCode Successfully updated to 9999' );
             EXCEPTION
