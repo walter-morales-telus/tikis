@@ -5,7 +5,8 @@ sysadm
 netcracker
 
 # Address GEM APP
-https://flcncapp-dv27.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
+https://flcncapp-dv16.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
+https://flcncapp-itn02.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
 
 # DV 
 https://flcncapp-dv52.tsl.telus.com/version.jsp
@@ -93,11 +94,13 @@ https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-dv16.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-dv72.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-itn02.tsl.telus.com/tools/cache_manager.jsp?tab=0
 
 # Cache Version
 https://flcncapp-dv27-csr.tsl.telus.com/boe-api-tools
 https://flcncapp-dv27-csr.tsl.telus.com/boe-api-tools
+https://flcncapp-itn02-csr.tsl.telus.com/boe-api-tools
 
 # RPP 
 go/rpp
@@ -109,6 +112,9 @@ https://docs.google.com/forms/d/e/1FAIpQLSeN9Wj3fqmNlRm07g3pa2B8KJ0GmEX-3uX5vOzD
 
 # Compensatory Form
 https://docs.google.com/forms/d/e/1FAIpQLScpUJ_Au4Vd-HWJ5CxZRJbAtl4KQtct1cXIZFoJjAIy0kigWw/viewform
+
+# Tech Hours Form
+https://docs.google.com/forms/d/e/1FAIpQLSdFBgotS3ZZcxt47E25KJJBN-ZJKtQKgOx4kWjMco-UdVl5Mg/viewform
 
 
 # Restart Server
@@ -269,3 +275,35 @@ select * from nc_objects where object_id = 9165101254913264003;
 - CSAG 22:23
 - Inicia con Taxes: 23:40
 - Mute
+
+
+## Calendario de timeoff del equipo de Puja: 
+https://calendar.google.com/calendar/u/0?cid=Y19vNTV0MWc1a3FocmM3MnQ5cDBsdG4ybmsyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+
+## Find Customers by Services
+
+select bpi.object_id, o3.object_id,o3.name, p2.value, r3.reference, o4.name
+from nc_references r, nc_attributes a, nc_objects bpi, nc_params status, nc_references r2, nc_objects o2, nc_objects o3, nc_params p2, nc_references r3, nc_objects o4
+where a.attr_id = r.attr_id and r.reference in(9152406687013913547,9161505363905984296,9161482788965984291/* LWC Offerings*/)
+and r.attr_id = 9126099920013458621 /* Product Offering */
+and bpi.object_id=r.object_id
+and bpi.object_type_id= 9126083628313449001 /* Business Product Instance */
+and status.object_id=bpi.object_id
+and status.attr_id= 9132857804713527164 /* Extended Business Product Instance Status */
+and status.list_value_id = 9132857804713527191 /* 6#009B00$Active */
+and bpi.object_id=r2.object_id
+and r2.attr_id = 9128240368813225026 /* Product Instance OPF */
+and r2.reference=o2.object_id
+and o3.object_id=o2.parent_id
+and o3.object_id=p2.object_id
+and p2.attr_id = 9138719996013282785 /* Enterprise Customer ID/Customer Profile ID */
+and bpi.object_id=r3.object_id
+and r3.attr_id = 9126099920013458621 /* Product Offering */
+and r3.reference=o4.object_id
+order by bpi.object_id desc;
+
+
+
+9161505374995984301 /* LivingWell Companion Home with Fall Detection - Cellular */,
+9161505363905984296 /* LivingWell Companion Home - Cellular */,
+9161482788965984291; /* LivingWell Companion Go */

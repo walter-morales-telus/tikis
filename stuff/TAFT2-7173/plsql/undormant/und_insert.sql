@@ -193,61 +193,29 @@ DECLARE
         9150145600313952927
     );
 BEGIN
-    SAVEPOINT before_dormant;
-    FOR i IN 1..nt.count LOOP
-        SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
-        IF cnt = 0 THEN
+    SAVEPOINT before_undormant;
+    FOR i IN 1..nt.count LOOP                                       /*Tax Code attr*/                   /*9999 ref*/
+        SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 AND reference = 9153786500813327277  AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+        IF cnt = 1 THEN
             BEGIN
-                INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
-                VALUES
-                (
-                    /*Tax Code attr*/
-                    9142883780313111933,
-                    /*9999 ref*/
-                    9153786500813327277,
-                    /*Alteration Price Component*/
-                    (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i)),
-                    1,
-                    0,
-                    0
-                );
+
+                DELETE FROM nc_references WHERE 
+                attr_id   = 9142883780313111933 
+                and 
+                reference = 9153786500813327277 
+                and 
+                object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+
                 COMMIT;
-                DBMS_OUTPUT.PUT_LINE('TaxCode 9999 Successfully added to: ' || nt(i));
+                DBMS_OUTPUT.PUT_LINE('TaxCode 9999 Successfully deleted from: ' || nt(i));
             EXCEPTION
             WHEN OTHERS THEN
-                ROLLBACK TO before_dormant;
+                ROLLBACK TO before_undormant;
                 DBMS_OUTPUT.PUT_LINE('EXCEPTION WITH OBJECT_ID: ' || nt(i));
             END;
         ELSE
-            DBMS_OUTPUT.PUT_LINE('Alteration Price Component has already a TaxCode: ' || nt(i));
+            DBMS_OUTPUT.PUT_LINE('Alteration Price Component has no TaxCode: ' || nt(i));
         END IF;
     END LOOP;
 END;
 /
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
