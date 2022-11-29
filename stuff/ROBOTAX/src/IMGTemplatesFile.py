@@ -7,6 +7,8 @@ class IMGTemplates:
     ACTIONS = "./Img/Templates/actions.png"
     AWARD = "./Img/Templates/award.png"
     BLUE_DETAILS = "./Img/Templates/blue_details.png"
+    SYNC_TO_LEGACY_SYSTEM = 'sync_to_legacy_system.png'
+    YES = "yes.png"
 
     
         
