@@ -1,25 +1,3 @@
-/* */
-SELECT * FROM nc_objects o WHERE o.object_id 
-IN
-(
-    9162796246682662086,
-    9164783177314235043,
-    9163410821067963319,
-    9162610807525427147
-)
-AND NOT EXISTS
-(
-    SELECT pa.parent_id
-    FROM nc_objects pa,
-    nc_references tax_ref
-    WHERE pa.parent_id    = o.object_id
-    AND tax_ref.object_id = pa.object_id
-    AND tax_ref.attr_id   = 9142883780313111933
-    AND tax_ref.reference = 9153786500813327277
-);
-
-
-
 select * from nc_references where object_id = 9163262016790813470;
 select * from nc_references where reference = 9163262016790813470;
 
@@ -54,22 +32,22 @@ DECLARE
 BEGIN
     FOR i IN 1..nt.count LOOP
 
-        SELECT COUNT(*) INTO cnt FROM nc_references WHERE
-        -- ATTR_ID : Promotion Type 
-        attr_id = 9153770145313318210
+        /* Promo has TIC Promotion Category? */
+        SELECT COUNT(*) INTO cnt FROM nc_references WHERE 
+        attr_id = 9153770145313318210   /* ATTR_ID : Promotion Type */
         AND
-        -- REFERENCE :  Tax Included Credits 
-        reference = 9153779179813323603
+        reference = 9153779179813323603 /* REFERENCE :  Tax Included Credits */ 
         AND
         object_id = nt(i);
 
+        /* NO: Promo doesnt have TIC Promotion Category */
         IF cnt = 0 THEN
-            -- INSERT REFERENCE TO TIC PROMO CATEGORY 
-            INSERT INTO nc_references (attr_id,reference,object_id,show_order,priority,attr_acces_type)
+            /* INSERT REFERENCE TO TIC PROMO CATEGORY */ 
+            INSERT INTO nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
             VALUES
-            (
-                9153770145313318210,
-                9153779179813323603,
+            ( 
+                9153770145313318210, /* ATTR_ID : Promotion Type */                
+                9153779179813323603, /* REFERENCE :  Tax Included Credits */
                 nt(i),
                 6,
                 0,
@@ -77,31 +55,31 @@ BEGIN
             );
         END IF;
 
-        SELECT COUNT(*) INTO cnt FROM nc_references WHERE attr_id = 9142883780313111933 AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
+        /* Price Alteration has referece to tax code? */
+        SELECT COUNT(*) INTO cnt FROM nc_references 
+        WHERE attr_id = 9142883780313111933  /* ATTR_ID: Tax Code */ 
+        AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
 
-        -- INSERT REFERENCE TO 9998
+        /*NO: INSERT REFERENCE TO 9998 */
         IF cnt = 0 THEN
             INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
             VALUES
             (
-                -- Tax Code attr
-                9142883780313111933,
-                -- 9998 ref
-                9164799782513550301,
-                -- Alteration Price Component
+                9142883780313111933, /* Tax Code attr */
+                9164799782513550301, /* 9998 ref */
+                /* Alteration Price Component */
                 (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i)),
                 1,
                 0,
                 0
             );
-        -- UPDATE REFERENCE TO 9998
+
+        /*YES: UPDATE REFERENCE TO 9998 */
         ELSE
             UPDATE nc_references SET 
-                        --9998 ref
-            reference = 9164799782513550301 
-            WHERE 
-                      --Tax Code attr
-            attr_id = 9142883780313111933 
+            reference = 9164799782513550301 /* 9998 ref*/
+            WHERE
+            attr_id = 9142883780313111933   /* Tax Code attr */
             AND 
             object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = nt(i));
 
@@ -120,57 +98,8 @@ END;
 
 
 
-
-
-
-
-
-
-
-
-/* Validation Query
-/* Dormant / Undormant
-
-
-
-
 /**** NO NO NO OPTIK TV Tax Included Offer NO NO NO ****/
-DECLARE
-    cnt NUMBER := 0;
-    TYPE nt_type IS TABLE of NUMBER;
-    nt nt_type := nt_type 
-    (
-        9154425741913505336,
-        9164391584860492552,
-        9154829195413214729,
-        9154829860713215107,
-        9154829926113215117
-    );
-BEGIN
-    FOR i IN 1..nt.count LOOP
 
-        SELECT COUNT(*) INTO cnt FROM nc_references WHERE
-        /* ATTR_ID : Promotion Type */
-        attr_id = 9153770145313318210
-        AND
-        /* REFERENCE :  Tax Included Credits */
-        reference = 9153779179813323603
-        AND
-        object_id = nt(i);
-
-        IF cnt = 1 THEN
-            DBMS_OUTPUT.PUT_LINE('All Good :v '|| cnt || nt(i));
-        ELSE
-            DBMS_OUTPUT.PUT_LINE('Most Insert '|| cnt || nt(i));
-        END IF;
-
-    END LOOP;
-
-EXCEPTION
-    WHEN OTHERS THEN
-
-END;
-/
 /* *************************************************** */
 
 
