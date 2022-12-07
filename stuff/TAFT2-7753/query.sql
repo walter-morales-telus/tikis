@@ -13,6 +13,107 @@ select * from nc_references where reference = 9163262016790813470;
 
 
 /**** YES YES YES OPTIK TV Tax Included Offer YES YES YES ****/
+
+CREATE OR REPLACE TYPE NumberArrayType IS TABLE of NUMBER;
+/
+
+CREATE OR REPLACE PROCEDURE YES_OPTIK_YES_UPDATE(NumArray IN NumberArrayType) IS  
+cnt NUMBER := 0;
+v_code  NUMBER;
+v_errm  VARCHAR2(64);
+BEGIN
+    FOR i IN 1..NumArray.count LOOP
+
+        /* Promo has TIC Promotion Category? */
+        SELECT COUNT(*) INTO cnt FROM nc_references WHERE 
+        attr_id = 9153770145313318210   /* ATTR_ID : Promotion Type */
+        AND
+        reference = 9153779179813323603 /* REFERENCE :  Tax Included Credits */ 
+        AND
+        object_id = NumArray(i);
+
+        /* NO: Promo doesnt have TIC Promotion Category */
+        IF cnt = 0 THEN
+            /* INSERT REFERENCE TO TIC PROMO CATEGORY */ 
+            INSERT INTO nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
+            VALUES
+            ( 
+                9153770145313318210, /* ATTR_ID : Promotion Type */                
+                9153779179813323603, /* REFERENCE :  Tax Included Credits */
+                NumArray(i),
+                6,
+                0,
+                0
+            );
+        END IF;
+
+        /* Price Alteration has referece to tax code? */
+        SELECT COUNT(*) INTO cnt FROM nc_references 
+        WHERE attr_id = 9142883780313111933  /* ATTR_ID: Tax Code */ 
+        AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i));
+
+        /*NO: INSERT REFERENCE TO 9998 */
+        IF cnt = 0 THEN
+            INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
+            VALUES
+            (
+                9142883780313111933, /* Tax Code attr */
+                9164799782513550301, /* 9998 ref */
+                /* Alteration Price Component */
+                (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)),
+                1,
+                0,
+                0
+            );
+
+        /*YES: UPDATE REFERENCE TO 9998 */
+        ELSE
+            UPDATE nc_references SET 
+            reference = 9164799782513550301 /* 9998 ref*/
+            WHERE
+            attr_id = 9142883780313111933   /* Tax Code attr */
+            AND 
+            object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i));
+
+        END IF;
+    END LOOP;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('E R R O R');
+        v_code := SQLCODE;
+        v_errm := SUBSTR(SQLERRM, 1, 64);
+        DBMS_OUTPUT.PUT_LINE (v_code || ' ' || v_errm);
+END;
+/
+
+BEGIN
+YES_OPTIK_YES_UPDATE
+(
+    NumberArrayType
+    (
+        9162241532532637333,
+        9162241549350637334,
+        9162241612047637335,
+        9162241644274639359,
+        9162241679340637336
+    )
+);
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
 DECLARE
     cnt NUMBER := 0;
     TYPE nt_type IS TABLE of NUMBER;
