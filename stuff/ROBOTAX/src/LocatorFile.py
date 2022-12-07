@@ -9,15 +9,12 @@ from DrawFile import Draw
 
 class Plane:
 
-    def __init__(self,current_image = None,parent_image = None, current_x_sup_left_corner = -1, current_y_sup_left_corner = -1, id = "enviroment"):
+    def __init__(self,current_image = None, current_x_sup_left_corner = -1, current_y_sup_left_corner = -1, id = "enviroment"):
 
         self.current_image = current_image
         self.current_image_width, self.current_image_height = current_image.shape[:2]  
         self.current_x_sup_left_corner = current_x_sup_left_corner
         self.current_y_sup_left_corner = current_y_sup_left_corner
-
-        self.parent_image = parent_image
-        self.parent_image_width, self.parent_image_height = parent_image.shape[:2]  
 
         self.id = id
         
@@ -103,7 +100,7 @@ class Locator:
 
         crop_img = enviroment[y_sup_left_corner:(y_sup_left_corner + template_height + y_extension) , x_sup_left_corner:(x_sup_left_corner + template_width + x_extension)]
         #pl = Plane(crop_img,x_center,y_center)
-        pl = Plane(crop_img,enviroment,x_sup_left_corner,y_sup_left_corner,template_png)
+        pl = Plane(crop_img,x_sup_left_corner,y_sup_left_corner,template_png)
         
         # Slicing
 

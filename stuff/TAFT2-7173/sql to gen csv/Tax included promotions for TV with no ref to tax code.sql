@@ -150,7 +150,7 @@ and not exists
 (select pa.parent_id
 from nc_objects pa,
 nc_references tax_ref
-where pa.parent_id = o.object_id
+where pa.parent_id    = o.object_id
 and tax_ref.object_id = pa.object_id
-and tax_ref.attr_id = 9142883780313111933
-and tax_ref.reference = 9153786500813327277 );
+and tax_ref.attr_id   = 9142883780313111933
+and tax_ref.reference = 9153786500813327277);

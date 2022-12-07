@@ -5,7 +5,7 @@ sysadm
 netcracker
 
 # Address GEM APP
-https://flcncapp-dv16.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
+https://flcncapp-dv27.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
 https://flcncapp-itn02.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
 
 # DV 
@@ -80,10 +80,10 @@ https://flcncapp-dv51.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=creat
 
 
 # [SCM] Change Tracker Listener
-https://flcncapp-dv16.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
+https://flcncapp-itn02.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
 
 # BOE Offering Catalog Rules (is Automatic NO)
-https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9134849870013241642
+https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 
 # Change Request
 https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9146586162313643063
@@ -91,7 +91,7 @@ https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 
 # Reset Cache
-https://flcncapp-dv16.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-dv27.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv72.tsl.telus.com/tools/cache_manager.jsp?tab=0
@@ -137,8 +137,8 @@ http://emwesttoolwebk.tsl.telus.com/em/deploy/
 https://docs.google.com/spreadsheets/d/1LjVqj2djq8fLYFbZUUtK2qNfJJlQRkCeMWPanmcPHSg/edit#gid=0
 
 # Import and Export
+https://flcncapp-pr.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv27.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
-https://flcncapp-dv17.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 
 https://flcncapp-dv16.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
@@ -304,6 +304,6 @@ order by bpi.object_id desc;
 
 
 
-9161505374995984301 /* LivingWell Companion Home with Fall Detection - Cellular */,
-9161505363905984296 /* LivingWell Companion Home - Cellular */,
+9161505374995984301  /* LivingWell Companion Home with Fall Detection - Cellular */,
+9161505363905984296  /* LivingWell Companion Home - Cellular */,
 9161482788965984291; /* LivingWell Companion Go */
