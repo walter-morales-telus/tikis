@@ -96,6 +96,7 @@ https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv72.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-itn02.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-itn03.tsl.telus.com/tools/cache_manager.jsp?tab=0
 
 # Cache Version
 https://flcncapp-dv27-csr.tsl.telus.com/boe-api-tools
