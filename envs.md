@@ -81,14 +81,17 @@ https://flcncapp-dv51.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=creat
 
 # [SCM] Change Tracker Listener
 https://flcncapp-itn02.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
+https://flcncapp-dv07.tsl.telus.com/admin/listener.jsp?xid=9137609576113311873
 
 # BOE Offering Catalog Rules (is Automatic NO)
 https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9134849870013241642
+https://flcncapp-dv07.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 
 # Change Request
 https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
+https://flcncapp-dv07.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 
 # Reset Cache
 https://flcncapp-dv27.tsl.telus.com/tools/cache_manager.jsp?tab=0
@@ -308,3 +311,19 @@ order by bpi.object_id desc;
 9161505374995984301  /* LivingWell Companion Home with Fall Detection - Cellular */,
 9161505363905984296  /* LivingWell Companion Home - Cellular */,
 9161482788965984291; /* LivingWell Companion Go */
+
+
+# Git Remove Large Files Across Branches and Commits
+- 'Points' is a Directory
+git filter-branch --tree-filter 'rm -r -f Points' HEAD
+
+
+
+
+
+
+
+
+
+
+NCMBE3IT=(DESCRIPTION=(ENABLE=BROKEN)(ADDRESS=(PROTOCOL=TCP)(HOST=NCMBE3IT)(PORT=41521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=NCMBE3ITsv1)))
