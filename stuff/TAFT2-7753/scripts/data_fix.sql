@@ -371,6 +371,7 @@ DECLARE
     );
 
 BEGIN
+    SAVEPOINT before_datafix;
     FOR i IN 1..NumArray.count LOOP
 
         /*** NO Alteration Price Component Validation ***/
@@ -434,13 +435,16 @@ BEGIN
         END IF;
         DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Successfully Updated');
     END LOOP;
+    COMMIT;
 
 EXCEPTION
     WHEN OTHERS THEN
+        ROLLBACK TO before_datafix;
         DBMS_OUTPUT.PUT_LINE('E X C E P T I O N');
         v_code := SQLCODE;
         v_errm := SUBSTR(SQLERRM, 1, 64);
         DBMS_OUTPUT.PUT_LINE (v_code || ' ' || v_errm);
+
 END;
 /
 
@@ -796,6 +800,7 @@ DECLARE
         9155591508113210002
     );
 BEGIN
+    SAVEPOINT before_datafix;
     FOR i IN 1..NumArray.count LOOP
 
         /*** NO Alteration Price Component Validation ***/
@@ -842,9 +847,11 @@ BEGIN
         END IF;
         DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
     END LOOP;
+    COMMIT;
 
 EXCEPTION
     WHEN OTHERS THEN
+        ROLLBACK TO before_datafix;
         DBMS_OUTPUT.PUT_LINE('E X C E P T I O N');
         v_code := SQLCODE;
         v_errm := SUBSTR(SQLERRM, 1, 64);
@@ -1230,6 +1237,7 @@ DECLARE
         9164421569528732407
     );
 BEGIN
+    SAVEPOINT before_datafix;
     FOR i IN 1..NumArray.count LOOP
 
         /*** NO Alteration Price Component Validation ***/
@@ -1276,9 +1284,11 @@ BEGIN
         END IF;
         DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
     END LOOP;
+    COMMIT;
 
 EXCEPTION
     WHEN OTHERS THEN
+        ROLLBACK TO before_datafix;
         DBMS_OUTPUT.PUT_LINE('E X C E P T I O N');
         v_code := SQLCODE;
         v_errm := SUBSTR(SQLERRM, 1, 64);
