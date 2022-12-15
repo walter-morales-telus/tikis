@@ -1,4 +1,18 @@
 # *************************************************************************************************************************************************************
+# FIFA FNDA-27898 [TnM-API] [ITSS-4936] || Incorrect Tax Calculation for One time TIC promotion "Referral One Time LWC Credit $50" in NC BE
+- https://jira.tsl.telus.com/browse/FNDA-27898
+
+- [link](./stuff/FNDA-27898/index.md)
+
+Adiccbpcsr RBdecsevencsrthree
+alain dryrunthree
+
+# *************************************************************************************************************************************************************
+
+
+
+
+# *************************************************************************************************************************************************************
 # TAFT 2.0 Delivery TAFT2-7753 [PC] Create script for datafix
 - https://jira.tsl.telus.com/browse/TAFT2-7753
 
