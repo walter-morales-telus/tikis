@@ -13,7 +13,6 @@ CREATE OR REPLACE PROCEDURE VALIDATE_YES_OPTIK(NumArray IN NumberArrayType) IS
             SELECT COUNT(*) INTO cnt  FROM nc_objects nco WHERE parent_id = NumArray(i);
             IF cnt = 0 THEN 
                 DBMS_OUTPUT.PUT_LINE('Promotion '|| NumArray(i) ||' Has NO Price Alteration Component -> Skiped');
-                DBMS_OUTPUT.PUT_LINE('');
                 CONTINUE;
             END IF;
 
@@ -30,10 +29,6 @@ CREATE OR REPLACE PROCEDURE VALIDATE_YES_OPTIK(NumArray IN NumberArrayType) IS
                 DBMS_OUTPUT.PUT_LINE('WRONG: Promotion '|| NumArray(i) ||' Doesnt have Tax Included Credits');
             END IF;
 
-            --IF cnt = 1 THEN
-                --DBMS_OUTPUT.PUT_LINE('OK: Promotion '|| NumArray(i) ||' Has Tax Included Credits');
-            --END IF;
-
             /* Price Alteration has referece to tax code? */
             SELECT COUNT(*) INTO cnt FROM nc_references WHERE
             reference = 9164799782513550301 /* 9998 ref*/
@@ -46,10 +41,6 @@ CREATE OR REPLACE PROCEDURE VALIDATE_YES_OPTIK(NumArray IN NumberArrayType) IS
                 DBMS_OUTPUT.PUT_LINE('WRONG: Promotion '|| NumArray(i) ||' Doesnt have reference to 9998');
             END IF;
 
-            /*YES: UPDATE REFERENCE TO 9998 */
-            --IF cnt = 1 THEN
-                --DBMS_OUTPUT.PUT_LINE('OK: Promotion '|| NumArray(i) ||' Has reference to 9998');
-            --END IF;
         END LOOP;
 
     EXCEPTION
@@ -155,10 +146,8 @@ CREATE OR REPLACE PROCEDURE VALIDATE_NO_OPTIK(NumArray IN NumberArrayType) IS
             SELECT COUNT(*) INTO cnt  FROM nc_objects nco WHERE parent_id = NumArray(i);
             IF cnt = 0 THEN 
                 DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Has NO Price Alteration Component -> Skiped');
-                DBMS_OUTPUT.PUT_LINE('');
                 CONTINUE;
             END IF;
-
 
             /* Promo has TIC Promotion Category? */
             SELECT COUNT(*) INTO cnt FROM nc_references WHERE 
@@ -173,21 +162,12 @@ CREATE OR REPLACE PROCEDURE VALIDATE_NO_OPTIK(NumArray IN NumberArrayType) IS
                 DBMS_OUTPUT.PUT_LINE('WRONG: Promotion '|| NumArray(i) ||' Doesnt have Tax Included Credits');
             END IF;
 
-            --IF cnt = 1 THEN
-                --DBMS_OUTPUT.PUT_LINE('OK: Promotion'|| NumArray(i) ||' Has Tax Included Credits');
-            --END IF;
-
             /* Price Alteration has referece to tax code? */
             SELECT COUNT(*) INTO cnt FROM nc_references WHERE
             reference = 9164799782513550301 /* 9998 ref*/
             AND
             attr_id = 9142883780313111933  /* ATTR_ID: Tax Code */
             AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i));
-
-            /*NO*/
-            --IF cnt = 0 THEN
-                --DBMS_OUTPUT.PUT_LINE('OK: Promotion '|| NumArray(i) ||' Doesnt have reference to ANY Taxcode');
-            --END IF;
 
             /*YES*/
             IF cnt = 1 THEN
