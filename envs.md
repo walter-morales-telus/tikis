@@ -88,13 +88,13 @@ https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 https://flcncapp-dv12.tsl.telus.com/ncobject.jsp?id=9134849870013241642
 
 # Change Request
-https://flcncapp-dv16.tsl.telus.com/ncobject.jsp?id=9146586162313643063
+https://flcncapp-dv13.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-itn03.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 https://flcncapp-dv12.tsl.telus.com/ncobject.jsp?id=9146586162313643063
 
 # Reset Cache
-https://flcncapp-dv27.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-dv13.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv72.tsl.telus.com/tools/cache_manager.jsp?tab=0
@@ -145,11 +145,11 @@ https://docs.google.com/spreadsheets/d/1LjVqj2djq8fLYFbZUUtK2qNfJJlQRkCeMWPanmcP
 https://docs.google.com/spreadsheets/d/1zrF8L9ozY5cXsfS1QIq6A8a1T5lcbn0E73ktP02r0wY/edit#gid=0
 
 # Import and Export
-https://flcncapp-pr.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
+https://flcncapp-dv12.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv27.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv12.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 
-https://flcncapp-dv16.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
+https://flcncapp-dv13.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-itn02.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects
 https://flcncapp-dv72.tsl.telus.com/common/uobject.jsp?object=3021058356013487092&tab=_Exported+Objects

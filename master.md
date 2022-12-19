@@ -6,6 +6,10 @@
 
 Adiccbpcsr RBdecsevencsrthree
 alain dryrunthree
+nelsontest RBnovfive
+
+CR Incorrect Tax Calculation for One time TIC 
+ITN02
 
 # *************************************************************************************************************************************************************
 
