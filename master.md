@@ -1,17 +1,17 @@
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-28031 (TQBVT_PROD) - 3rd number block is automatically added
+---
+## FIFA FNDA-28031 (TQBVT_PROD) - 3rd number block is automatically added
 - https://jira.tsl.telus.com/browse/FNDA-28031
 - [link](./stuff/FNDA-28031/index.md)
 
 //Original Offer
 Call Guardian - 3rd Number Billing Block-1
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/7d7ebec3-7bee-c833-e75d-5d31b07b615a/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/7d7ebec3-7bee-c833-e75d-5d31b07b615a/207762ee-dd0a-4386-bdd4-74a967836320
 
 
 //New Product Offering
 3rd Number Block feature offer
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c0012f52-866f-44e5-9be3-17d1aba7bb29/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/c0012f52-866f-44e5-9be3-17d1aba7bb29/3818118c-53ab-4acf-9e61-7c0a25418318
 
 DV27
 ccbp fqc ii
@@ -27,35 +27,35 @@ itn04
 tien ofor
 
 ping pong
-# -------------------------------------------------------------------------------------------------------------
 
+---
+<br/><br/><br/>
 
-
-
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-27866 (TQBVT_PROD) - Display block feature on Home phone is not working
+---
+## FIFA FNDA-27866 (TQBVT_PROD) - Display block feature on Home phone is not working
 - https://jira.tsl.telus.com/browse/FNDA-27866
 - [link](./stuff/FNDA-27866/index.md)
 
 
 Display Block
 9160233552813596001
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
 
 
 Add Disp Block feature offer
 9164912403320407836
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-27898 [TnM-API] [ITSS-4936] || Incorrect Tax Calculation for One time TIC promotion "Referral One Time LWC Credit $50" in NC BE
+---
+## FIFA FNDA-27898 [TnM-API] [ITSS-4936] || Incorrect Tax Calculation for One time TIC promotion "Referral One Time LWC Credit $50" in NC BE
 - https://jira.tsl.telus.com/browse/FNDA-27898
 
 - [link](./stuff/FNDA-27898/index.md)
@@ -67,38 +67,41 @@ nelsontest RBnovfive
 CR Incorrect Tax Calculation for One time TIC 
 ITN02
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7753 [PC] Create script for datafix
+---
+## TAFT 2.0 Delivery TAFT2-7753 [PC] Create script for datafix
 - https://jira.tsl.telus.com/browse/TAFT2-7753
 
 - [link](./stuff/FNDA-7753/index.md)
-- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit#gid=898730481
+- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit##gid=898730481
 
-# -------------------------------------------------------------------------------------------------------------
 
-# -------------------------------------------------------------------------------------------------------------
 ITN02 Adiccbpcsr RBnovfourteencsr
 ITN03 aagrrhpccbp aagrrhp
-# -------------------------------------------------------------------------------------------------------------
+
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26976 (TQBVT_ITN02) ITSS-5334 - OPUS Offers does NOT trigger Credit Installation and Service Fees
+---
+## FIFA FNDA-26976 (TQBVT_ITN02) ITSS-5334 - OPUS Offers does NOT trigger Credit Installation and Service Fees
 - https://jira.tsl.telus.com/browse/FNDA-27289
 - https://jira.tsl.telus.com/browse/FNDA-27138
 
 - 900 Block  9136923654113578850
 - Toll Block 9136923654113578856
-# -------------------------------------------------------------------------------------------------------------
+  
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26976 (TQBVT_ITN02) ITSS-5334 - OPUS Offers does NOT trigger Credit Installation and Service Fees
+---
+## FIFA FNDA-26976 (TQBVT_ITN02) ITSS-5334 - OPUS Offers does NOT trigger Credit Installation and Service Fees
 - https://jira.tsl.telus.com/browse/FNDA-26976
 - [link](./stuff/FNDA-26976/index.md)
 
@@ -107,54 +110,60 @@ ITN03 aagrrhpccbp aagrrhp
 
 equals to optik tv: https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232588159114404
 equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232588105114403
-# -------------------------------------------------------------------------------------------------------------
+
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26910 [DMT_ITN02_E2E] The description of One-time charges and credits does not match the prices
+---
+## FIFA FNDA-26910 [DMT_ITN02_E2E] The description of One-time charges and credits does not match the prices
 - https://jira.tsl.telus.com/browse/FNDA-26910
 - [link](./stuff/FNDA-26910/index.md)
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26779 DEC MJR_ITN02 | D2C | Partners | New Provide | Invalid promo code
+---
+## FIFA FNDA-26779 DEC MJR_ITN02 | D2C | Partners | New Provide | Invalid promo code
 - https://jira.tsl.telus.com/browse/FNDA-26779
 - [link](./stuff/FNDA-26779/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26920 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nyTC
+---
+## FIFA FNDA-26920 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nyTC
 
 - https://jira.tsl.telus.com/browse/FNDA-26920
 - [link](./stuff/FNDA-26920/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26817 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nw4g
+---
+## FIFA FNDA-26817 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nw4g
 
 - https://jira.tsl.telus.com/browse/FNDA-26817
 - [link](./stuff/FNDA-26817/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-26470 (TQBVT_PROD) CSR - (Home Phone, Additional Directory Listing), Designation does NOT keep the pre-selected option
+---
+## FIFA FNDA-26470 (TQBVT_PROD) CSR - (Home Phone, Additional Directory Listing), Designation does NOT keep the pre-selected option
 
 ##     CR: CR Branch FNDA-26470 Designation does NOT keep the pre-selected option
 ## Branch: BRANCH FNDA-26470 Designation does NOT keep the pre-selected option
@@ -170,25 +179,27 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 - erictest RBnovtenone
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-25025 WiFi 6E Extender not added to PODS
+---
+## FIFA FNDA-25025 WiFi 6E Extender not added to PODS
 
 
 
 - https://jira.tsl.telus.com/browse/FNDA-25025
 - [link](./stuff/FNDA-25025/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7277 [DMT_ST_DV27] "One-time" is not translated to French in Shopping Cart
+---
+## TAFT 2.0 Delivery TAFT2-7277 [DMT_ST_DV27] "One-time" is not translated to French in Shopping Cart
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -204,11 +215,12 @@ Frais de raccordement de ligne
 - https://jira.tsl.telus.com/browse/TAFT2-7277
 - [link](./stuff/TAFT2-7277/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7278 [DMT_ST_DV27] It is not possible to remove 900 Block feature
+---
+## TAFT 2.0 Delivery TAFT2-7278 [DMT_ST_DV27] It is not possible to remove 900 Block feature
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -216,15 +228,16 @@ Frais de raccordement de ligne
 - https://jira.tsl.telus.com/browse/TAFT2-7278
 - [link](./stuff/TAFT2-7277/index.md)
   
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery B O T
+---
+## TAFT 2.0 Delivery B O T
 
 ##     CR: CR BOT Execution
 ## Branch: ITSS-4936 - Alignment of Tax Included Credits 
@@ -232,12 +245,14 @@ Frais de raccordement de ligne
 - DV35
 - [link](./stuff/ROBOTAX/index.md)
   
-- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit#gid=8262681
-# -------------------------------------------------------------------------------------------------------------
+- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit##gid=8262681
+  
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7173 - [PC] Apply Dormancy
+---
+## TAFT 2.0 Delivery TAFT2-7173 - [PC] Apply Dormancy
 
 ##     CR: 
 ## Branch: 2022F12-DecemberMRBranch
@@ -247,7 +262,7 @@ Frais de raccordement de ligne
 - https://jira.tsl.telus.com/browse/TAFT2-7173
 - [link](./stuff/TAFT2-7173/index.md) 
 
-- https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit#gid=254687718
+- https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit##gid=254687718
 
 - https://drive.google.com/file/d/1fmhIjEqXSTAhzsG0FhuH6ihorSFw_ezy/view
 - Minute 27
@@ -256,24 +271,25 @@ Frais de raccordement de ligne
 
 - Rollback https://oracle-base.com/articles/misc/sql-for-beginners-the-insert-statement
 
-# If dormancy is required to be applied in f12 branch before release night
+## If dormancy is required to be applied in f12 branch before release night
   Remove CRs from f12 release branch:
 - 0b712f63-7f4d-41f7-86da-a31d04423a60
 - 78b5bca2-88f6-4015-9490-a03050e099e0
 
-# Apply Dormancy 
+## Apply Dormancy 
 - Execute Queries: delete.sql, insert.sql, update.sql in that order
 
-# Apply Undormancy
+## Apply Undormancy
 - Execute Queries: undormant_delte.sql, undormant_insert.sql, undormant_update.sql in that order
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery / TAFT2-7200 - [DMT_DV27_ST] Display Block should be available on csr
+---
+## TAFT 2.0 Delivery / TAFT2-7200 - [DMT_DV27_ST] Display Block should be available on csr
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -290,11 +306,13 @@ sync_to_legacy_system	                    true
 action_to_modify_parent	                    Add,Delete 
 propagate_modify_to_parent	                No 
 propagate_override_to_all_child_offerings	Do not override 
-# -------------------------------------------------------------------------------------------------------------
+
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7072 - [PC] Enable Dormancy for LWC Price Increase ITSS-5487
+---
+## TAFT 2.0 Delivery TAFT2-7072 - [PC] Enable Dormancy for LWC Price Increase ITSS-5487
 
 ##     CR: [TAFT] ITSS-5487 LWC Price Increase 
 ## Branch: 2022F11-NovemberMRBranch
@@ -310,7 +328,8 @@ propagate_override_to_all_child_offerings	Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -319,8 +338,8 @@ propagate_override_to_all_child_offerings	Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
+---
+## TAFT 2.0 Delivery TAFT2-7056 - [PC] TFP-1429/ 900 Block & Toll Block removal fees
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -332,29 +351,29 @@ https://github.com/telus/nc-telus-fifa/pull/9401
 
 
 //Original Rule
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/business-rule/fdd9aa0d-6ec2-4490-91cf-1fd75b746ab9/f3bbd3af-88aa-4527-ae88-cf6feb1ea2d0
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/business-rule/fdd9aa0d-6ec2-4490-91cf-1fd75b746ab9/f3bbd3af-88aa-4527-ae88-cf6feb1ea2d0
 Warn when “Software” delivery method is selected for LWC_CPQ
 
 //Original Action
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/94258b33-f9c7-43ff-97bc-c61c94325614/f6d6157d-d9a0-4a2e-88e4-e0a93ccd40c1
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-action/94258b33-f9c7-43ff-97bc-c61c94325614/f6d6157d-d9a0-4a2e-88e4-e0a93ccd40c1
 
 
 //New Rule
 Warn when “Remove” 900 Block & Toll Block because of additional fee
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/business-rule/eb1739ca-a3c3-4930-a29b-401c101088b6/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/business-rule/eb1739ca-a3c3-4930-a29b-401c101088b6/3818118c-53ab-4acf-9e61-7c0a25418318
 
 
     //Condition 1
     TQ Voice plans (9159722947713609854) are new/current
-    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/e4c2f30a-5331-4f84-82a3-6d917ed8f37d/3818118c-53ab-4acf-9e61-7c0a25418318
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-condition/e4c2f30a-5331-4f84-82a3-6d917ed8f37d/3818118c-53ab-4acf-9e61-7c0a25418318
 
     //Condition 2
     900 Block (9136923654113578850) is deleted/selected
-    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/d1a185f8-a8a2-4c11-a62d-470d8a33d33d/3818118c-53ab-4acf-9e61-7c0a25418318
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-condition/d1a185f8-a8a2-4c11-a62d-470d8a33d33d/3818118c-53ab-4acf-9e61-7c0a25418318
 
     //Contidion 3
     Call Guardian - Toll Block (9136923654113578856) is deleted/selected
-    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-condition/bc8d330a-d953-4366-8ea3-c15ec57bd207/3818118c-53ab-4acf-9e61-7c0a25418318
+    https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-condition/bc8d330a-d953-4366-8ea3-c15ec57bd207/3818118c-53ab-4acf-9e61-7c0a25418318
 
 
     priority	               10 
@@ -369,11 +388,11 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/business
 
 //New Action
 Warn msg if “Remove” 900 Block & Toll Block
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action/52f8ccfc-53c7-4ff4-a5a9-04e498f31e2e/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-action/52f8ccfc-53c7-4ff4-a5a9-04e498f31e2e/3818118c-53ab-4acf-9e61-7c0a25418318
 
 //Action Message
 Fee will be added if remove 900 Block or Toll Block
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/rules/rule-action-message/51df4535-b658-428b-b542-62b2140725d9/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/rules/rule-action-message/51df4535-b658-428b-b542-62b2140725d9/3818118c-53ab-4acf-9e61-7c0a25418318
 Reminder: A $10 fee is applicable for removing the blocking feature
 
 
@@ -387,7 +406,8 @@ dtestuser dtestuser
 313903024
 1 274 RUE GOSSELIN ST, RIMOUSKI, QC
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -398,8 +418,8 @@ dtestuser dtestuser
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-25620 - [BVT_ITN02] ITSS-5487 Price is not reflecting in enabler.
+---
+## FIFA FNDA-25620 - [BVT_ITN02] ITSS-5487 Price is not reflecting in enabler.
 
 ##     CR: [TAFT] ITSS-5487 LWC Price Increase 
 ## Branch: 2022F11-NovemberMRBranch
@@ -436,7 +456,8 @@ CCBPlwc RBOcttwentyONE (no price in enabler)
 telusbvt-06itssLWC@yahoo.com
 32739, HAIDA DR Drive ABBOTSFORD, BC Canada
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -468,8 +489,8 @@ telusbvt-06itssLWC@yahoo.com
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-25579 - [DMT_ITN02_E2E] LWC Create Subscriber Error - No rows returned for 4120617
+---
+## FIFA FNDA-25579 - [DMT_ITN02_E2E] LWC Create Subscriber Error - No rows returned for 4120617
 
 ##     CR: [TAFT] ITSS-5487 LWC Price Increase
 ## Branch: [TAFT] ITSS-5487 LWC Price Increase 
@@ -485,7 +506,8 @@ https://flcncapp-itn02.tsl.telus.com/common/uobject.jsp?tab=_Price&object=916321
 select * from nc_params where object_id = 9164750501316234960 and attr_id = 9141216061213794878;
 update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and attr_id = 9141216061213794878;
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -502,8 +524,8 @@ update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and 
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7133 - [PC] TFP-2116/ 3rd Number Block
+---
+## TAFT 2.0 Delivery TAFT2-7133 - [PC] TFP-2116/ 3rd Number Block
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -513,22 +535,22 @@ update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and 
 
 //Original Template
 Call Guardian - 3rd Number Billing Block-Portal Configuration-2
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/ba1fc613-6497-20cd-6a4c-c6c928574111/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/ba1fc613-6497-20cd-6a4c-c6c928574111/207762ee-dd0a-4386-bdd4-74a967836320
 
 //Original Offer
 Call Guardian - 3rd Number Billing Block-1
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/7d7ebec3-7bee-c833-e75d-5d31b07b615a/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/7d7ebec3-7bee-c833-e75d-5d31b07b615a/207762ee-dd0a-4386-bdd4-74a967836320
 
 
 //Cloned Template
 3rd Number Block Template
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/afc9e6a6-386a-42e0-a82e-46d867b41955/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/afc9e6a6-386a-42e0-a82e-46d867b41955/3818118c-53ab-4acf-9e61-7c0a25418318
 
 //New Product Offering
 3rd Number Block feature offer
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c0012f52-866f-44e5-9be3-17d1aba7bb29/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/c0012f52-866f-44e5-9be3-17d1aba7bb29/3818118c-53ab-4acf-9e61-7c0a25418318
 
-# *** TOP OFFERS ***
+## *** TOP OFFERS ***
 
 ## Extended Parameters of Relation
 
@@ -540,22 +562,23 @@ propagate_modify_to_parent                  No
 propagate_override_to_all_child_offerings   Do not override 
 
 TQ Home phone-Template
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
 Home Phone Lite
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
 TQ Home phone-Template
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
 Home Phone-7
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/4087486a-ed6c-4e8a-b5e3-8fdf2f4d8375/191b45ba-1c88-4af8-86c7-03be9fd3b7e9
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/4087486a-ed6c-4e8a-b5e3-8fdf2f4d8375/191b45ba-1c88-4af8-86c7-03be9fd3b7e9
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7052 - [PC] TFP-2114/ Add Display Block feature offer
+---
+## TAFT 2.0 Delivery TAFT2-7052 - [PC] TFP-2114/ Add Display Block feature offer
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -565,20 +588,20 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/prod
 
 //Original Template
 Display Block-Portal Configuration 
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/6daf2e18-b45a-bb87-a279-78d76fd4434c/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/6daf2e18-b45a-bb87-a279-78d76fd4434c/207762ee-dd0a-4386-bdd4-74a967836320
 
 //Original Offer
 Display Block
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/c986ae06-0df8-059c-6dca-3b712ec6b24d/207762ee-dd0a-4386-bdd4-74a967836320
 
 
 //Cloned Template
 Add Disp Block feature offer Template
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/90d365a0-780c-42ea-9ef9-a19a267c501d/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/90d365a0-780c-42ea-9ef9-a19a267c501d/3818118c-53ab-4acf-9e61-7c0a25418318
 
 //New Product Offering
 Add Disp Block feature offer
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
 
 //Extended Parameters
 
@@ -594,16 +617,18 @@ applicable_for_manual_discount	 Yes
 
 
 TQ Home phone-Template
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/templates/product-offering-template/8c3585ca-d214-4f2a-bcaa-bc247c1ceadb/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
 Home Phone Lite
-https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/a05ba9eb-53f8-4c18-94d9-87e4f8a75351/d80f3bcd-d78f-4aed-9740-90f14e7e0a63
 
 
 
 TELUS_Offering_External_IDs (TELUS BAU)
-https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_SMA/edit#gid=1920647907
-# -------------------------------------------------------------------------------------------------------------
+https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_SMA/edit##gid=1920647907
+
+--- 
+<br/><br/><br/>
 
 
 
@@ -615,8 +640,8 @@ https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7054 - [PC] TFP-2115/ Changes for Toll Block offer
+---
+## TAFT 2.0 Delivery TAFT2-7054 - [PC] TFP-2115/ Changes for Toll Block offer
            
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -624,7 +649,7 @@ https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_
 - https://jira.tsl.telus.com/browse/TAFT2-7054
 - [link](./stuff/TAFT2-7054/loc.txt)  
 
-# Address
+## Address
 - 9164896080913553579
 - Formated address: 1 419 RUE DU FLEUVE ST, RIMOUSKI, QC
 - qctoll qctoll
@@ -641,12 +666,14 @@ sync_to_legacy_system                       true
 action_to_modify_parent                     Add,Delete 
 propagate_modify_to_parent                  No 
 propagate_override_to_all_child_offerings   Do not override 
-# -------------------------------------------------------------------------------------------------------------
+
+--- 
+<br/><br/><br/>
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-7053 - [PC] TFP-2113/ Changes for 900 Block offer
+---
+## TAFT 2.0 Delivery TAFT2-7053 - [PC] TFP-2113/ Changes for 900 Block offer
 
 ##     CR: [TAFT] ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
@@ -654,13 +681,14 @@ propagate_override_to_all_child_offerings   Do not override
 - https://jira.tsl.telus.com/browse/TAFT2-7053
 - [link](./stuff/TAFT2-7053/loc.txt)     
 
-# Address
+## Address
 - 9164868905813509134
 - Formated address: 1 547 RUE DU FLEUVE ST, RIMOUSKI, QC
 - DV27 - ECID: 313746547
 - frienxin frienxin
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -701,8 +729,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-6706 - [PC] Price increase for LWC MPERS
+---
+## TAFT 2.0 Delivery TAFT2-6706 - [PC] Price increase for LWC MPERS
 - https://jira.tsl.telus.com/browse/TAFT2-6706
   
 ##     CR: [TAFT] ITSS 5487 LWC Price increase v2
@@ -715,7 +743,8 @@ propagate_override_to_all_child_offerings   Do not override
 - A new Product assigned prefix must be taken from spreadsheet
 - https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_SMA/edit?usp=sharing
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -723,8 +752,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-6709 - [PC] Price increase for LWC Home with fall detection - cellular
+---
+## TAFT 2.0 Delivery TAFT2-6709 - [PC] Price increase for LWC Home with fall detection - cellular
 - https://jira.tsl.telus.com/browse/TAFT2-6709
 
 ##     CR: [TAFT] ITSS 5487 LWC Price increase v2
@@ -741,7 +770,9 @@ propagate_override_to_all_child_offerings   Do not override
 
 - Change Request: [TAFT] ITSS 5487 LWC Price increase v2
 - Branch:         [TAFT] ITSS 5487 LWC Price increase HLD
-# -------------------------------------------------------------------------------------------------------------
+  
+--- 
+<br/><br/><br/>
 
 
 
@@ -754,14 +785,15 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-6707 - [PC] Align Rule reference from LWC MPERS
+---
+## TAFT 2.0 Delivery TAFT2-6707 - [PC] Align Rule reference from LWC MPERS
 - https://jira.tsl.telus.com/browse/TAFT2-6707
 
 ##     CR: [TAFT] ITSS 5487 LWC Price increase v2
 ## Branch: [TAFT] ITSS 5487 LWC Price increase HLD
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -774,12 +806,13 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-23987 (TQBVT_ITN02) CSR - directory listing & Additional Directory Listing has duplicate options
+---
+## FIFA FNDA-23987 (TQBVT_ITN02) CSR - directory listing & Additional Directory Listing has duplicate options
 - https://jira.tsl.telus.com/browse/FNDA-23987
 - [link](./stuff/FNDA-23987/)            
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -792,8 +825,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA Catalog Management - CMFBP-23041 - Add "Software" to Wi-Fi 6E Extender offering
+---
+## FIFA Catalog Management - CMFBP-23041 - Add "Software" to Wi-Fi 6E Extender offering
 - https://jira.tsl.telus.com/browse/CMFBP-23041
 
 ##     CR: CR CMFBP-23041 Add "Software" to Wi-Fi 6E Extender offering
@@ -801,7 +834,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -814,8 +848,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA-24371 - (TQBVT_ITN02) - CSR - Directory Listing not translated
+---
+## FIFA FNDA-24371 - (TQBVT_ITN02) - CSR - Directory Listing not translated
 - https://jira.tsl.telus.com/browse/FNDA-24371
   
 - https://flcncapp-itn02.tsl.telus.com/common/uobject.jsp?tab=_Portal+Content&object=9164020405428562786 
@@ -825,7 +859,8 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -838,17 +873,17 @@ propagate_override_to_all_child_offerings   Do not override
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# FIFA FNDA - 24592 (TQBVT_PROD) CSR - Missing "Other" option under "Title" for Name Listing & Additional Directory Listing
+---
+## FIFA FNDA - 24592 (TQBVT_PROD) CSR - Missing "Other" option under "Title" for Name Listing & Additional Directory Listing
 - https://jira.tsl.telus.com/browse/FNDA-24592
 
 ##     CR: [TAFT] CR FNDA - 24592 Directory Listing Missing Other
 ## Branch: [TAFT] FNDA - 24592 Directory Listing Missing Other
 
-# Directory Listing
+## Directory Listing
 - https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164020405428562786 
 
-# Additional Directory Listing
+## Additional Directory Listing
 - https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164022378661450533
 
 - https://flcncapp-pr.tsl.telus.com/common/uobject.jsp?object=1000
@@ -858,7 +893,8 @@ qctigon
 
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -871,13 +907,15 @@ qctigon
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery TAFT2-6814 - [PC] Prepare DV27 to not sync Retain Historical Price parameter
+---
+## TAFT 2.0 Delivery TAFT2-6814 - [PC] Prepare DV27 to not sync Retain Historical Price parameter
 - https://jira.tsl.telus.com/browse/TAFT2-6814
   
-- # Additional Directory Listing
+- ## Additional Directory Listing
 - https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9164022378661450533
-# -------------------------------------------------------------------------------------------------------------
+  
+--- 
+<br/><br/><br/>
 
 
 
@@ -890,8 +928,8 @@ qctigon
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery - TAFT2-6816 - [PC] Price increase on LWC Offers
+---
+## TAFT 2.0 Delivery - TAFT2-6816 - [PC] Price increase on LWC Offers
 - https://jira.tsl.telus.com/browse/TAFT2-6816
 - 
 - 
@@ -922,7 +960,8 @@ seconqb
 4854215478
 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
 
 
 
@@ -935,14 +974,15 @@ seconqb
 
 
 
-# -------------------------------------------------------------------------------------------------------------
-# TAFT 2.0 Delivery - TAFT2-6892 - Remove Tax Code for all Tax Included Promotions from Non-TV
+---
+## TAFT 2.0 Delivery - TAFT2-6892 - Remove Tax Code for all Tax Included Promotions from Non-TV
 - https://jira.tsl.telus.com/browse/TAFT2-6892
 
-- https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit#gid=254687718
+- https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit##gid=254687718
 
 - [link](./stuff/TAFT2-6892/)    
 - CR: ITSS-4936 - Alignment of Tax Included Credits v2
 - Branch: ITSS-4936 - Alignment of Tax Included Credits 
 
-# -------------------------------------------------------------------------------------------------------------
+--- 
+<br/><br/><br/>
