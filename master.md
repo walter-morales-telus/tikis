@@ -2,7 +2,7 @@
 ---
 ## FIFA FNDA-28031 (TQBVT_PROD) - 3rd number block is automatically added
 - https://jira.tsl.telus.com/browse/FNDA-28031
-- [link](./stuff/FNDA-28031/index.md)
+
 
 //Original Offer
 Call Guardian - 3rd Number Billing Block-1
@@ -34,8 +34,6 @@ ping pong
 ---
 ## FIFA FNDA-27866 (TQBVT_PROD) - Display block feature on Home phone is not working
 - https://jira.tsl.telus.com/browse/FNDA-27866
-- [link](./stuff/FNDA-27866/index.md)
-
 
 Display Block
 9160233552813596001
@@ -46,9 +44,6 @@ Add Disp Block feature offer
 9164912403320407836
 https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/product-offering/5a36fddc-dfa5-495c-b442-7ca614470967/3818118c-53ab-4acf-9e61-7c0a25418318
 
-
-
-
 --- 
 <br/><br/><br/>
 
@@ -58,7 +53,7 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/pro
 ## FIFA FNDA-27898 [TnM-API] [ITSS-4936] || Incorrect Tax Calculation for One time TIC promotion "Referral One Time LWC Credit $50" in NC BE
 - https://jira.tsl.telus.com/browse/FNDA-27898
 
-- [link](./stuff/FNDA-27898/index.md)
+- [link](./stuff/CLOSED/FNDA-27898/index.md)
 
 Adiccbpcsr RBdecsevencsrthree
 alain dryrunthree
@@ -77,7 +72,7 @@ ITN02
 ## TAFT 2.0 Delivery TAFT2-7753 [PC] Create script for datafix
 - https://jira.tsl.telus.com/browse/TAFT2-7753
 
-- [link](./stuff/FNDA-7753/index.md)
+- [link](./stuff/TAFT2-7753)
 - https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit##gid=898730481
 
 
@@ -103,7 +98,7 @@ ITN03 aagrrhpccbp aagrrhp
 ---
 ## FIFA FNDA-26976 (TQBVT_ITN02) ITSS-5334 - OPUS Offers does NOT trigger Credit Installation and Service Fees
 - https://jira.tsl.telus.com/browse/FNDA-26976
-- [link](./stuff/FNDA-26976/index.md)
+- [link](./stuff/CLOSED/FNDA-26976/index.md)
 
 - https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9164913939991407857
 213510849
@@ -119,7 +114,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 ---
 ## FIFA FNDA-26910 [DMT_ITN02_E2E] The description of One-time charges and credits does not match the prices
 - https://jira.tsl.telus.com/browse/FNDA-26910
-- [link](./stuff/FNDA-26910/index.md)
+- [link](./stuff/CLOSED/FNDA-26910/index.md)
 
 --- 
 <br/><br/><br/>
@@ -130,7 +125,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 ---
 ## FIFA FNDA-26779 DEC MJR_ITN02 | D2C | Partners | New Provide | Invalid promo code
 - https://jira.tsl.telus.com/browse/FNDA-26779
-- [link](./stuff/FNDA-26779/index.md)
+- [link](./stuff/CLOSED/FNDA-26779/index.md)
   
 --- 
 <br/><br/><br/>
@@ -141,7 +136,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 ## FIFA FNDA-26920 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nyTC
 
 - https://jira.tsl.telus.com/browse/FNDA-26920
-- [link](./stuff/FNDA-26920/index.md)
+- [link](./stuff/CLOSED/FNDA-26920/index.md)
   
 --- 
 <br/><br/><br/>
@@ -152,7 +147,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 ## FIFA FNDA-26817 [DMT_ITN02_E2E] Billing Action error Invalid ApIds: null00nw4g
 
 - https://jira.tsl.telus.com/browse/FNDA-26817
-- [link](./stuff/FNDA-26817/index.md)
+- [link](./stuff/CLOSED/FNDA-26817/index.md)
   
 --- 
 <br/><br/><br/>
@@ -170,7 +165,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 
 
 - https://jira.tsl.telus.com/browse/FNDA-26470
-- [link](./stuff/FNDA-26470/index.md)
+- [link](./stuff/CLOSED/FNDA-26470/index.md)
 
 - NC Request to Flix Bulk: https://jira.tsl.telus.com/browse/FNDA-26599
 
@@ -191,7 +186,7 @@ equals to tv:       https://flcncapp-itn02.tsl.telus.com/ncobject.jsp?id=9165232
 
 
 - https://jira.tsl.telus.com/browse/FNDA-25025
-- [link](./stuff/FNDA-25025/index.md)
+- [link](./stuff/CLOSED/FNDA-25025/index.md)
   
 --- 
 <br/><br/><br/>
@@ -213,7 +208,7 @@ Frais de raccordement de ligne
 
 
 - https://jira.tsl.telus.com/browse/TAFT2-7277
-- [link](./stuff/TAFT2-7277/index.md)
+- [link](./stuff/CLOSED/TAFT2-7277/index.md)
   
 --- 
 <br/><br/><br/>
@@ -226,7 +221,7 @@ Frais de raccordement de ligne
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7278
-- [link](./stuff/TAFT2-7277/index.md)
+- [link](./stuff/CLOSED/TAFT2-7277/index.md)
   
 --- 
 <br/><br/><br/>
@@ -243,7 +238,7 @@ Frais de raccordement de ligne
 ## Branch: ITSS-4936 - Alignment of Tax Included Credits 
 
 - DV35
-- [link](./stuff/ROBOTAX/index.md)
+- [link](./stuff/CLOSED/ROBOTAX/index.md)
   
 - https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit##gid=8262681
   
@@ -260,7 +255,7 @@ Frais de raccordement de ligne
 - ITSS-4936 - Alignment of Tax Included Credits
   
 - https://jira.tsl.telus.com/browse/TAFT2-7173
-- [link](./stuff/TAFT2-7173/index.md) 
+- [link](./stuff/CLOSED/TAFT2-7173/index.md) 
 
 - https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit##gid=254687718
 
@@ -318,7 +313,7 @@ propagate_override_to_all_child_offerings	Do not override
 ## Branch: 2022F11-NovemberMRBranch
 
 - https://jira.tsl.telus.com/browse/TAFT2-7072
-- [link](./stuff/TAFT2-7072/index.md) 
+- [link](./stuff/CLOSED/TAFT2-7072/index.md) 
 
 | Object_id           | Offer name                                               | Old billing offer id | Old price | New billing offer id | New price |
 | :------------------ | :------------------------------------------------------- | :------------------- | :-------- | :------------------- | :-------- |
@@ -345,7 +340,7 @@ propagate_override_to_all_child_offerings	Do not override
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7056
-- [link](./stuff/TAFT2-7056/index.md)  
+- [link](./stuff/CLOSED/TAFT2-7056/index.md)  
 
 https://github.com/telus/nc-telus-fifa/pull/9401
 
@@ -425,7 +420,7 @@ dtestuser dtestuser
 ## Branch: 2022F11-NovemberMRBranch
 
 - https://jira.tsl.telus.com/browse/FNDA-25620
-- [link](./stuff/FNDA-25620/index.md)  
+- [link](./stuff/CLOSED/FNDA-25620/index.md)  
 
 - LivingWell Companion Home - Cellular (V2):                       9161505363905984296
 - LivingWell Companion Home with Fall Detection - Cellular (V2):   9161505374995984301
@@ -497,7 +492,7 @@ telusbvt-06itssLWC@yahoo.com
 
 
 - https://jira.tsl.telus.com/browse/FNDA-25579
-- [link](./stuff/FNDA-25579/index.md)
+- [link](./stuff/CLOSED/FNDA-25579/index.md)
 
 
 LivingWell Companion Go - With App
@@ -531,7 +526,7 @@ update nc_params set VALUE = 41206171 where object_id = 9164750501316234960 and 
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7133
-- [link](./stuff/TAFT2-7133/index.md)  
+- [link](./stuff/CLOSED/TAFT2-7133/index.md)  
 
 //Original Template
 Call Guardian - 3rd Number Billing Block-Portal Configuration-2
@@ -584,7 +579,7 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/##/offerings/pro
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7052
-- [link](./stuff/TAFT2-7052/index.md)  
+- [link](./stuff/CLOSED/TAFT2-7052/index.md)  
 
 //Original Template
 Display Block-Portal Configuration 
@@ -647,7 +642,7 @@ https://docs.google.com/spreadsheets/d/1kwcPw6wsZFN6VQ4Iaq03nXI0Jw7_UFto-2132wj_
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7054
-- [link](./stuff/TAFT2-7054/loc.txt)  
+- [link](./stuff/CLOSED/TAFT2-7054/loc.txt)  
 
 ## Address
 - 9164896080913553579
@@ -679,7 +674,7 @@ propagate_override_to_all_child_offerings   Do not override
 ## Branch: ITSS-5334 / CSR Portal/Netcracker changes for NGHP project
 
 - https://jira.tsl.telus.com/browse/TAFT2-7053
-- [link](./stuff/TAFT2-7053/loc.txt)     
+- [link](./stuff/CLOSED/TAFT2-7053/loc.txt)     
 
 ## Address
 - 9164868905813509134
@@ -809,7 +804,7 @@ propagate_override_to_all_child_offerings   Do not override
 ---
 ## FIFA FNDA-23987 (TQBVT_ITN02) CSR - directory listing & Additional Directory Listing has duplicate options
 - https://jira.tsl.telus.com/browse/FNDA-23987
-- [link](./stuff/FNDA-23987/)            
+- [link](./stuff/CLOSED/FNDA-23987/)            
 
 --- 
 <br/><br/><br/>
@@ -980,7 +975,7 @@ seconqb
 
 - https://docs.google.com/spreadsheets/d/1tL-gzaTd6dMns7Xo1EcgYuKuGcIL70Mk/edit##gid=254687718
 
-- [link](./stuff/TAFT2-6892/)    
+- [link](./stuff/CLOSED/TAFT2-6892/)    
 - CR: ITSS-4936 - Alignment of Tax Included Credits v2
 - Branch: ITSS-4936 - Alignment of Tax Included Credits 
 
