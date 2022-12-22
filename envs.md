@@ -4,8 +4,11 @@ https://docs.google.com/spreadsheets/d/15d-bKqfABJhyATOxhHVPYmm_T453uCmNTLFPbKwy
 sysadm
 netcracker
 
+# Create Quebec address
+https://jira.tsl.telus.com/browse/TAFT2-7061
+
 # Address GEM APP
-https://flcncapp-dv27.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
+https://flcncapp-itn04.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
 https://flcncapp-itn02.tsl.telus.com/telus/gem.jsp?appId=taftdevtool&pageid=createaddr
 
 # DV 
@@ -40,8 +43,12 @@ https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/home
 # When Distribution
 https://flcncapp-dv16.tsl.telus.com/tools/db150.jsp
 
+# ITN Distribution
+How to distribute my changes on PPS Environment - Currently ITN03
+https://sites.google.com/telus.com/fifa-bau-resource-center/bau-processes/bau-itn-delivery-on-pps-env-vrs-fifa-release-env?authuser=1
+
 select * from cloud_catalog_synchronization order by created_when desc;
-update cloud_catalog_synchronization set STATE = 'COMPLETED' where STATE is NULL or STATE = 'FAILED';
+update cloud_catalog_synchronization set STATE = 'COMPLETED' where STATE is NULL or STATE = 'FAILED' or STATE = 'IN_PROGRESS';
 
 https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158367376113476115;
 
@@ -99,7 +106,7 @@ https://flcncapp-dv35.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv52.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv72.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-itn02.tsl.telus.com/tools/cache_manager.jsp?tab=0
-https://flcncapp-itn03.tsl.telus.com/tools/cache_manager.jsp?tab=0
+https://flcncapp-itn04.tsl.telus.com/tools/cache_manager.jsp?tab=0
 https://flcncapp-dv61.tsl.telus.com/tools/cache_manager.jsp?tab=0
 
 # Cache Version
