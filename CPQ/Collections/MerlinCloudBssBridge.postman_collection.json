@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "09aa689b-ddbe-4fc5-9f5a-cc1404b471f5",
+		"name": "MerlinCloudBssBridge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transformIds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"123456\",\r\n    \"href\": \"string\",\r\n    \"description\": \"string\",\r\n    \"requestType\": \"Qualification\",\r\n    \"lineOfBusiness\": \"WLN\",\r\n    \"source\": \"input\",\r\n    \"input\": {\r\n        \"channel\": {\r\n            \"id\": \"PERMIT\",\r\n            \"name\": \"CSR\",\r\n            \"@referredType\": \"Channel\"\r\n        },\r\n        \"customerCategory\": {\r\n            \"id\": \"9134661890013196039\",\r\n            \"name\": \"Residential Customer\",\r\n            \"@referredType\": \"CustomerCategory\"\r\n        },\r\n        \"place\": [\r\n            {\r\n                \"id\": \"lpdsid123\"\r\n            }\r\n        ],\r\n        \"category\": {\r\n            \"id\": \"9147368267313811293\",\r\n            \"name\": \"new M&H coupon category for Home\",\r\n            \"@referredType\": \"Category\"\r\n        },\r\n        \"productOfferingQualificationItem\": [\r\n            {\r\n                \"id\": \"1\",\r\n                \"action\": \"add\",\r\n                \"productOffering\": {\r\n                    \"id\": \"9159715937913601581\",\r\n                    \"name\": \"Internet 750 Plan\",\r\n                    \"referredType\": \"ProductOfferingRef\"\r\n                },\r\n                \"qualificationItemResult\": \"qualified\"\r\n            },\r\n            {\r\n                \"id\": \"2\",\r\n                \"action\": \"add\",\r\n                \"productOffering\": {\r\n                    \"id\": \"9142046828213433809\",\r\n                    \"name\": \"Optik TV You Pick 6\",\r\n                    \"referredType\": \"ProductOfferingRef\"\r\n                },\r\n                \"qualificationItemResult\": \"qualified\"\r\n            },\r\n            {\r\n                \"id\": \"3\",\r\n                \"action\": \"add\",\r\n                \"productOffering\": {\r\n                    \"id\": \"9153485578113039924\",\r\n                    \"name\": \"M&H Coupon\",\r\n                    \"referredType\": \"ProductOfferingRef\"\r\n                },\r\n                \"qualificationRelationship\": [\r\n                    {\r\n                        \"id\": \"1\",\r\n                        \"relationshipType\": \"qualifiesWith\"\r\n                    },\r\n                    {\r\n                        \"id\": \"2\",\r\n                        \"relationshipType\": \"qualifiesWith\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"relatedParty\": [\r\n            {\r\n                \"id\": \"ecid1234\",\r\n                \"role\": \"customer\",\r\n                \"name\": \"some name 2\"\r\n            },\r\n            {\r\n                \"id\": \"mobilityBAN-1212313\",\r\n                \"role\": \"cotMobile\",\r\n                \"name\": \"some name 2\"\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bss-bridge/v1/merlinCloudBssBridge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bss-bridge",
+						"v1",
+						"merlinCloudBssBridge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transformIds 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"123\",\r\n    \"href\": \"string\",\r\n    \"description\": \"string\",\r\n    \"requestType\": \"Qualification\",\r\n    \"lineOfBusiness\": \"WLN\",\r\n    \"source\": \"input\",\r\n    \"input\": {\r\n        \"provideAlternative\": false,\r\n        \"instantSyncQualification\": true,\r\n        \"provideOnlyAvailable\": true,\r\n        \"CustomerCategoryRef\": {\r\n            \"id\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\r\n            \"name\": \"Res\"\r\n        },\r\n        \"channel\": {\r\n            \"id\": \"PERMIT\",\r\n            \"name\": \"CSR\"\r\n        },\r\n        \"place\": [\r\n            {\r\n                \"id\": \"5480039\",\r\n                \"name\": \"Address\"\r\n            }\r\n        ],\r\n        \"marketSegment\": {\r\n            \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"name\": \"Alberta\"\r\n        },\r\n        \"category\": {\r\n            \"id\": \"47260f35-5a47-4c45-88f8-02d52ab2dc9f\",\r\n            \"name\": \"Pure Fiber Committments\",\r\n            \"@referredType\": \"Category\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bss-bridge/v1/merlinCloudBssBridge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bss-bridge",
+						"v1",
+						"merlinCloudBssBridge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDocs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api-docs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api-docs",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

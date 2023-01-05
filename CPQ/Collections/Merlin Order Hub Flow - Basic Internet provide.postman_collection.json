@@ -1,0 +1,1212 @@
+{
+	"info": {
+		"_postman_id": "7f30687f-27d9-4560-86d4-6836ca13ce6f",
+		"name": "Merlin Order Hub Flow - Basic Internet provide",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Display Top Product Categories",
+			"item": []
+		},
+		{
+			"name": "Display Qualified Committments and Internet Products",
+			"item": [
+				{
+					"name": "Qualify for Pure Fibre Committment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"category\": {\n        \"id\": \"1112add1-a76a-5ca1-45e0-4d2ec6cef45e\",\n        \"name\": \"Pure Fiber committments\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"1\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"6c023b9c-99bc-a283-b146-72ed1379a3b9\",\n                \"name\": \"TELUS Internet 750/750-1\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemResult\": \"qualified\"\n        },\n        {\n            \"qualificationItemRelationship\": [\n                {\n                    \"id\": \"1\",\n                    \"relationshipType\": \"qualifiesWith\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Qualify  Pure Fibre Committment - Filter by HSIA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"category\": {\n        \"id\": \"1112add1-a76a-5ca1-45e0-4d2ec6cef45e\",\n        \"name\": \"Pure Fiber committments\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"product\": {\n\t\t\t\t\"productCharacteristic\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"id\" : \"8b7edfab-614f-98a8-d343-d2c733176933\",\n                        \"name\" : \"Products Required\",\n\t\t\t\t\t\t\"value\" : \"HSIA\"\n\t\t\t\t\t}\n\t\t\t\t]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Qualify Internet offering (Month To Month)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": false,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n     \"place\": [\n        {\n            \"id\": \"5480039\",\n            \"name\": \"Address\"\n        }\n    ],   \n    \"category\": {\n        \"id\": \"76906b11-eee8-5d97-c051-882f6023af72\",\n        \"name\": \"Highspeed Home\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Qualify Internet offering with one committment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n     \"place\": [\n        {\n            \"id\": \"2570078\",\n            \"name\": \"Address\"\n        }\n    ],      \n    \"category\": {\n        \"id\": \"76906b11-eee8-5d97-c051-882f6023af72\",\n        \"name\": \"High Speed Home\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"1\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"95988e85-f086-5976-5827-6bd3ecba7303\",\n                \"name\": \"TELUS Internet Committment\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemResult\": \"qualified\"\n        },\n        {\n            \"qualificationItemRelationship\": [\n                {\n                    \"id\": \"1\",\n                    \"relationshipType\": \"qualifiesWith\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Qualify Internet offering with one committment - test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"1\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"21480c48-d2b9-6064-c585-9572f60bcbba\",\n                \"name\": \"TELUS Internet Committment\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemResult\": \"qualified\"\n        },\n        {\n            \"id\": \"2\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"752187aa-f396-4ade-7dfd-a6a27ddd7b33\",\n                \"name\": \"TELUS Internet 300\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemRelationship\": [\n                {\n                    \"id\": \"1\",\n                    \"relationshipType\": \"qualifiesWith\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. Qualify Internet offering with one committment Copy 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"2\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"752187aa-f396-4ade-7dfd-a6a27ddd7b33\",\n                \"name\": \"TELUS Internet 300\",\n                \"referredType\": \"ProductOfferingRef\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Display Internet child offers",
+			"item": [
+				{
+					"name": "9. Qualify SLO - Equipment under Internet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"category\": {\n        \"id\": \"1112add1-a76a-5ca1-45e0-4d2ec6cef45e\",\n        \"name\": \"Pure Fiber committments\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"1\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"6c023b9c-99bc-a283-b146-72ed1379a3b9\",\n                \"name\": \"TELUS Internet 750/750-1\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemResult\": \"qualified\"\n        },\n        {\n            \"qualificationRelationship\": [\n                {\n                    \"id\": \"1\",\n                    \"relationshipType\": \"qualifiesWith\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. Qualify SLO - Feature under Internet Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": true,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"category\": {\n        \"id\": \"1112add1-a76a-5ca1-45e0-4d2ec6cef45e\",\n        \"name\": \"Pure Fiber committments\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"id\": \"1\",\n            \"action\": \"add\",\n            \"productOffering\": {\n                \"id\": \"6c023b9c-99bc-a283-b146-72ed1379a3b9\",\n                \"name\": \"TELUS Internet 750/750-1\",\n                \"referredType\": \"ProductOfferingRef\"\n            },\n            \"qualificationItemResult\": \"qualified\"\n        },\n        {\n            \"qualificationRelationship\": [\n                {\n                    \"id\": \"1\",\n                    \"relationshipType\": \"qualifiesWith\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"fifaproductofferingqualification",
+								"v4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add Internet and child offers to Quote",
+			"item": [
+				{
+					"name": "Create Quote with Internet 300- with Full ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);",
+									"postman.setEnvironmentVariable(\"version\", data.version);",
+									"",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].rootQuoteItemId);",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{quote_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{quote_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"313737480\"\n        }\n    ],\n    \"extendedParameters\": {\n        \"distributionChannelId\": [\n            \"PERMIT\"\n        ],\n        \"invokeFeasibilityCheck\": [\n            \"true\"\n        ],\n        \"InvokeWorkOfferFlag\": [\n            \"false\"\n        ]\n    },\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ]\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2026-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"752187aa-f396-4ade-7dfd-a6a27ddd7b33\",\n                \"name\": \"TELUS Internet 300/300\"\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"extendedParameters\": {\n                \"TELUS QuickConnect\": [\n                    \"QC-HS Only\"\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Quote - High speed 300/300 and Commitment Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);\r",
+									"postman.setEnvironmentVariable(\"version\", data.version);\r",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].id);\r",
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"setTimeout(function(){}, [100]);\r",
+									"if(pm.response) {\r",
+									"    try {\r",
+									"        var data = JSON.parse(responseBody);\r",
+									"        utils.checkStatus(pm.response, 201);\r",
+									"    } catch(e) {\r",
+									"        console.log(e);\r",
+									"    }\r",
+									"};\r",
+									"pm.collectionVariables.set(\"quoteItemsContent\", JSON.stringify(data.quoteItem)); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{quote_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"213483001\"\n        }\n    ],\n    \"extendedParameters\": {\n        \"distributionChannelId\": [\n            \"PERMIT\"\n        ],\n        \"invokeFeasibilityCheck\": [\n            \"true\"\n        ],\n        \"InvokeWorkOfferFlag\": [\n            \"true\"\n        ]\n    },\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"name\": \"Overridden Delivery Method\",\n                        \"rawValue\": [\n                            \"Yes\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"name\": \"Price Guarantee Start Date Characteristic\",\n                        \"rawValue\": [\n                            \"2021-11-19T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"name\": \"Delivery Method Change Reason\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"name\": \"Term Start Date Characteristic\",\n                        \"rawValue\": [\n                            \"2021-11-19T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"name\": \"Activation Due Date\",\n                        \"rawValue\": [\n                            \"2022-01-10T19:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"name\": \"Forced Pro Install\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"name\": \"Pricing Effective Date Characteristic\",\n                        \"rawValue\": [\n                            \"2023-11-19T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"1e3f5408-99b0-2fa9-e7a0-e5d164472ade\",\n                        \"name\": \"Delivery Method\",\n                        \"value\": [\n                            \"Pro Install\"\n                        ],\n                        \"rawValue\": [\n                            \"Pro Install\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"name\": \"Schedule Type\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"752187aa-f396-4ade-7dfd-a6a27ddd7b33\",\n                \"name\": \"TELUS Internet 300/300\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        },\n        {\n            \"action\": \"ADD\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"0f9a635c-983a-84d6-5a21-cc156583df40\",\n                        \"name\": \"Commitment Products\",\n                        \"rawValue\": [\n                            \"9160672975913880564\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"7a7e33e3-dfc3-ca7d-12d3-ddab956151ed\",\n                        \"name\": \"Partial Service Agreement Termination Fee Characteristic\",\n                        \"rawValue\": [\n                            \"text\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"name\": \"Schedule Type\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"fde631cf-d1b7-cc41-dc16-870700408282\",\n                        \"name\": \"Contract ID Characteristic\",\n                        \"rawValue\": [\n                            \"123456\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"1eff1582-788a-dfd4-4e41-b47ad6fcaabf\",\n                        \"name\": \"Commitment Start Date Characteristic\",\n                        \"rawValue\": [\n                            \"2022-01-10T19:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"name\": \"Activation Due Date\",\n                        \"rawValue\": [\n                            \"2022-01-10T19:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"964ef9cb-a409-99d0-91b0-e5c51ef7149c\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Quote with Internet 150 + Committment- with Full ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);",
+									"postman.setEnvironmentVariable(\"version\", data.version);",
+									"",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].rootQuoteItemId);",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{quote_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"313737459\"\n        }\n    ],\n    \"extendedParameters\": {\n        \"distributionChannelId\": [\n            \"PERMIT\"\n        ],\n        \"invokeFeasibilityCheck\": [\n            \"true\"\n        ],\n        \"InvokeWorkOfferFlag\": [\n            \"true\"\n        ]\n    },\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ]\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2026-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\n                \"name\": \"Internet 150\"\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"extendedParameters\": {\n                \"TELUS QuickConnect\": [\n                    \"QC-HS Only\"\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Quote and add TELUS Online Security Complete offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);",
+									"postman.setEnvironmentVariable(\"version\", data.version);",
+									"",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].rootQuoteItemId);",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"313737459\"\n        }\n    ],\n    \"extendedParameters\": {\n        \"distributionChannelId\": [\n            \"PERMIT\"\n        ],\n        \"invokeFeasibilityCheck\": [\n            \"true\"\n        ],\n        \"InvokeWorkOfferFlag\": [\n            \"true\"\n        ]\n    },\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ]\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2026-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\n                \"origId\": \"test test\"\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"extendedParameters\": {\n                \"TELUS QuickConnect\": [\n                    \"QC-HS Only\"\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Validate Quote, Patch Quote, Checkout.",
+			"item": [
+				{
+					"name": "Validate Quote - High speed 300/300 and Commitment Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);\r",
+									"postman.setEnvironmentVariable(\"version\", data.version);\r",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].id);\r",
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"setTimeout(function(){}, [100]);\r",
+									"if(pm.response) {\r",
+									"    try {\r",
+									"        var data = JSON.parse(responseBody);\r",
+									"        utils.checkStatus(pm.response, 201);\r",
+									"    } catch(e) {\r",
+									"        console.log(e);\r",
+									"    }\r",
+									"};\r",
+									"pm.collectionVariables.set(\"quoteItemsContent\", JSON.stringify(data.quoteItem)); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{quote_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/{{quoteId}}/validateQuote",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								"{{quoteId}}",
+								"validateQuote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Quote - Feasibility and Work offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteId\", data.id);",
+									"postman.setEnvironmentVariable(\"version\", data.version);",
+									"",
+									"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].rootQuoteItemId);",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Business-id",
+								"type": "text",
+								"value": "{{customerId}}",
+								"disabled": true
+							},
+							{
+								"key": "env",
+								"value": "itn03",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"313737459\"\n        }\n    ],\n    \"extendedParameters\": {\n        \"distributionChannelId\": [\n            \"PERMIT\"\n        ],\n        \"invokeFeasibilityCheck\": [\n            \"true\"\n        ],\n        \"InvokeWorkOfferFlag\": [\n            \"true\"\n        ]\n    },\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ]\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2026-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"3394755\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\n                \"origId\": \"test test\"\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"extendedParameters\": {\n                \"TELUS QuickConnect\": [\n                    \"QC-HS Only\"\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/",
+							"protocol": "https",
+							"host": [
+								"apigw-private-yul-np-001",
+								"cloudapps",
+								"telus",
+								"com"
+							],
+							"path": [
+								"marketsales",
+								"quote",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Confirmation",
+			"item": []
+		},
+		{
+			"name": "get Kong Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12711511-fa3f-4d4e-bebd-6c28ecc51871e213fac9-3c02-43ee-9a9d-f5e8da6ddeaa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "c19b9aa0-82b4-4aaf-92c0-e62e3ad5880c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "scope",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_id",
+						"value": " c19b9aa0-82b4-4aaf-92c0-e62e3ad5880c",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_secret",
+						"value": "12711511-fa3f-4d4e-bebd-6c28ecc51871e213fac9-3c02-43ee-9a9d-f5e8da6ddeaa",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://apigw-st.tsl.telus.com/st/token?grant_type=client_credentials&scope=28",
+					"protocol": "https",
+					"host": [
+						"apigw-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"st",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Kong Token - Quote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"quote_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12711511-fa3f-4d4e-bebd-6c28ecc51871e213fac9-3c02-43ee-9a9d-f5e8da6ddeaa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "c19b9aa0-82b4-4aaf-92c0-e62e3ad5880c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "scope",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_id",
+						"value": " c19b9aa0-82b4-4aaf-92c0-e62e3ad5880c",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_secret",
+						"value": "12711511-fa3f-4d4e-bebd-6c28ecc51871e213fac9-3c02-43ee-9a9d-f5e8da6ddeaa",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://apigw-st.tsl.telus.com/st/token?grant_type=client_credentials&scope=1934",
+					"protocol": "https",
+					"host": [
+						"apigw-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"st",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "1934"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Qualify  Pure Fibre Committment - Filter by HSIA - From digital with WHSIA address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "env",
+						"value": "itn03",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provideAlternative\": false,\n    \"instantSyncQualification\": true,\n    \"provideOnlyAvailable\": false,\n    \"provideUnavailabilityReason\": true,\n    \"inMemory\": true,\n    \"customerCategory\": {\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n        \"name\": \"Res\"\n    },\n    \"channel\": {\n        \"id\": \"PERMIT\",\n        \"name\": \"CSR\"\n    },\n     \"place\": [\n        {\n            \"id\": \"2570078\",\n            \"name\": \"Address\"\n        }\n    ],       \n    \"marketSegment\": {\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n        \"name\": \"Alberta\"\n    },\n    \"category\": {\n        \"id\": \"1112add1-a76a-5ca1-45e0-4d2ec6cef45e\",\n        \"name\": \"Pure Fiber committments\",\n        \"@referredType\": \"Category\"\n    },\n    \"productOfferingQualificationItem\": [\n        {\n            \"product\": {\n\t\t\t\t\"productCharacteristic\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"id\" : \"8b7edfab-614f-98a8-d343-d2c733176933\",\n                        \"name\" : \"Products Required\",\n\t\t\t\t\t\t\"value\" : \"HSIA\"\n\t\t\t\t\t}\n\t\t\t\t]\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/fifaproductofferingqualification/v4/",
+					"protocol": "https",
+					"host": [
+						"apigw-private-yul-np-001",
+						"cloudapps",
+						"telus",
+						"com"
+					],
+					"path": [
+						"marketsales",
+						"fifaproductofferingqualification",
+						"v4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote - High speed 300/300 and Commitment Copy 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"quoteId\", data.id);\r",
+							"postman.setEnvironmentVariable(\"version\", data.version);\r",
+							"postman.setEnvironmentVariable(\"quoteItemId\", data.quoteItem[0].id);\r",
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"setTimeout(function(){}, [100]);\r",
+							"if(pm.response) {\r",
+							"    try {\r",
+							"        var data = JSON.parse(responseBody);\r",
+							"        utils.checkStatus(pm.response, 201);\r",
+							"    } catch(e) {\r",
+							"        console.log(e);\r",
+							"    }\r",
+							"};\r",
+							"pm.collectionVariables.set(\"quoteItemsContent\", JSON.stringify(data.quoteItem)); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{quote_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Business-id",
+						"type": "text",
+						"value": "{{customerId}}",
+						"disabled": true
+					},
+					{
+						"key": "env",
+						"value": "itn03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apigw-private-yul-np-001.cloudapps.telus.com/marketsales/quote/v1/{{quoteId}}",
+					"protocol": "https",
+					"host": [
+						"apigw-private-yul-np-001",
+						"cloudapps",
+						"telus",
+						"com"
+					],
+					"path": [
+						"marketsales",
+						"quote",
+						"v1",
+						"{{quoteId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "quoteItemsContent",
+			"value": ""
+		}
+	]
+}

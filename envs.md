@@ -48,7 +48,7 @@ How to distribute my changes on PPS Environment - Currently ITN03
 https://sites.google.com/telus.com/fifa-bau-resource-center/bau-processes/bau-itn-delivery-on-pps-env-vrs-fifa-release-env?authuser=1
 
 select * from cloud_catalog_synchronization order by created_when desc;
-update cloud_catalog_synchronization set STATE = 'COMPLETED' where STATE is NULL or STATE = 'FAILED' or STATE = 'IN_PROGRESS';
+update cloud_catalog_synchronization set STATE = 'COMPLETED' where STATE is NULL or STATE = 'FAILED' or STATE = 'IN_PROGRESS' or STATE = 'READY';
 
 https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?tab=_Sessions&object=9158367376113476115;
 
@@ -244,21 +244,10 @@ https://convertico.com/
 # Cloud Object
 https://flcncapp-dv35.tsl.telus.com/ncobject.jsp?id=9156310643013937192
 
-# Find All Customers by Allocation of an Enviroment
-select o.object_id, o.name, pp.name, a.object_id
-from nc_objects o,
-nc_references r,
-nc_objects a,
-nc_objects p,
-nc_objects pp
-where o.object_type_id = 4063055943013004400
-and r.object_id = o.object_id
-and r.attr_id = 9132251685613889259
-and a.object_id = r.reference
-and p.object_id = a.parent_id
-and pp.object_id = p.parent_id
-order by o.object_id desc;
-select * from nc_objects where object_id = 9165101254913264003;
+# STUB
+- https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?mode=0&object=9158328730313364369&tab=_Characteristics&ctrl=tParameters_Parameters
+- https://flcncapp-dv52.tsl.telus.com/common/uobject.jsp?mode=0&object=9157701182913716036&ctrl=tParameters_Parameters
+
 
 # Touchpoints - Videos
 
@@ -292,38 +281,8 @@ select * from nc_objects where object_id = 9165101254913264003;
 - Inicia con Taxes: 23:40
 - Mute
 
-
 ## Calendario de timeoff del equipo de Puja: 
 https://calendar.google.com/calendar/u/0?cid=Y19vNTV0MWc1a3FocmM3MnQ5cDBsdG4ybmsyNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-
-## Find Customers by Services
-
-select bpi.object_id, o3.object_id,o3.name, p2.value, r3.reference, o4.name
-from nc_references r, nc_attributes a, nc_objects bpi, nc_params status, nc_references r2, nc_objects o2, nc_objects o3, nc_params p2, nc_references r3, nc_objects o4
-where a.attr_id = r.attr_id and r.reference in(9152406687013913547,9161505363905984296,9161482788965984291/* LWC Offerings*/)
-and r.attr_id = 9126099920013458621 /* Product Offering */
-and bpi.object_id=r.object_id
-and bpi.object_type_id= 9126083628313449001 /* Business Product Instance */
-and status.object_id=bpi.object_id
-and status.attr_id= 9132857804713527164 /* Extended Business Product Instance Status */
-and status.list_value_id = 9132857804713527191 /* 6#009B00$Active */
-and bpi.object_id=r2.object_id
-and r2.attr_id = 9128240368813225026 /* Product Instance OPF */
-and r2.reference=o2.object_id
-and o3.object_id=o2.parent_id
-and o3.object_id=p2.object_id
-and p2.attr_id = 9138719996013282785 /* Enterprise Customer ID/Customer Profile ID */
-and bpi.object_id=r3.object_id
-and r3.attr_id = 9126099920013458621 /* Product Offering */
-and r3.reference=o4.object_id
-order by bpi.object_id desc;
-
-
-
-9161505374995984301  /* LivingWell Companion Home with Fall Detection - Cellular */,
-9161505363905984296  /* LivingWell Companion Home - Cellular */,
-9161482788965984291; /* LivingWell Companion Go */
-
 
 # Git Remove Large Files Across Branches and Commits
 - 'Points' is a Directory
@@ -335,7 +294,3 @@ git filter-branch --tree-filter 'rm -r -f Points' HEAD
 
 
 
-
-
-
-NCMBE3IT=(DESCRIPTION=(ENABLE=BROKEN)(ADDRESS=(PROTOCOL=TCP)(HOST=NCMBE3IT)(PORT=41521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=NCMBE3ITsv1)))

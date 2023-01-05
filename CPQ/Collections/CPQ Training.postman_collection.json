@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "b91b38c9-6f63-414c-8254-fb5310cc25b5",
+		"name": "CPQ Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24385174"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.variables.get(\"variable_key\");\r",
+									"postman.setGlobalVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "cpq-admin@netcracker.com",
+									"description": "cpq-admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "MARket1234!",
+									"description": "MARket1234!",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "frontend",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/auth/realms/cpq/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"cpq",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TMF679",
+			"item": [
+				{
+					"name": "Product Offering Qualification",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "use-fifa-nc-id",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provideAlternative\": false,\r\n    \"inMemory\": true,\r\n    \"instantSyncQualification\": true,\r\n    \"provideOnlyAvailable\": false,\r\n    \"provideUnavailabilityReason\": true,\r\n    \"customerCategory\": {\r\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\r\n        \"name\": \"Residential Customers\"\r\n    },\r\n    \"channel\": {\r\n        \"id\": \"PERMIT\",\r\n        \"name\": \"CSR\"\r\n    },\r\n    \"marketSegment\": {\r\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n        \"name\": \"Alberta\"\r\n    },\r\n    \"productOfferingQualificationItem\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"productOffering\": {\r\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\r\n                \"name\": \"TELUS Internet 150/150-5\",\r\n                \"referredType\": \"ProductOfferingRef\"\r\n            }\r\n        }\r\n    ],\r\n    \"relatedParty\": [\r\n        {\r\n            \"id\": \"5753806\",\r\n            \"role\": \"Customer\",\r\n            \"name\": \"Alphonso Davies\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/offering-qualification-service/v1/catalogManagement/productOfferingQualification",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"offering-qualification-service",
+								"v1",
+								"catalogManagement",
+								"productOfferingQualification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Offering Qualification v2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "use-fifa-nc-id",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provideAlternative\": false,\r\n    \"inMemory\": true,\r\n    \"instantSyncQualification\": true,\r\n    \"provideOnlyAvailable\": false,\r\n    \"provideUnavailabilityReason\": true,\r\n    \"customerCategory\": {\r\n        \"id\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\r\n        \"name\": \"Residential Customers\"\r\n    },\r\n    \"channel\": {\r\n        \"id\": \"PERMIT\",\r\n        \"name\": \"CSR\"\r\n    },\r\n    \"marketSegment\": {\r\n        \"id\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n        \"name\": \"Alberta\"\r\n    },\r\n    \"category\": {\r\n        \"id\": \"76906b11-eee8-5d97-c051-882f6023af72\",\r\n        \"name\": \"Highspeed Home\",\r\n        \"@referredType\": \"Category\"\r\n    },\r\n    \"productOfferingQualificationItem\": [],\r\n    \"relatedParty\": [\r\n        {\r\n            \"id\": \"5753806\",\r\n            \"role\": \"Customer\",\r\n            \"name\": \"Alphonso Davies\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/offering-qualification-service/v1/catalogManagement/productOfferingQualification",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"offering-qualification-service",
+								"v1",
+								"catalogManagement",
+								"productOfferingQualification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TMF648",
+			"item": [
+				{
+					"name": "Create Quote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.variables.get(\"variable_key\");\r",
+									"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"468784885\"\n        }\n    ],\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"OPEN\",\n            \"product\": {\n                \"characteristic\": [],\n                \"place\": [\n                    {\n                        \"address\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"1235475\",\n                        \"name\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n                        \"role\": \"customerLocation\"\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"437aae68-cb5d-50ba-3eac-6564f335e463\",\n                \"name\": \"TELUS Internet 75/75\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Quote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Check quote.state=CANCELLED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.state).to.eql(\"CANCELLED\");",
+									"});",
+									"",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteVersion\", data.version);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "{{env}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}/validateQuote",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote",
+								"{{quote_id}}",
+								"validateQuote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Quote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Check quote.state=CANCELLED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.state).to.eql(\"CANCELLED\");",
+									"});",
+									"",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteVersion\", data.version);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "{{env}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/quote-tmf-service/quoteManagement/quote/48c61cc4-8359-4de7-bd3b-07994b4c915f\",\r\n    \"id\": \"48c61cc4-8359-4de7-bd3b-07994b4c915f\",\r\n    \"expirationDate\": \"2023-01-23T14:32:45.225237685Z\",\r\n    \"version\": \"12\",\r\n    \"number\": \"345\",\r\n    \"category\": \"Residential Customers\",\r\n    \"state\": \"IN_PROGRESS\",\r\n    \"quoteDate\": \"2022-10-25T14:32:45.225237685Z\",\r\n    \"validFor\": {\r\n        \"startDateTime\": \"2022-10-25T14:32:45.225237685Z\",\r\n        \"endDateTime\": \"2023-01-23T14:32:45.225237685Z\"\r\n    },\r\n    \"relatedParty\": [\r\n        {\r\n            \"id\": \"468784885\",\r\n            \"role\": \"Customer\",\r\n            \"@type\": \"Customer\"\r\n        }\r\n    ],\r\n    \"quoteItem\": [\r\n        {\r\n            \"id\": \"8d963e1d-3536-49f4-a51d-f8a30db24e65\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"DASH\",\r\n            \"productOffering\": {\r\n                \"id\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n                \"name\": \"Field Work Indicator for Internet\",\r\n                \"externalId\": \"9146789586413802963\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/install-base-tmf-service/productInventory/product/8d963e1d-3536-49f4-a51d-f8a30db24e65\",\r\n                \"id\": \"8d963e1d-3536-49f4-a51d-f8a30db24e65\",\r\n                \"name\": \"Field Work Indicator for Internet #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"899e0d40-6089-4761-9527-12591e650cf5\",\r\n                        \"name\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"address\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"externalId\": \"1235475\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"recurringChargePeriod\": \"Month\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"taxIncludedAmount\": \"105.00\",\r\n                                    \"dutyFreeAmount\": \"105.00\",\r\n                                    \"valueExcludingTax\": \"105\",\r\n                                    \"valueExcludingTaxRounded\": \"105.00\",\r\n                                    \"valueIncludingTax\": \"105\",\r\n                                    \"valueIncludingTaxRounded\": \"105.00\",\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"priceCurrency\": \"CAD\",\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"propertyInfo\": [\r\n                                \"[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":\\\"true\\\",\\\"hasGarage\\\":\\\"true\\\",\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}]\"\r\n                            ],\r\n                            \"preInstalledEquipment\": [\r\n                                \"[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}]\"\r\n                            ],\r\n                            \"fifaDetails\": [\r\n                                \"[]\"\r\n                            ],\r\n                            \"locationServiceType\": [\r\n                                \"Wireless,Fibre,lte\"\r\n                            ],\r\n                            \"ontDetails\": [\r\n                                \"[{\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"connectivity\\\":null,\\\"speedThreshold\\\":\\\"1000\\\",\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\"}]\"\r\n                            ],\r\n                            \"addressDetails\": [\r\n                                \"[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}]\"\r\n                            ],\r\n                            \"sqResponse\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                \"[{\\\"name\\\":\\\"usedLimitedPromtions\\\",\\\"value\\\":\\\"[]\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"preInstalledEquipment\\\",\\\"value\\\":[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"compoundEquipmentType\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"creditRiskLevel\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"TELUSQuickConnectConversion\\\",\\\"value\\\":\\\"QC-HS ONLY\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"ONTDetails\\\",\\\"value\\\":[{\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\",\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"speedThreshold\\\":\\\"1000\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"fifaDetails\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"FeasibilityCheckResult\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"VerificationCodeValidationStatus\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"AddressDetails\\\",\\\"value\\\":[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"ExternalQualifiedItems\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"propertyInfo\\\",\\\"value\\\":[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":true,\\\"hasGarage\\\":true,\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},null]\"\r\n                            ],\r\n                            \"isDPORequired\": [\r\n                                \"Not Applicable\"\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [\r\n                    {\r\n                        \"id\": \"9e87687d-6269-3445-7045-808cde175e31\",\r\n                        \"name\": \"Selected\",\r\n                        \"value\": [\r\n                            \"Yes\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Yes\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"34c1c518-c2b3-ed8e-4b40-bb1dce3daf30\",\r\n                        \"name\": \"Offering ID\",\r\n                        \"value\": [\r\n                            \"FIFA-FW-INET\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"FIFA-FW-INET\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    }\r\n                ],\r\n                \"productSpecification\": {\r\n                    \"id\": \"511e967f-d5b0-4e1d-aa1e-9ca858084fb1\",\r\n                    \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n                    \"version\": \"2.0\",\r\n                    \"name\": \"Technical Offerings Product Specification\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"parentQuoteItemId\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-10-25T14:30:02.519547Z\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"1235475\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-10-25T14:33:03.690101456Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"overrideMode\": \"GROSS\",\r\n            \"@type\": \"QuoteItem\"\r\n        },\r\n        {\r\n            \"id\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"DASH\",\r\n            \"relatedParty\": [\r\n                {\r\n                    \"id\": \"468784885\",\r\n                    \"role\": \"Customer\",\r\n                    \"@type\": \"Customer\"\r\n                }\r\n            ],\r\n            \"productOffering\": {\r\n                \"id\": \"437aae68-cb5d-50ba-3eac-6564f335e463\",\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/437aae68-cb5d-50ba-3eac-6564f335e463\",\r\n                \"name\": \"TELUS Internet 75/75\",\r\n                \"externalId\": \"9150529041113486764\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [\r\n                {\r\n                    \"priceType\": \"RC\",\r\n                    \"recurringChargePeriod\": \"Month\",\r\n                    \"name\": \"Monthly Fee\",\r\n                    \"price\": {\r\n                        \"taxIncludedAmount\": \"105.00\",\r\n                        \"dutyFreeAmount\": \"105.00\",\r\n                        \"overridden\": false,\r\n                        \"priceValueRef\": \"72dd78e9-5cdf-471b-b4d8-557f65a97e3c\",\r\n                        \"valueBasePriceExcludingTax\": \"105\",\r\n                        \"valueBasePriceExcludingTaxRounded\": \"105.00\",\r\n                        \"valueBasePriceIncludingTax\": \"105\",\r\n                        \"valueBasePriceIncludingTaxRounded\": \"105.00\",\r\n                        \"valueExcludingTax\": \"105\",\r\n                        \"valueExcludingTaxRounded\": \"105.00\",\r\n                        \"valueIncludingTax\": \"105\",\r\n                        \"valueIncludingTaxRounded\": \"105.00\",\r\n                        \"valueSubTotalPriceExcludingTax\": \"105\",\r\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"105.00\",\r\n                        \"valueSubTotalPriceIncludingTax\": \"105\",\r\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"105.00\",\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"priceComponentSpecificationRef\": \"5f417bce-8fd0-4e21-a900-b333dc3c84b0\",\r\n                    \"priceSpecificationType\": \"Monthly Fee\",\r\n                    \"priceCurrency\": \"CAD\",\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total RC\",\r\n                    \"recurringChargePeriod\": \"Month\",\r\n                    \"name\": \"Total RC by Quote Item\",\r\n                    \"price\": {\r\n                        \"taxIncludedAmount\": \"105.00\",\r\n                        \"dutyFreeAmount\": \"105.00\",\r\n                        \"valueExcludingTax\": \"105\",\r\n                        \"valueExcludingTaxRounded\": \"105.00\",\r\n                        \"valueIncludingTax\": \"105\",\r\n                        \"valueIncludingTaxRounded\": \"105.00\",\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"priceCurrency\": \"CAD\",\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total NRC\",\r\n                    \"name\": \"Total NRC by Quote Item\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/install-base-tmf-service/productInventory/product/bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n                \"id\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n                \"name\": \"TELUS Internet 75/75 #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"899e0d40-6089-4761-9527-12591e650cf5\",\r\n                        \"name\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"address\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"externalId\": \"1235475\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"recurringChargePeriod\": \"Month\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"taxIncludedAmount\": \"105.00\",\r\n                                    \"dutyFreeAmount\": \"105.00\",\r\n                                    \"valueExcludingTax\": \"105\",\r\n                                    \"valueExcludingTaxRounded\": \"105.00\",\r\n                                    \"valueIncludingTax\": \"105\",\r\n                                    \"valueIncludingTaxRounded\": \"105.00\",\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"priceCurrency\": \"CAD\",\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"propertyInfo\": [\r\n                                \"[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":\\\"true\\\",\\\"hasGarage\\\":\\\"true\\\",\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}]\"\r\n                            ],\r\n                            \"preInstalledEquipment\": [\r\n                                \"[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}]\"\r\n                            ],\r\n                            \"fifaDetails\": [\r\n                                \"[]\"\r\n                            ],\r\n                            \"locationServiceType\": [\r\n                                \"Wireless,Fibre,lte\"\r\n                            ],\r\n                            \"ontDetails\": [\r\n                                \"[{\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"connectivity\\\":null,\\\"speedThreshold\\\":\\\"1000\\\",\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\"}]\"\r\n                            ],\r\n                            \"addressDetails\": [\r\n                                \"[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}]\"\r\n                            ],\r\n                            \"sqResponse\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                \"[{\\\"name\\\":\\\"usedLimitedPromtions\\\",\\\"value\\\":\\\"[]\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"preInstalledEquipment\\\",\\\"value\\\":[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"compoundEquipmentType\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"creditRiskLevel\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"TELUSQuickConnectConversion\\\",\\\"value\\\":\\\"QC-HS ONLY\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"ONTDetails\\\",\\\"value\\\":[{\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\",\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"speedThreshold\\\":\\\"1000\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"fifaDetails\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"FeasibilityCheckResult\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"VerificationCodeValidationStatus\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"AddressDetails\\\",\\\"value\\\":[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"ExternalQualifiedItems\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"propertyInfo\\\",\\\"value\\\":[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":true,\\\"hasGarage\\\":true,\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},null]\"\r\n                            ],\r\n                            \"isDPORequired\": [\r\n                                \"Not Applicable\"\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [\r\n                    {\r\n                        \"id\": \"f3800995-d882-ae97-277a-8e170502f78d\",\r\n                        \"name\": \"Offering Type\",\r\n                        \"value\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"bfefae74-6d67-7b0a-35f5-d79c560b6685\",\r\n                        \"name\": \"Max Total Discount Life Value\",\r\n                        \"value\": [\r\n                            \"1296\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"1296\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"cb856f87-d6f9-564d-5b00-a8d434c5b629\",\r\n                        \"name\": \"IP Address Assignment Type\",\r\n                        \"value\": [\r\n                            \"Dynamic\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9136427540613380174\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"6133e68d-af9a-a042-dbc3-250ca599dd54\",\r\n                        \"name\": \"Offering Type\",\r\n                        \"value\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"e18795f0-4c26-f6ee-1e63-a9030a3406d1\",\r\n                        \"name\": \"Extender Type\",\r\n                        \"value\": [\r\n                            \"Non microDPU\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9159965993013506286\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"8e5f390e-d171-9e6b-544c-20d43970c6b6\",\r\n                        \"name\": \"Monthly Data Usage Capacity Characteristic\",\r\n                        \"value\": [\r\n                            \"550 GB\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9147204794613766670\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"18508a32-fa95-1666-93f0-46f13d527e82\",\r\n                        \"name\": \"TISAA\",\r\n                        \"value\": [\r\n                            \"True\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"True\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"05e249b7-e439-6ac6-e2da-3139033d60f8\",\r\n                        \"name\": \"Access Type\",\r\n                        \"value\": [\r\n                            \"Fibre - FIFA\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9147856909313058508\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"1e3f5408-99b0-2fa9-e7a0-e5d164472ade\",\r\n                        \"name\": \"Delivery Method\",\r\n                        \"value\": [\r\n                            \"Software\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Software\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"8ad10b94-24ff-4d95-97b9-6b4776e20ada\",\r\n                        \"name\": \"Install Method\",\r\n                        \"value\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"4c0b5b01-9a1d-ff85-ceb5-7ff3bfd924a3\",\r\n                        \"name\": \"Download speed\",\r\n                        \"value\": [\r\n                            \"150 Mbps\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"150 Mbps\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"b3b692f9-dccd-7ddc-5003-f80cb154c89f\",\r\n                        \"name\": \"Use Base Service\",\r\n                        \"value\": [\r\n                            \"False\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9149423635813053390\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\r\n                        \"name\": \"Available Delivery Method\",\r\n                        \"value\": [\r\n                            \"Pro Install, Self-Install\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Pro Install, Self-Install\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"7ac539e5-9381-882e-d248-50de7b04c4e1\",\r\n                        \"name\": \"Upload speed\",\r\n                        \"value\": [\r\n                            \"75 Mbps\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9149618309213295668\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"2e88b206-3724-c6ad-c202-f369bb519848\",\r\n                        \"name\": \"Fulfillment Automation\",\r\n                        \"value\": [\r\n                            \"Yes\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9150567774813953725\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"technical\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    }\r\n                ],\r\n                \"productSpecification\": {\r\n                    \"id\": \"6fc2e315-5c2e-d504-f7bd-3e3e99e1c7e3\",\r\n                    \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/437aae68-cb5d-50ba-3eac-6564f335e463\",\r\n                    \"version\": \"6.0\",\r\n                    \"name\": \"TELUS Internet Product\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-10-25T14:30:54.360273Z\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"isEquipmentRemoved\": [\r\n                    \"Yes\"\r\n                ],\r\n                \"availableAccessType\": [\r\n                    \"GPON\"\r\n                ],\r\n                \"isTenantCustomer\": [\r\n                    \"False\"\r\n                ],\r\n                \"a69db2b4-637a-4990-8ca5-82b796cc261d\": [\r\n                    \"9163196264813817795\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"1235475\"\r\n                ],\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"preInstalledEquipment\": [\r\n                    \"3ac13316-c397-8040-b83e-67931936b113\"\r\n                ],\r\n                \"TELUSquickConnectConversion\": [\r\n                    \"QC-HS ONLY\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-10-25T14:33:03.691781786Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"overrideMode\": \"GROSS\",\r\n            \"@type\": \"QuoteItem\"\r\n        },\r\n        {\r\n            \"id\": \"e24a1a30-a853-4483-8080-032a9d90fd84\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"DASH\",\r\n            \"productOffering\": {\r\n                \"id\": \"4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n                \"name\": \"$50 High Speed Internet Activation Fee\",\r\n                \"externalId\": \"9162773549385530042\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/install-base-tmf-service/productInventory/product/e24a1a30-a853-4483-8080-032a9d90fd84\",\r\n                \"id\": \"e24a1a30-a853-4483-8080-032a9d90fd84\",\r\n                \"name\": \"$50 High Speed Internet Activation Fee #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"899e0d40-6089-4761-9527-12591e650cf5\",\r\n                        \"name\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"address\": \"1358 PHOENIX ST, DRAYTON VALLEY, AB\",\r\n                        \"externalId\": \"1235475\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"recurringChargePeriod\": \"Month\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"taxIncludedAmount\": \"105.00\",\r\n                                    \"dutyFreeAmount\": \"105.00\",\r\n                                    \"valueExcludingTax\": \"105\",\r\n                                    \"valueExcludingTaxRounded\": \"105.00\",\r\n                                    \"valueIncludingTax\": \"105\",\r\n                                    \"valueIncludingTaxRounded\": \"105.00\",\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"priceCurrency\": \"CAD\",\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"propertyInfo\": [\r\n                                \"[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":\\\"true\\\",\\\"hasGarage\\\":\\\"true\\\",\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}]\"\r\n                            ],\r\n                            \"preInstalledEquipment\": [\r\n                                \"[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}]\"\r\n                            ],\r\n                            \"fifaDetails\": [\r\n                                \"[]\"\r\n                            ],\r\n                            \"locationServiceType\": [\r\n                                \"Wireless,Fibre,lte\"\r\n                            ],\r\n                            \"ontDetails\": [\r\n                                \"[{\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"connectivity\\\":null,\\\"speedThreshold\\\":\\\"1000\\\",\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\"}]\"\r\n                            ],\r\n                            \"addressDetails\": [\r\n                                \"[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}]\"\r\n                            ],\r\n                            \"sqResponse\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                \"[{\\\"name\\\":\\\"usedLimitedPromtions\\\",\\\"value\\\":\\\"[]\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"preInstalledEquipment\\\",\\\"value\\\":[{\\\"offeringCategoryId\\\":\\\"9160663688213690538\\\",\\\"equipmentType\\\":\\\"G-240G-A\\\",\\\"characteristics\\\":[{\\\"characteristicId\\\":\\\"9160665411313691364\\\",\\\"value\\\":\\\"G-240G-A\\\"},{\\\"characteristicId\\\":\\\"9160665411313691371\\\",\\\"value\\\":\\\"RANGED\\\"}]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"compoundEquipmentType\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"creditRiskLevel\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"TELUSQuickConnectConversion\\\",\\\"value\\\":\\\"QC-HS ONLY\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"ONTDetails\\\",\\\"value\\\":[{\\\"option82\\\":\\\"KLWNBC02OT06 PON 1/1/06/03:17.1.1\\\",\\\"model\\\":\\\"G-240G-A\\\",\\\"status\\\":\\\"RANGED\\\",\\\"onthwstate\\\":\\\"update required\\\",\\\"speedThreshold\\\":\\\"1000\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"fifaDetails\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"FeasibilityCheckResult\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"VerificationCodeValidationStatus\\\",\\\"value\\\":\\\"\\\",\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":null},{\\\"name\\\":\\\"AddressDetails\\\",\\\"value\\\":[{\\\"lpdsId\\\":\\\"12726390\\\",\\\"buildingType\\\":\\\"MDU\\\",\\\"tag\\\":[]}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"ExternalQualifiedItems\\\",\\\"value\\\":[],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":\\\"12726390\\\",\\\"expirationDuration\\\":1657730874381},{\\\"name\\\":\\\"propertyInfo\\\",\\\"value\\\":[{\\\"id\\\":12726390,\\\"@baseType\\\":\\\"GeographicSite\\\",\\\"@type\\\":\\\"GeographicSitePropertyInfo\\\",\\\"code\\\":\\\"\\\",\\\"name\\\":\\\"\\\",\\\"description\\\":\\\"\\\",\\\"status\\\":\\\"\\\",\\\"houseSize\\\":null,\\\"estimatedHouseSize\\\":\\\"241.00\\\",\\\"numStories\\\":\\\"6.0\\\",\\\"numBedrooms\\\":\\\"3\\\",\\\"hasBasement\\\":true,\\\"hasGarage\\\":true,\\\"isDIYEligible\\\":false,\\\"isQCConvertible\\\":null,\\\"accessTechnology\\\":\\\"Fibre\\\",\\\"howInstalled\\\":null,\\\"landSize\\\":null,\\\"yearBuilt\\\":null,\\\"numUnits\\\":null,\\\"floor1Area\\\":null,\\\"floor2Area\\\":null,\\\"constructionMaterial\\\":null,\\\"hasTerminatedFibre\\\":true,\\\"hasReliabilityIssues\\\":null,\\\"href\\\":\\\"https://butterfly-np.cloudapps.telus.com/api/v1/propertyInfo/12726390\\\"}],\\\"status\\\":{\\\"description\\\":\\\"OK\\\",\\\"statusCodes\\\":{\\\"status\\\":\\\"success\\\",\\\"code\\\":\\\"200\\\",\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"\\\",\\\"referenceError\\\":\\\"\\\"}},\\\"resolveKey\\\":null,\\\"expirationDuration\\\":1657730874381},null]\"\r\n                            ],\r\n                            \"isDPORequired\": [\r\n                                \"Not Applicable\"\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [],\r\n                \"productSpecification\": {\r\n                    \"id\": \"af179042-c762-49df-8d99-0c57f62ff409\",\r\n                    \"href\": \"https://public-gateway-cloud-bss-is02.nc-gke-st.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n                    \"version\": \"1.0\",\r\n                    \"name\": \"Internet Common Add Ons Product Specification\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"parentQuoteItemId\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"bc1f96e8-ed79-47da-8d5a-c33c988fc7ac\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-10-25T14:29:24.334246Z\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"1235475\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-10-25T14:33:03.657353029Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"overrideMode\": \"GROSS\",\r\n            \"@type\": \"QuoteItem\"\r\n        }\r\n    ],\r\n    \"quoteTotalPrice\": [\r\n        {\r\n            \"priceType\": \"Total NRC\",\r\n            \"name\": \"Total NRC by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total NRC Tax\",\r\n            \"name\": \"Total NRC Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total NRC Reduction\",\r\n            \"name\": \"Total NRC Reduction by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC\",\r\n            \"recurringChargePeriod\": \"Month\",\r\n            \"name\": \"Total RC by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"105.00\",\r\n                \"dutyFreeAmount\": \"105.00\",\r\n                \"valueExcludingTaxRounded\": \"105.00\",\r\n                \"valueIncludingTaxRounded\": \"105.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"priceCurrency\": \"CAD\",\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC Tax\",\r\n            \"recurringChargePeriod\": \"Month\",\r\n            \"name\": \"Total RC Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"priceCurrency\": \"CAD\",\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC Reduction\",\r\n            \"recurringChargePeriod\": \"Month\",\r\n            \"name\": \"Total RC Reduction by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"priceCurrency\": \"CAD\",\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total Deactivation Fee\",\r\n            \"name\": \"Total Deactivation Fee by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total Deactivation Fee Tax\",\r\n            \"name\": \"Total Deactivation Fee Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        }\r\n    ],\r\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\r\n    \"customerId\": \"468784885\",\r\n    \"distributionChannelId\": \"PERMIT\",\r\n    \"initialDistributionChannelId\": \"PERMIT\",\r\n    \"newMSA\": false,\r\n    \"distributionChannelName\": \"CSR\",\r\n    \"name\": \"Quote #345\",\r\n    \"revision\": 0,\r\n    \"updatedWhen\": \"2022-10-25T14:33:03.719929139Z\",\r\n    \"overrideMode\": \"gross\",\r\n    \"approvalLevel\": 0,\r\n    \"extendedParameters\": {\r\n        \"newCustomer\": [\r\n            \"Yes\"\r\n        ],\r\n        \"customerCategoryHierarchyUUIDs\": [\r\n            \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef,72d6fb2d-f64c-a9dc-bf03-e109ee914b13\"\r\n        ],\r\n        \"newFixedCustomer\": [\r\n            \"No\"\r\n        ]\r\n    },\r\n    \"productOfferingRefByMarketRefs\": [\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"name\": \"Sub-Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"437aae68-cb5d-50ba-3eac-6564f335e463\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"recurringChargePeriod\": \"Month\",\r\n                    \"name\": \"Monthly Fee\",\r\n                    \"price\": {\r\n                        \"taxIncludedAmount\": \"105.00\",\r\n                        \"dutyFreeAmount\": \"105.00\",\r\n                        \"valueBasePriceExcludingTax\": \"105\",\r\n                        \"valueBasePriceExcludingTaxRounded\": \"105.00\",\r\n                        \"valueBasePriceIncludingTax\": \"105\",\r\n                        \"valueBasePriceIncludingTaxRounded\": \"105.00\",\r\n                        \"valueExcludingTax\": \"105\",\r\n                        \"valueExcludingTaxRounded\": \"105.00\",\r\n                        \"valueIncludingTax\": \"105\",\r\n                        \"valueIncludingTaxRounded\": \"105.00\",\r\n                        \"valueSubTotalPriceExcludingTax\": \"105\",\r\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"105.00\",\r\n                        \"valueSubTotalPriceIncludingTax\": \"105\",\r\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"105.00\",\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"priceCurrency\": \"CAD\",\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total RC\",\r\n                    \"recurringChargePeriod\": \"Month\",\r\n                    \"name\": \"Total RC by Product\",\r\n                    \"price\": {\r\n                        \"taxIncludedAmount\": \"105.00\",\r\n                        \"dutyFreeAmount\": \"105.00\",\r\n                        \"valueExcludingTax\": \"105\",\r\n                        \"valueExcludingTaxRounded\": \"105.00\",\r\n                        \"valueIncludingTax\": \"105\",\r\n                        \"valueIncludingTaxRounded\": \"105.00\",\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"priceCurrency\": \"CAD\",\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total NRC\",\r\n                    \"name\": \"Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"name\": \"Sub-Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"marketRefs\": [\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"marketName\": \"Alberta\"\r\n        }\r\n    ],\r\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\r\n    \"initialBaselineQuoteId\": \"48c61cc4-8359-4de7-bd3b-07994b4c915f\",\r\n    \"createdBy\": {\r\n        \"id\": \"3daf812d-fbcd-4149-a489-1ee93c97f808\",\r\n        \"name\": \"cpq-admin@netcracker.com\",\r\n        \"@referredType\": \"User\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote",
+								"{{quote_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change State",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Check quote.state=CANCELLED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.state).to.eql(\"CANCELLED\");",
+									"});",
+									"",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteVersion\", data.version);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "{{env}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quoteId\": \"3be40d49-7d4f-42c7-bbe5-a587f3696c6d\",\r\n  \"sourceState\": \"IN_PROGRESS\",\r\n  \"targetState\": \"PREPARE_FOR_SUBMITTING\"\r\n}"
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}/changeState",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote",
+								"{{quote_id}}",
+								"changeState"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Modify Quote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.variables.get(\"variable_key\");\r",
+									"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"3154684999\"\n        }\n    ],\n    \"quoteItem\": [\n        {\n            \"action\": \"DASH\",\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"product\": {\n                \"id\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Modify Quote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Check quote.state=CANCELLED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.state).to.eql(\"CANCELLED\");",
+									"});",
+									"",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"quoteVersion\", data.version);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "env",
+								"value": "{{env}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"href\": \"https://public-gateway-cloud-bss-dev19.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/quote/e9b86912-31c2-46ae-a78d-99f0268e8f85\",\r\n    \"id\": \"e9b86912-31c2-46ae-a78d-99f0268e8f85\",\r\n    \"expirationDate\": \"2022-09-14T05:11:29.338812Z\",\r\n    \"version\": \"14\",\r\n    \"number\": \"3099\",\r\n    \"category\": \"Residential Customers\",\r\n    \"state\": \"IN_PROGRESS\",\r\n    \"quoteDate\": \"2022-06-16T05:11:29.338812Z\",\r\n    \"validFor\": {\r\n        \"startDateTime\": \"2022-06-16T05:11:29.338812Z\",\r\n        \"endDateTime\": \"2022-09-14T05:11:29.338812Z\"\r\n    },\r\n    \"relatedParty\": [\r\n        {\r\n            \"id\": \"3154684999\",\r\n            \"role\": \"Customer\",\r\n            \"@type\": \"Customer\"\r\n        }\r\n    ],\r\n    \"quoteItem\": [\r\n        {\r\n            \"id\": \"e1db1dcc-7df3-4f31-8b22-13fbccd9e986\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"MODIFY\",\r\n            \"productOffering\": {\r\n                \"id\": \"4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n                \"name\": \"$50 High Speed Internet Activation Fee\",\r\n                \"externalId\": \"9162773549385530042\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-dev19.nc-gke-np.tsl.telus.com/install-base-tmf-service/productInventory/product/e1db1dcc-7df3-4f31-8b22-13fbccd9e986\",\r\n                \"id\": \"e1db1dcc-7df3-4f31-8b22-13fbccd9e986\",\r\n                \"name\": \"$50 High Speed Internet Activation Fee #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"9e1f9a95-3507-4b64-881a-4365fe527d2c\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"externalId\": \"165154655877\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"historicCat_28c5728f-abde-d9ff-85ae-d1b8812657fb\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_2cafb465-f691-4536-5cba-c2d40c658803\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"isEmbargoValidated\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"historicCat_1112add1-a76a-5ca1-45e0-4d2ec6cef45e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_4615a4b2-1218-2daf-7726-cdf4590a35e1\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_c1b9e1bd-4cb3-98f2-60ef-cef6d30dfb1e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                {\r\n                                    \"name\": \"usedLimitedPromtions\",\r\n                                    \"value\": \"[]\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"preInstalledEquipment\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"compoundEquipmentType\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"creditRiskLevel\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><S:Body><S:Fault xmlns:ns4=\\\"http://www.w3.org/2003/05/soap-envelope\\\"><faultcode>S:Server</faultcode><faultstring>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</faultstring><detail><ns8:ServiceException xmlns:ns9=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/CreditCommon_v1\\\" xmlns:ns7=\\\"http://schemas.telus.com/eca/common_types_2_1\\\" xmlns:ns6=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/customer_information_reference_types_1_0\\\" xmlns:ns5=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/CustomerManagementCommonTypes_v4\\\" xmlns:ns4=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/EnterpriseCommonTypes_v6\\\" xmlns:ns3=\\\"http://xmlschema.tmi.telus.com/srv/CMO/OrderMgmt/WLNCreditProfileManagementServiceRequestResponse_v2\\\" xmlns:ns2=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/WirelineCreditProfileManagementTypes_v2\\\" xmlns:ns10=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/types/ping_v1\\\" xmlns:ns8=\\\"http://xmlschema.tmi.telus.com/xsd/common/exceptions/Exceptions_v1_0\\\"><ns8:messageId/><ns8:errorCode>WLNP-UNK-001</ns8:errorCode><ns8:errorMessage>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</ns8:errorMessage></ns8:ServiceException></detail></S:Fault></S:Body></S:Envelope>\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"TELUSQuickConnectConversion\",\r\n                                    \"value\": \"QC-HS ONLY\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ONTDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Not Acceptable\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"406\",\r\n                                            \"reason\": \"NC data not found for 165154655877\",\r\n                                            \"message\": \"Resource 165154655877 not found in NC\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"fifaDetails\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"FeasibilityCheckResult\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"VerificationCodeValidationStatus\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"AddressDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"{\\\"timestamp\\\":\\\"2022-06-15T19:46:48.886Z\\\",\\\"status\\\":\\\"102\\\",\\\"error\\\":\\\"value \\\\\\\"165154655877\\\\\\\" is out of range for type integer\\\",\\\"exception\\\":null,\\\"message\\\":\\\"\\\",\\\"path\\\":null,\\\"httpStatus\\\":500}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ExternalQualifiedItems\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"propertyInfo\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 404\",\r\n                                            \"message\": \"{\\\"error\\\":true,\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"no_data\\\",\\\"status\\\":404}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [],\r\n                \"productSpecification\": {\r\n                    \"id\": \"af179042-c762-49df-8d99-0c57f62ff409\",\r\n                    \"version\": \"0.18\",\r\n                    \"name\": \"Internet Common Add Ons Product Specification\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"parentQuoteItemId\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-06-16T05:10:45.338002Z\",\r\n            \"availabilityCheckResult\": \"AVAILABLE\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"165154655877\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-06-16T05:11:32.296028Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"@type\": \"QuoteItem\"\r\n        },\r\n        {\r\n            \"id\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"MODIFY\",\r\n            \"relatedParty\": [\r\n                {\r\n                    \"id\": \"3154684999\",\r\n                    \"role\": \"Customer\",\r\n                    \"@type\": \"Customer\"\r\n                }\r\n            ],\r\n            \"productOffering\": {\r\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\r\n                \"name\": \"TELUS Internet 150/150-5\",\r\n                \"externalId\": \"9150564125513493939\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [\r\n                {\r\n                    \"priceType\": \"Total RC\",\r\n                    \"name\": \"Total RC by Quote Item\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total NRC\",\r\n                    \"name\": \"Total NRC by Quote Item\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-dev19.nc-gke-np.tsl.telus.com/install-base-tmf-service/productInventory/product/7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n                \"id\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n                \"name\": \"TELUS Internet 150/150-5 #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"9e1f9a95-3507-4b64-881a-4365fe527d2c\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"externalId\": \"165154655877\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"historicCat_28c5728f-abde-d9ff-85ae-d1b8812657fb\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_2cafb465-f691-4536-5cba-c2d40c658803\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"isEmbargoValidated\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"historicCat_1112add1-a76a-5ca1-45e0-4d2ec6cef45e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_4615a4b2-1218-2daf-7726-cdf4590a35e1\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_c1b9e1bd-4cb3-98f2-60ef-cef6d30dfb1e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                {\r\n                                    \"name\": \"usedLimitedPromtions\",\r\n                                    \"value\": \"[]\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"preInstalledEquipment\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"compoundEquipmentType\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"creditRiskLevel\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><S:Body><S:Fault xmlns:ns4=\\\"http://www.w3.org/2003/05/soap-envelope\\\"><faultcode>S:Server</faultcode><faultstring>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</faultstring><detail><ns8:ServiceException xmlns:ns9=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/CreditCommon_v1\\\" xmlns:ns7=\\\"http://schemas.telus.com/eca/common_types_2_1\\\" xmlns:ns6=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/customer_information_reference_types_1_0\\\" xmlns:ns5=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/CustomerManagementCommonTypes_v4\\\" xmlns:ns4=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/EnterpriseCommonTypes_v6\\\" xmlns:ns3=\\\"http://xmlschema.tmi.telus.com/srv/CMO/OrderMgmt/WLNCreditProfileManagementServiceRequestResponse_v2\\\" xmlns:ns2=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/WirelineCreditProfileManagementTypes_v2\\\" xmlns:ns10=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/types/ping_v1\\\" xmlns:ns8=\\\"http://xmlschema.tmi.telus.com/xsd/common/exceptions/Exceptions_v1_0\\\"><ns8:messageId/><ns8:errorCode>WLNP-UNK-001</ns8:errorCode><ns8:errorMessage>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</ns8:errorMessage></ns8:ServiceException></detail></S:Fault></S:Body></S:Envelope>\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"TELUSQuickConnectConversion\",\r\n                                    \"value\": \"QC-HS ONLY\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ONTDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Not Acceptable\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"406\",\r\n                                            \"reason\": \"NC data not found for 165154655877\",\r\n                                            \"message\": \"Resource 165154655877 not found in NC\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"fifaDetails\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"FeasibilityCheckResult\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"VerificationCodeValidationStatus\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"AddressDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"{\\\"timestamp\\\":\\\"2022-06-15T19:46:48.886Z\\\",\\\"status\\\":\\\"102\\\",\\\"error\\\":\\\"value \\\\\\\"165154655877\\\\\\\" is out of range for type integer\\\",\\\"exception\\\":null,\\\"message\\\":\\\"\\\",\\\"path\\\":null,\\\"httpStatus\\\":500}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ExternalQualifiedItems\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"propertyInfo\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 404\",\r\n                                            \"message\": \"{\\\"error\\\":true,\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"no_data\\\",\\\"status\\\":404}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [\r\n                    {\r\n                        \"id\": \"f3800995-d882-ae97-277a-8e170502f78d\",\r\n                        \"name\": \"Offering Type\",\r\n                        \"value\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"bfefae74-6d67-7b0a-35f5-d79c560b6685\",\r\n                        \"name\": \"Max Total Discount Life Value\",\r\n                        \"value\": [\r\n                            \"1584\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"1584\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"cb856f87-d6f9-564d-5b00-a8d434c5b629\",\r\n                        \"name\": \"IP Address Assignment Type\",\r\n                        \"value\": [\r\n                            \"Dynamic\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9136427540613380174\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"6133e68d-af9a-a042-dbc3-250ca599dd54\",\r\n                        \"name\": \"Offering Type\",\r\n                        \"value\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Consumer\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"e18795f0-4c26-f6ee-1e63-a9030a3406d1\",\r\n                        \"name\": \"Extender Type\",\r\n                        \"value\": [\r\n                            \"Non microDPU\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9159965993013506286\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"8e5f390e-d171-9e6b-544c-20d43970c6b6\",\r\n                        \"name\": \"Monthly Data Usage Capacity Characteristic\",\r\n                        \"value\": [\r\n                            \"1000 GB\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9147204774713760656\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"18508a32-fa95-1666-93f0-46f13d527e82\",\r\n                        \"name\": \"TISAA\",\r\n                        \"value\": [\r\n                            \"True\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"True\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"05e249b7-e439-6ac6-e2da-3139033d60f8\",\r\n                        \"name\": \"Access Type\",\r\n                        \"value\": [\r\n                            \"Fibre - FIFA\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9147856909313058508\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"1e3f5408-99b0-2fa9-e7a0-e5d164472ade\",\r\n                        \"name\": \"Delivery Method\",\r\n                        \"value\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"4c0b5b01-9a1d-ff85-ceb5-7ff3bfd924a3\",\r\n                        \"name\": \"Download speed\",\r\n                        \"value\": [\r\n                            \"150 Mbps\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"150 Mbps\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"b3b692f9-dccd-7ddc-5003-f80cb154c89f\",\r\n                        \"name\": \"Use Base Service\",\r\n                        \"value\": [\r\n                            \"False\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9149423635813053390\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\r\n                        \"name\": \"Available Delivery Method\",\r\n                        \"value\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Pro Install\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"7ac539e5-9381-882e-d248-50de7b04c4e1\",\r\n                        \"name\": \"Upload speed\",\r\n                        \"value\": [\r\n                            \"150 Mbps\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"9145372504313748257\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    }\r\n                ],\r\n                \"productSpecification\": {\r\n                    \"id\": \"6fc2e315-5c2e-d504-f7bd-3e3e99e1c7e3\",\r\n                    \"version\": \"3.0\",\r\n                    \"name\": \"TELUS Internet Product\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-06-16T05:10:23.700486Z\",\r\n            \"availabilityCheckResult\": \"AVAILABLE\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"historicCat_2cafb465-f691-4536-5cba-c2d40c658803\": [\r\n                    \"terminationPeriodDays=0\"\r\n                ],\r\n                \"isEquipmentRemoved\": [\r\n                    \"Yes\"\r\n                ],\r\n                \"availableAccessType\": [\r\n                    \"GPON,XGSPON\"\r\n                ],\r\n                \"isTenantCustomer\": [\r\n                    \"False\"\r\n                ],\r\n                \"historicCat_4615a4b2-1218-2daf-7726-cdf4590a35e1\": [\r\n                    \"terminationPeriodDays=0\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"165154655877\"\r\n                ],\r\n                \"historicCat_1112add1-a76a-5ca1-45e0-4d2ec6cef45e\": [\r\n                    \"terminationPeriodDays=0\"\r\n                ],\r\n                \"historicCat_c1b9e1bd-4cb3-98f2-60ef-cef6d30dfb1e\": [\r\n                    \"terminationPeriodDays=0\"\r\n                ],\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"historicCat_28c5728f-abde-d9ff-85ae-d1b8812657fb\": [\r\n                    \"terminationPeriodDays=0\"\r\n                ],\r\n                \"TELUSquickConnectConversion\": [\r\n                    \"QC-HS ONLY\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-06-16T05:11:32.296195Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"@type\": \"QuoteItem\"\r\n        },\r\n        {\r\n            \"id\": \"330c7472-10c2-4aae-9443-f079f43253ed\",\r\n            \"state\": \"QUALIFIED\",\r\n            \"quantity\": 1,\r\n            \"action\": \"MODIFY\",\r\n            \"productOffering\": {\r\n                \"id\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n                \"name\": \"Field Work Indicator for Internet\",\r\n                \"externalId\": \"9146789586413802963\",\r\n                \"@type\": \"ProductOffering\"\r\n            },\r\n            \"quoteItemPrice\": [],\r\n            \"product\": {\r\n                \"href\": \"https://public-gateway-cloud-bss-dev19.nc-gke-np.tsl.telus.com/install-base-tmf-service/productInventory/product/330c7472-10c2-4aae-9443-f079f43253ed\",\r\n                \"id\": \"330c7472-10c2-4aae-9443-f079f43253ed\",\r\n                \"name\": \"Field Work Indicator for Internet #1\",\r\n                \"place\": [\r\n                    {\r\n                        \"id\": \"9e1f9a95-3507-4b64-881a-4365fe527d2c\",\r\n                        \"role\": \"customerLocation\",\r\n                        \"addedToTheQuote\": true,\r\n                        \"externalId\": \"165154655877\",\r\n                        \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n                        \"marketName\": \"Alberta\",\r\n                        \"totalPricesByLocation\": [\r\n                            {\r\n                                \"priceType\": \"Total RC\",\r\n                                \"name\": \"Total RC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            },\r\n                            {\r\n                                \"priceType\": \"Total NRC\",\r\n                                \"name\": \"Total NRC by Location\",\r\n                                \"price\": {\r\n                                    \"@type\": \"Price\"\r\n                                },\r\n                                \"@type\": \"QuotePrice\"\r\n                            }\r\n                        ],\r\n                        \"extendedParameters\": {\r\n                            \"historicCat_28c5728f-abde-d9ff-85ae-d1b8812657fb\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_2cafb465-f691-4536-5cba-c2d40c658803\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"isEmbargoValidated\": [\r\n                                \"True\"\r\n                            ],\r\n                            \"historicCat_1112add1-a76a-5ca1-45e0-4d2ec6cef45e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_4615a4b2-1218-2daf-7726-cdf4590a35e1\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"historicCat_c1b9e1bd-4cb3-98f2-60ef-cef6d30dfb1e\": [\r\n                                \"terminationPeriodDays=0\"\r\n                            ],\r\n                            \"ocgResponse\": [\r\n                                {\r\n                                    \"name\": \"usedLimitedPromtions\",\r\n                                    \"value\": \"[]\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"preInstalledEquipment\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"compoundEquipmentType\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"creditRiskLevel\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><S:Body><S:Fault xmlns:ns4=\\\"http://www.w3.org/2003/05/soap-envelope\\\"><faultcode>S:Server</faultcode><faultstring>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</faultstring><detail><ns8:ServiceException xmlns:ns9=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/CreditCommon_v1\\\" xmlns:ns7=\\\"http://schemas.telus.com/eca/common_types_2_1\\\" xmlns:ns6=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/BaseTypes/customer_information_reference_types_1_0\\\" xmlns:ns5=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/CustomerManagementCommonTypes_v4\\\" xmlns:ns4=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/EnterpriseCommonTypes_v6\\\" xmlns:ns3=\\\"http://xmlschema.tmi.telus.com/srv/CMO/OrderMgmt/WLNCreditProfileManagementServiceRequestResponse_v2\\\" xmlns:ns2=\\\"http://xmlschema.tmi.telus.com/xsd/Customer/Customer/WirelineCreditProfileManagementTypes_v2\\\" xmlns:ns10=\\\"http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/types/ping_v1\\\" xmlns:ns8=\\\"http://xmlschema.tmi.telus.com/xsd/common/exceptions/Exceptions_v1_0\\\"><ns8:messageId/><ns8:errorCode>WLNP-UNK-001</ns8:errorCode><ns8:errorMessage>WLNCreditProfileManagementService 2.0 getCreditProfileByCustomerId: System throws unchecked exceptions when getting credit profile for customer  :3154684999</ns8:errorMessage></ns8:ServiceException></detail></S:Fault></S:Body></S:Envelope>\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"TELUSQuickConnectConversion\",\r\n                                    \"value\": \"QC-HS ONLY\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ONTDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Not Acceptable\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"406\",\r\n                                            \"reason\": \"NC data not found for 165154655877\",\r\n                                            \"message\": \"Resource 165154655877 not found in NC\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"fifaDetails\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"FeasibilityCheckResult\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"VerificationCodeValidationStatus\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"AddressDetails\",\r\n                                    \"value\": \"\",\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 500\",\r\n                                            \"message\": \"{\\\"timestamp\\\":\\\"2022-06-15T19:46:48.886Z\\\",\\\"status\\\":\\\"102\\\",\\\"error\\\":\\\"value \\\\\\\"165154655877\\\\\\\" is out of range for type integer\\\",\\\"exception\\\":null,\\\"message\\\":\\\"\\\",\\\"path\\\":null,\\\"httpStatus\\\":500}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                },\r\n                                {\r\n                                    \"name\": \"ExternalQualifiedItems\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"OK\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"success\",\r\n                                            \"code\": \"200\",\r\n                                            \"reason\": \"\",\r\n                                            \"message\": \"\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    },\r\n                                    \"resolveKey\": \"165154655877\",\r\n                                    \"expirationDuration\": 1655356291343\r\n                                },\r\n                                {\r\n                                    \"name\": \"propertyInfo\",\r\n                                    \"value\": [],\r\n                                    \"status\": {\r\n                                        \"description\": \"Internal Server Error\",\r\n                                        \"statusCodes\": {\r\n                                            \"status\": \"failure\",\r\n                                            \"code\": \"500\",\r\n                                            \"reason\": \"Request failed with status code 404\",\r\n                                            \"message\": \"{\\\"error\\\":true,\\\"reason\\\":\\\"\\\",\\\"message\\\":\\\"no_data\\\",\\\"status\\\":404}\",\r\n                                            \"referenceError\": \"\"\r\n                                        }\r\n                                    }\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                ],\r\n                \"characteristic\": [\r\n                    {\r\n                        \"id\": \"9e87687d-6269-3445-7045-808cde175e31\",\r\n                        \"name\": \"Selected\",\r\n                        \"value\": [\r\n                            \"Yes\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"Yes\"\r\n                        ],\r\n                        \"visible\": true,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    },\r\n                    {\r\n                        \"id\": \"34c1c518-c2b3-ed8e-4b40-bb1dce3daf30\",\r\n                        \"name\": \"Offering ID\",\r\n                        \"value\": [\r\n                            \"FIFA-FW-INET\"\r\n                        ],\r\n                        \"rawValue\": [\r\n                            \"FIFA-FW-INET\"\r\n                        ],\r\n                        \"visible\": false,\r\n                        \"@type\": \"ProductOfferingCharacteristic\"\r\n                    }\r\n                ],\r\n                \"productSpecification\": {\r\n                    \"id\": \"511e967f-d5b0-4e1d-aa1e-9ca858084fb1\",\r\n                    \"version\": \"0.14\",\r\n                    \"name\": \"Technical Offerings Product Specification\",\r\n                    \"@type\": \"ProductSpecification\"\r\n                }\r\n            },\r\n            \"parentQuoteItemId\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"quoteItemType\": \"Product offering\",\r\n            \"rootQuoteItemId\": \"7c59fe81-6ad5-4099-ba66-d322eb78fcad\",\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"distributionChannelId\": \"PERMIT\",\r\n            \"activeFrom\": \"2022-06-16T05:11:05.652751Z\",\r\n            \"availabilityCheckResult\": \"AVAILABLE\",\r\n            \"approvalLevel\": 0,\r\n            \"extendedParameters\": {\r\n                \"transactionType\": [\r\n                    \"Like For Like\"\r\n                ],\r\n                \"cpiAttributes.cpiLocationId\": [\r\n                    \"165154655877\"\r\n                ],\r\n                \"hierarchyUnrolled\": [\r\n                    \"true\"\r\n                ]\r\n            },\r\n            \"businessAction\": \"Like For Like\",\r\n            \"creationTime\": \"2022-06-16T05:11:32.296139Z\",\r\n            \"cpiVersion\": 2,\r\n            \"cpiState\": \"ACTIVE\",\r\n            \"@type\": \"QuoteItem\"\r\n        }\r\n    ],\r\n    \"quoteTotalPrice\": [\r\n        {\r\n            \"priceType\": \"Total NRC\",\r\n            \"name\": \"Total NRC by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total NRC Tax\",\r\n            \"name\": \"Total NRC Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total NRC Reduction\",\r\n            \"name\": \"Total NRC Reduction by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC\",\r\n            \"name\": \"Total RC by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC Tax\",\r\n            \"name\": \"Total RC Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total RC Reduction\",\r\n            \"name\": \"Total RC Reduction by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total Deactivation Fee\",\r\n            \"name\": \"Total Deactivation Fee by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"dutyFreeAmount\": \"0.00\",\r\n                \"valueExcludingTaxRounded\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        },\r\n        {\r\n            \"priceType\": \"Total Deactivation Fee Tax\",\r\n            \"name\": \"Total Deactivation Fee Tax by Quote\",\r\n            \"price\": {\r\n                \"taxIncludedAmount\": \"0.00\",\r\n                \"valueIncludingTaxRounded\": \"0.00\",\r\n                \"@type\": \"Price\"\r\n            },\r\n            \"@type\": \"QuotePrice\"\r\n        }\r\n    ],\r\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\r\n    \"customerId\": \"3154684999\",\r\n    \"distributionChannelId\": \"PERMIT\",\r\n    \"initialDistributionChannelId\": \"PERMIT\",\r\n    \"newMSA\": false,\r\n    \"distributionChannelName\": \"CSR\",\r\n    \"name\": \"Quote #3099\",\r\n    \"revision\": 0,\r\n    \"updatedWhen\": \"2022-06-16T05:12:41.274776Z\",\r\n    \"overrideMode\": \"gross\",\r\n    \"approvalLevel\": 0,\r\n    \"extendedParameters\": {\r\n        \"newCustomer\": [\r\n            \"Yes\"\r\n        ],\r\n        \"customerCategoryHierarchyUUIDs\": [\r\n            \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef,72d6fb2d-f64c-a9dc-bf03-e109ee914b13\"\r\n        ]\r\n    },\r\n    \"productOfferingRefByMarketRefs\": [\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"4ef7b4da-c75d-4e41-8e59-0d3ab165cbd4\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"name\": \"Sub-Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"name\": \"Sub-Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total RC\",\r\n                    \"name\": \"Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Total NRC\",\r\n                    \"name\": \"Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"productOfferingId\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\r\n            \"pricesByOffering\": [\r\n                {\r\n                    \"priceType\": \"Sub-Total RC\",\r\n                    \"name\": \"Sub-Total RC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                },\r\n                {\r\n                    \"priceType\": \"Sub-Total NRC\",\r\n                    \"name\": \"Sub-Total NRC by Product\",\r\n                    \"price\": {\r\n                        \"@type\": \"Price\"\r\n                    },\r\n                    \"@type\": \"QuotePrice\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"marketRefs\": [\r\n        {\r\n            \"marketId\": \"6f3360b5-ba90-469a-8f38-d8bc2dcbfae5\",\r\n            \"marketName\": \"Alberta\"\r\n        }\r\n    ],\r\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\r\n    \"initialBaselineQuoteId\": \"e9b86912-31c2-46ae-a78d-99f0268e8f85\"\r\n}"
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"quote-tmf-service",
+								"quoteManagement",
+								"v5",
+								"quote",
+								"{{quote_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Install Base",
+			"item": [
+				{
+					"name": "Get Install Base",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"setTimeout(function(){}, [100]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/install-base-tmf-service/productInventory/v6/product?relatedParty.role=Customer&relatedParty.id=3154684999",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"install-base-tmf-service",
+								"productInventory",
+								"v6",
+								"product"
+							],
+							"query": [
+								{
+									"key": "relatedParty.role",
+									"value": "Customer"
+								},
+								{
+									"key": "relatedParty.id",
+									"value": "3154684999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"setTimeout(function(){}, [100]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "ExposeNotAppliedDiscounts",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Business-id",
+								"value": "313737459",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"a520a50d-b33a-4537-81a6-63c84ba1539c\",\r\n        \"status\": \"ACTIVE\",\r\n        \"@type\": \"Product\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://public-gateway-cloud-bss-{{env}}.nc-gke-{{cluster}}.tsl.telus.com/install-base-tmf-service/productInventory/v6/product/a520a50d-b33a-4537-81a6-63c84ba1539c",
+							"protocol": "https",
+							"host": [
+								"public-gateway-cloud-bss-{{env}}",
+								"nc-gke-{{cluster}}",
+								"tsl",
+								"telus",
+								"com"
+							],
+							"path": [
+								"install-base-tmf-service",
+								"productInventory",
+								"v6",
+								"product",
+								"a520a50d-b33a-4537-81a6-63c84ba1539c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

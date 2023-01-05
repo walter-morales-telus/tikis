@@ -1,0 +1,428 @@
+*** Price ***************************************************************************************
+Name	
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data
+ 	 	Description	
+Get 500 GB on no term.
+Object Type	
+ Product Offering
+ 	 	 	 
+Billing Parameters
+Billing Offer ID	
+41134581
+ 	 	Financial MIC Code	
+ 
+Financial MIC Type	
+ 
+ 	 	Kenan Billing ID	
+ 
+Primary Price Plan Billing Offer ID	
+41135191
+ 	 	TQ Billing Offer ID	
+ 
+Billing Subscriber Type	
+HSIC
+
+*** Product Offering Structure ******************************************************************
+100GB recurring top-up
+2020.12.31		British Columbia
+Alberta
+Manitoba	Residential Customers	Active	08/20/2022 07:36:51	internal		SAPCC Product Component	No
+	
+50GB recurring top-up
+2020.12.31		British Columbia
+Alberta
+Manitoba	Residential Customers	Active	08/20/2022 07:36:51	internal		SAPCC Product Component	No
+	
+Field Work Indicator for wHSIA Install
+2020.12.31		British Columbia
+Manitoba
+Alberta	Residential Customers
+Business Customers	Active	11/30/2022 16:25:49	internal			No
+	
+Network Access Hub
+2098.12.31		Canada	Residential Customers
+Business Customers	Planned	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+SIM
+2020.12.31		Canada	Residential Customers	Active	12/27/2022 17:15:51	internal		TELUS Equipment Product	No
+	
+SIM Replacement
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Boost Wi-Fi - Replacement
+2018.10.31	4096.12.30	Canada	Residential Customers	Active	05/15/2022 06:31:16	internal		TELUS Equipment Product	No
+	
+TELUS Boost Wi-Fi Starter Pack Easy Payment
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Boost Wi-Fi Starter Pack Purchase
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub
+2020.12.31	2022.03.17	Canada	Residential Customers
+Business Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Grandfather
+2020.12.31	2021.01.30	Canada	Residential Customers
+Business Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Replacement
+2021.04.18	4096.12.30	Canada	Residential Customers
+Business Customers	Active	07/08/2022 08:29:50	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Replacement
+2021.04.18	2022.07.05	Canada	Residential Customers
+Business Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+Unlimited Data Add-on
+2021.11.01	2099.12.31	Canada	Residential Customers	Active	10/06/2022 07:26:39	internal		SAPCC Product Component	No
+	
+5G Indoor Router
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	Yes
+	
+5G Indoor Router - Grandfather
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Indoor Router Easy Payment
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Indoor Router Purchase
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Indoor Router Replacement
+2020.12.23		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Indoor Router Replacement
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	Yes
+	
+5G Outdoor Router - Grandfather
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router Easy Pay
+2020.12.31		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router Easy Pay New
+2021.01.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router Purchase
+2020.12.31		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router Purchase New
+2021.01.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+5G Outdoor Router Replacement
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+IDU BYOD
+2021.12.07		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+ODU BYOD
+2021.12.08		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+Smart Hub ZTE - 279
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+Smart Hub ZTE - 279 Replacement
+2020.12.31	2021.01.30	Canada	Residential Customers	Historic	08/20/2022 07:36:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Easy Payment
+2020.12.31	2022.07.05	Canada	Residential Customers
+Business Customers	Historic	12/27/2022 17:15:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Easy Payment
+2020.12.31	2122.12.31	Canada	Residential Customers
+Business Customers	Active	12/27/2022 17:15:51	internal		TELUS Equipment Product	No
+	
+TELUS Wi-Fi Hub - Purchase
+2021.12.05	2122.12.31	Canada	Residential Customers	Active	12/27/2022 17:15:51	internal		TELUS Equipment Product	No
+	
+Telus Wi-Fi Hub - Purchase
+2021.12.05	2022.07.05	Canada	Residential Customers	Historic	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+ECHS Wall Mount Single Unit
+2022.09.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+P2P Gaming APN
+2021.11.01	2107.12.31	British Columbia
+Alberta
+Manitoba	Residential Customers	Active	08/20/2022 07:36:51	internal		P2P APN Product Component	No
+	
+POE
+2022.09.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+SIM
+2022.03.01		Canada	Residential Customers	Active	03/31/2022 18:27:07	x246111		TELUS Equipment Product	No
+	
+Self-Install Kit
+2021.01.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+TELUS Boost Wi-Fi Starter Pack
+2020.12.31		Canada	Residential Customers	Active	08/20/2022 07:36:51	internal			Yes
+	
+TELUS Wi-Fi Hub
+2018.10.31	4096.12.30	Canada	Residential Customers	Active	08/20/2022 07:36:51	internal		TELUS Equipment Product	Yes
+	
+Telephone Number Offering
+2022.02.01		Canada	Residential Customers
+Business Customers	Active	12/16/2022 12:02:53	internal		Telephone Number Product Specification	No
+	
+WALL ANCHOR KIT 5G SMART HUB ODU
+2022.09.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+Wireless HSIA Connection Fee
+2022.03.01		Canada	Residential Customers	Active	07/24/2022 05:59:58	internal			No
+	
+ZTE ODU FLAT CABLE REPLACEMENT 20M
+2022.09.01		Canada	Residential Customers	Active	11/30/2022 16:25:49	internal		TELUS Equipment Product	No
+	
+wHSIA VSOS Scheduler
+2022.09.01		Canada	Residential Customers
+Business Customers	Active	12/27/2022 17:15:51	internal			No
+	
+wHSIA Vacation Suspension
+2022.09.01		Canada	Residential Customers
+Business Customers	Active	12/27/2022 17:15:51	internal			No
+
+*** Portal Content ******************************************************************************
+Name	
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data
+ 	 	Description	
+Get 500 GB on no term.
+Object Type	
+ Product Offering
+ 	 	 	 
+Portal Content Parameters
+CSS Classes	
+ 
+ 	 	Order Number	
+ 
+Portal Content Items
+Select Portal Content Item
+Release
+ 
+
+
+Name	
+ 
+Locale	
+Value	
+Alias	
+	
+descriptionAngular
+en_CA		descriptionAngular_79
+	
+offeringName
+fr_CA	Terminal intelligent pour Internet en milieu rural 25/10 – 500 Go de données mensuelles	offeringName
+
+*** Characteristics *****************************************************************************
+	Access Type	Access Type		WIRELESS		12/28/2022 18:49:41	internal	0
+		Available Delivery Method	Available Delivery Method Characteristic				12/28/2022 17:45:39	internal	0
+		CSD Sale on Site	CSD Sale on Site Characteristic		No		12/28/2022 18:49:41	internal	0
+		Delivery Method	Delivery Method Characteristic		Self-Install		12/28/2022 18:49:41	internal	0
+		Delivery Method Change Reason					12/28/2022 18:49:41	internal	0
+		Download speed	Download Speed Characteristic		30 Mbps		12/28/2022 18:49:41	internal	0
+		Geo Type Code	Geo Type Code Characteristic	GEOFENCE			12/28/2022 17:45:39	internal	0
+		IP Address Assignment Type	IP Address Assignment Type Characteristic		Dynamic		12/28/2022 18:49:41	internal	0
+		Install Method	Install Method Characteristic				12/28/2022 18:49:41	internal	0
+		Is Antenna Required	Is Antenna Required Characteristic				12/28/2022 18:49:41	internal	0
+		Is Swap Scenario	Is Swap Scenario Characteristic				12/28/2022 17:45:39	internal	0
+		Market					12/28/2022 18:49:41	internal	0
+		Monthly Data Usage Capacity Characteristic	Monthly Data Usage Capacity Characteristic		500 GB		12/28/2022 18:49:41	internal	0
+		Offer Type Code Characteristic	Offer Type Code Characteristic		PLAN		12/28/2022 18:49:41	internal	0
+		Offering Type	Product Type Characteristic		Consumer		12/28/2022 18:49:41	internal	0
+		Offering Type			Consumer		12/28/2022 18:49:41	internal	0
+		Overridden Delivery Method	Overridden Delivery Method Characteristic				12/28/2022 18:49:41	internal	0
+		Price Guarantee Start Date Characteristic					12/28/2022 17:45:39	internal	0
+		Price Level					12/28/2022 17:45:39	internal	0
+		Pricing Effective Date Characteristic					10/17/2021 06:01:03	internal	0
+		Qualified BYOD Type	Qualified BYOD Type Characteristic				12/28/2022 18:49:41	internal	0
+		Qualified Equipment Type	Qualified Equipment Type				06/28/2022 04:29:01	sysadm	
+		Qualified Technology Type	Qualified Technology Type Characteristic		WIRELESS		12/28/2022 18:49:41	internal	0
+		Ranking			110		10/17/2021 06:01:03	internal	
+		SATF Charging Value					12/28/2022 17:45:39	internal	0
+		SATF Life Charging Value					12/28/2022 17:45:39	internal	0
+		SATF term					12/28/2022 17:45:39	internal	0
+		Satisfaction Guarantee Period		30			12/28/2022 17:45:39	internal	0
+		Self Install availability notifications					12/28/2022 18:49:41	internal	0
+		Suspension Reason	Suspension Reason Characteristic				12/28/2022 18:49:41	internal	0
+		Suspension Treatment	Suspension Treatment Characteristic				12/28/2022 18:49:41	internal	0
+		TISAA	TISAA Characteristic		True		12/28/2022 18:49:41	internal	0
+		Term Start Date Characteristic					10/17/2021 06:01:03	internal	0
+		Upload speed	Upload Speed Characteristic		30 Mbps		12/28/2022 18:49:41	internal	0
+		Use Base Service	Use Base Service Characteristic		False		12/28/2022 18:49:41	internal	0
+		throttleFlag	Throttle Flag Characteristic		True		12/13/2022 01:55:35	x257526
+*** Pricing *************************************************************************************
+WHSIA Antenna Offer Activation Fee Price Component
+One Time Price Specification: Activation Fee	0.00	Active			
+	
+WHSIA Offer Recurrent Charge
+Recurrent Price Specification: Recurrent Charge by Day	90.00	Active	11/04/2021 23:44:16	x222053	WHSIA Offer Recurrent Charge
+	
+WHSIA Offer Recurrent Charge
+Recurrent Price Specification: Recurrent Charge by Day	85.00	Historical	11/04/2021 23:44:01	x222053	WHSIA Offer Recurrent Charge
+	
+WHSIA Antenna Offer Recurrent Charge
+Recurrent Price Specification: Recurrent Charge by Day	110.00	Historical			
+	
+WHSIA Antenna Offer Recurrent Charge
+Recurrent Price Specification: Recurrent Charge by Day	110.00	Historical
+
+*** Rules ***************************************************************************************
+*** Order/Instance Parameters *******************************************************************
+Name	
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data
+ 	 	Description	
+Get 500 GB on no term.
+Object Type	
+ Product Offering
+ 	 	 	 
+Order/Instance Parameters
+Bonding Automation	
+ 
+ 	 	Equipment Categories	
+ 
+SWT Package Constant	
+
+*** Parameters **********************************************************************************
+Name	
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data
+ 	 	Description	
+Get 500 GB on no term.
+Object Type	
+ Product Offering
+ 	 	 	 
+Portal Parameters
+Displayed Price	
+80
+ 	 	Detailed Description	
+Offer: No term - Rural Internet Product: wHSIA Original term: No term Data Allowance: 500 GB
+Offer pre-description	
+ 
+ 	 	Large Picture url	
+ 
+Visible in SSP	
+Yes
+ 	 	Picture url	
+ 
+Order Number	
+980
+ 	 	Visible in TD	
+Yes
+Modification Info
+Created By	
+ 
+ 	 	Created When	
+ 
+Modified When	
+11/18/2021 14:03:30
+ 	 	Modified By	
+x222053
+Offering Catalog Information
+Allowed Product Action	
+ 	 	Applicable for Manual Discount	
+Yes
+Bill Description Format (English)	
+ 
+ 	 	Bill Description Format (French)	
+ 
+Bookable	
+No
+ 	 	Can be automatically moved to	
+CoS multiplier	
+ 
+ 	 	Contract Term Multiplier	
+ 
+Contractible	
+ 
+ 	 	Enable Billing	
+ 
+External ID	
+AndE
+ 	 	From Category	
+Install outside normal business Hours	
+ 
+ 	 	Move Strategy	
+Modify
+One Time Service	
+No
+ 	 	PSI/FOX ID?	
+ 
+Price per Mb	
+ 
+ 	 	Provisioning Code	
+ 
+Recurring Promotion Stackability	
+Non-Stackable
+ 	 	Reliable Asset	
+Yes
+Reservable	
+ 
+ 	 	S-Tag?	
+ 
+Shippable	
+No
+ 	 	Show on Customer Facing Materials	
+Yes
+Suppress Child Billing	
+ 
+ 	 	Valid Period	
+ 
+Short Description	
+Up to -- Mbps download and -- Mbps upload speeds Get 100 GB  on no term
+ 	 	Product Manager	
+ 
+Terms	
+https://www.telus.com/en/ab/support/article/terms-and-conditions
+Suspendable	
+Yes
+ 	 	Can be downgraded to	
+Smart Hub Rural Internet 25/10 - 100 GB Monthly Data
+Can be Upgraded / Downgraded to (Category)	
+WHSIA
+ 	 	Can be upgraded to	
+Smart Hub Rural Internet 25/10 - 1 TB Monthly Data
+Status	
+Active
+ 	 	Has Parent?	
+ 
+Is Top Offer?	
+Yes
+ 	 	Product Specification	
+TELUS Wireless Internet Product
+Has Children?	
+Yes
+ 	 	 	 
+Available for
+Available From	
+2021.01.01
+ 	 	Available To	
+ 
+Offering Category	
+High Speed Home
+In-market Internet Offers for Commitments
+WHSIA
+GPON Offerings Category
+WHSIA 25 Mbps Offers      Select Parent Categories
+ 	 	Market	
+British Columbia
+Alberta
+Customer Category	
+Residential Customers
+ 	 	Distribution Channel	
+CSR
+F2F
+SSP
+Eligibility Slices	
+ 	 	 	 
+Unavailable for
+Market	
+ 	 	Distribution Channel	
+Customer Category	
+ 	 	 	 
+Comments/Notes
+Business Owner	
+ 
+ 	 	Other Information

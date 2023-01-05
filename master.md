@@ -1,5 +1,142 @@
 
 ---
+- https://docs.google.com/spreadsheets/d/1l7ndA2DdLyIqLZGyYghRtOguSuHd0j3j/edit#gid=1792324802
+- https://docs.google.com/spreadsheets/d/1OPwL9XbnQGKyujvoN-5dd4gU6aR7NVGe/edit#gid=8262681
+
+Hi All,
+
+I took the latest ENB report found in folder and created the following sheet
+There is a worksheet called "TIC Consolidated" that has some of the EPC list of interest
+
+Filter: Column AA:Y & AC:Y --> OPTIK TV Tax Included Credits
+Filter: Column AA:Y and AC: N --> non-OPTIK Included Credits
+
+please check/sniff test my calculations. 
+
+@Walter/Luis: can you pull for the above list (querying in NC)
+
+1. All NC Promotions that map to these Offer IDs 
+   OPTIK
+   Non-OPTIK
+
+2. NC Promotions that are mapped not marked as TIC in NC but should be
+   OPTIK
+   Non-OPTIK
+
+3. NC Promotions that are marked as TIC in NC but should not be.
+   OPTIK
+   Non-OPTIK
+
+Thanks
+
+The second question is about if the first report is related with the others 2, I mean if instead of using
+the complete 10,610 promotions do I have to use the output of the this report, and again
+---
+<br/><br/><br/>
+
+
+
+
+---
+# TAFT 2.0 Delivery TAFT2-7956
+- https://jira.tsl.telus.com/browse/TAFT2-7956
+- [link](./stuff/TAFT2-7956/index.md)
+
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data 
+9159683640113535776
+https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9159683640113535776
+https://flcncapp-pr.tsl.telus.com/ncobject.jsp?id=9159683640113535776
+1681ac67-caaf-96f0-e469-58ff27c53e7c
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/1681ac67-caaf-96f0-e469-58ff27c53e7c/a933e117-ca36-4f14-abe7-63fcb1d47a41
+Alberta-BritishColumbia_Resi_CSR-F2F-SSP
+
+
+0$
+   Nuevo: 9159683640113535796
+
+90$
+   Nuevo: 9164015627559450521
+
+
+Smart Hub Rural Internet 25/10 - 100 GB Monthly Data 
+9159602850913498849
+https://flcncapp-dv27.tsl.telus.com/ncobject.jsp?id=9159602850913498849
+https://flcncapp-pr.tsl.telus.com/ncobject.jsp?id=9159602850913498849
+83bc2746-ec36-80dd-b416-bbb879f18ee0
+https://pim-frontend-srv-cloud-bss-pr01.nc-gke-pr.tsl.telus.com/#/offerings/product-offering/83bc2746-ec36-80dd-b416-bbb879f18ee0/a933e117-ca36-4f14-abe7-63fcb1d47a41
+
+
+In-market Internet Offers for Commitments
+WHSIA
+
+High Speed Home
+In-market Internet Offers for Commitments
+WHSIA
+GPON Offerings Category
+WHSIA 25 Mbps Offers
+
+
+0$ Antiguo: 9165526873800639252 -->  9165526873830639251
+   Nuevo:   9159602850913498854
+
+75$ Antiguo: 9165526873853639249 --> 9165526873845639248
+    Nuevo:   9161895871013952254
+
+
+
+0.00   9159602850913498854 Active
+       9165526873830639251 None
+
+75.00  9161895871013952254 Active
+       9165526873845639248 None
+
+
+delete from nc_objects where object_id in (select object_id from nc_objects start with object_id = 9165526873830639251
+connect by prior object_id=parent_id);
+
+delete from nc_objects where object_id in (select object_id from nc_objects start with object_id = 9165526873845639248
+connect by prior object_id=parent_id);
+
+
+[TAFT] FNDA-15944 sync yes to WHSIA Offers
+FNDA-15944 sync yes to WHSIA Offers
+
+---
+<br/><br/><br/>
+
+---
+# FIFA FNDA-28150 [DMT_ITN02] Billing action failed on Create Subscriber with error "Cannot update or remove the non-existing list item MIC code."
+- https://jira.tsl.telus.com/browse/FNDA-28150
+- [link](./stuff/FNDA-28150/index.md)
+
+ccbKrisMove TestSix
+
+nopnop sipsip
+dop nop
+10531 40 ST NW, EDMONTON, AB
+
+diper dan
+1832 56 ST NW, EDMONTON, AB
+
+3511 113 ST NW, EDMONTON, AB
+
+abelloCCBP RBwhoyou
+
+CCBPJonathan RBTest
+
+ITSS-5426-Boost Mini-2
+2023F2-FeburaryMRBranch
+
+Mic Code-2    9144689223813944271     7e18beda-febe-3115-3d39-a05c9e319e0e
+Product Offering Characteristic Involvement
+
+
+PIM-0035: Entity ProdOfferingCharInvolvement with Id = 977ed274-17f8-4696-91a5-47bc741080a9 cannot be deleted due to associations to the following entities: ProdOfferingCharInvolvementOverride with Id(s) = ffd7bed4-4b91-485e-a3f7-bc561d765cb9
+
+---
+<br/><br/><br/>
+
+---
 ## FIFA FNDA-28031 (TQBVT_PROD) - 3rd number block is automatically added
 - https://jira.tsl.telus.com/browse/FNDA-28031
 

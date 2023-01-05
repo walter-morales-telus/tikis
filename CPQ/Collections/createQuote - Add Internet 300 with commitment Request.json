@@ -1,0 +1,198 @@
+{
+    "brandId": "01fdb423-f3d5-46da-8597-789ef250d3e2",
+    "customerCategory": "a88bb5d3-9064-ae45-ff6d-1c30709b26ef",
+    "distributionChannelId": "PERMIT",
+    "relatedParty": [
+        {
+            "@type": "Customer",
+            "role": "Customer",
+            "id": "313737495"
+        }
+    ],
+    "extendedParameters": {
+    },
+    "quoteItem": [
+        {
+            "action": "ADD",
+            "distributionChannelId": "PERMIT",
+            "quantity": 1,
+            "state": "QUALIFIED",
+            "product": {
+                "characteristic": [
+                    {
+                        "id": "14c667c9-4ae4-558a-687d-4720a2332f32",
+                        "name": "Overridden Delivery Method",
+                        "rawValue": [
+                            "Yes"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "dedbcda3-7e8d-f02a-40e2-47c6f7b6e012",
+                        "name": "Price Guarantee Start Date Characteristic",
+                        "rawValue": [
+                            "2021-11-19T08:46:04.44484Z"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "02e29431-a0d2-80fe-1386-3f8f494a791a",
+                        "name": "Delivery Method Change Reason",
+                        "rawValue": [
+                            "Customer requested tech installer"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "6b10f2ae-1992-4035-023d-df7b8a81cd43",
+                        "name": "Term Start Date Characteristic",
+                        "rawValue": [
+                            "2021-11-19T08:46:04.44484Z"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "b8f7756d-9c6c-552b-b692-053bca445c3d",
+                        "name": "Activation Due Date",
+                        "rawValue": [
+                            "2022-01-10T19:46:04.44484Z"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "5df1a463-9f9b-1325-631d-f7540914295e",
+                        "name": "Forced Pro Install",
+                        "rawValue": [
+                            "No"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "8e6bdbf1-bcea-deb7-b865-68a85b3953c7",
+                        "name": "Pricing Effective Date Characteristic",
+                        "rawValue": [
+                            "2023-11-19T08:46:04.44484Z"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "1e3f5408-99b0-2fa9-e7a0-e5d164472ade",
+                        "name": "Delivery Method",
+                        "value": [
+                            "Pro Install"
+                        ],
+                        "rawValue": [
+                            "Pro Install"
+                        ],
+                        "visible": true,
+                        "@type": "ProductOfferingCharacteristic"
+                    },
+                    {
+                        "id": "eb1be80b-9b2c-70ee-2b9a-481c18a6ff43",
+                        "name": "Schedule Type",
+                        "rawValue": [
+                            "9154143332813396526"
+                        ],
+                        "visible": true
+                    }
+                ],
+                "place": [
+                    {
+                        "address": "1116 PHOENIX ST, DRAYTON VALLEY, AB",
+                        "externalId": "3394755",
+                        "id": "9fd4ad80-38fd-472c-9526-91b1e08d2faf",
+                        "name": "1116",
+                        "role": "customerLocation",
+                        "extendedParameters": {
+                            "availability": [
+                                "on-net"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "productOffering": {
+                "id": "752187aa-f396-4ade-7dfd-a6a27ddd7b33",
+                "name": "TELUS Internet 300/300"
+            },
+            "quoteItemType": "Product offering"
+        },
+        {
+            "action": "ADD",
+            "distributionChannelId": "PERMIT",
+            "quantity": 1,
+            "state": "QUALIFIED",
+            "product": {
+                "characteristic": [
+                    {
+                        "id": "0f9a635c-983a-84d6-5a21-cc156583df40",
+                        "name": "Commitment Products",
+                        "rawValue": [
+                            "9160672975913880564"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "7a7e33e3-dfc3-ca7d-12d3-ddab956151ed",
+                        "name": "Partial Service Agreement Termination Fee Characteristic",
+                        "rawValue": [
+                            "text"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "eb1be80b-9b2c-70ee-2b9a-481c18a6ff43",
+                        "name": "Schedule Type",
+                        "rawValue": [
+                            "9154143332813396526"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "fde631cf-d1b7-cc41-dc16-870700408282",
+                        "name": "Contract ID Characteristic",
+                        "rawValue": [
+                            "123456"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "1eff1582-788a-dfd4-4e41-b47ad6fcaabf",
+                        "name": "Commitment Start Date Characteristic",
+                        "rawValue": [
+                            "2022-01-10T19:46:04.44484Z"
+                        ],
+                        "visible": true
+                    },
+                    {
+                        "id": "b8f7756d-9c6c-552b-b692-053bca445c3d",
+                        "name": "Activation Due Date",
+                        "rawValue": [
+                            "2022-01-10T19:46:04.44484Z"
+                        ],
+                        "visible": true
+                    }
+                ],
+                "place": [
+                    {
+                        "address": "1116 PHOENIX ST, DRAYTON VALLEY, AB",
+                        "externalId": "3394755",
+                        "id": "9fd4ad80-38fd-472c-9526-91b1e08d2faf",
+                        "name": "1116",
+                        "role": "customerLocation",
+                        "extendedParameters": {
+                            "availability": [
+                                "on-net"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "productOffering": {
+                "id": "964ef9cb-a409-99d0-91b0-e5c51ef7149c",
+                "name": "Special Offer: Save on Internet for 24 months (NC)-2"
+            },
+            "quoteItemType": "Product offering"
+        }
+    ]
+}

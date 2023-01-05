@@ -1,0 +1,62 @@
+Smart Hub Rural Internet - 50Mbps (500GB)                           Smart Hub Rural Internet - 50Mbps (500GB)
+Internet 25 - TELUS Internet for Good                               Internet 25 - TELUS Internet for Good-ET
+OPTIK 50/50 - internet for Good for disabled people                 OPTIK 50/50 - internet for Good for disabled people
+Internet 1 - TELUS Internet for Good                                Internet 1 - TELUS Internet for Good-31
+Connecting Families Internet 50                                     Connecting Families Internet 50 Copper
+Connecting Families Seniors Internet 50                             Connecting Families Seniors Internet 50-FIFA
+OPTIK 25/25 - internet for Good for seniors                         OPTIK 25/25 - internet for Good for seniors
+OPTIK 25/25 internet for Good for disabled people                   OPTIK 25/25 internet for Good for disabled people
+Internet OPTIK 25 Connecting Families                               Internet OPTIK 25 Connecting Families-01
+Internet 6 - TELUS Internet for Good                                Internet 6 - TELUS Internet for Good-31
+
+Connecting Families Seniors Internet 1                              9163598174889187552     Connecting Families Seniors Internet 1-Copper1
+Connecting Families Internet 50                                     9162848865658619647     Connecting Families Internet 50 Fibre
+Connecting Families Seniors Internet 25                             9162983398974768923     Connecting Families Seniors Internet 25-Copper1
+Connecting Families Seniors Internet 6                              9163598167121187549     Connecting Families Seniors Internet 6-Copper1
+TELUS Internet 75/75                                                9162969962389409565     TELUS Internet 75/75 microDPU
+OPTIK 50/50 - internet for Good for seniors                         9163400848479487653     OPTIK 50/50 - internet for Good for seniors
+Internet 15 - TELUS Internet for Good Seniors                       9163597860959187539     Internet 15 - TELUS Internet for Good Seniors
+Internet OPTIK 50/50 - Connecting families for disabled people      9163217401267625436     Internet OPTIK 50/50 - Connecting families for disabled people
+Internet 50 - TELUS Internet for Good                               9161445933113894182     Internet 50 - TELUS Internet for Good-Copper
+Internet 15 - TELUS Internet for Good                               9163140474570084687     Internet 15 - TELUS Internet for Good-31
+
+Internet 25 - TELUS Internet for Good Seniors                       9161844889317101968     Internet 25 - TELUS Internet for Good Seniors-Copper
+Internet 50 - TELUS Internet for Good Refugees                      9161994621075294554     Internet 50 - TELUS Internet for Good Refugees
+OPTIK 50/50 -internet for Good for families                         9163400324568517414     OPTIK 50/50 -internet for Good for families
+Internet OPTIK 50/50 Connecting Families                            9163217268569647511     Internet OPTIK 50/50 Connecting Families
+OPTIK 25/25- internet for Good for families                         9163400178827517404     OPTIK 25/25- internet for Good for families
+Internet OPTIK 25/25 - Connecting families for Seniors              9163393000570487613     Internet OPTIK 25/25 - Connecting families for Seniors-01
+Internet 25 - TELUS Internet for Good Seniors                       9163336489051708387     Internet 25 - TELUS Internet for Good Seniors-Fibre ET
+Smart Hub Rural Internet - 100Mbps (500GB)                          9161354253113686113     Smart Hub Rural Internet - 100Mbps (500GB)
+Internet 50 - TELUS Internet for Good Seniors                       9163337801567699827     Internet 50 - TELUS Internet for Good Seniors-Fibre ET
+Connecting Families Seniors Internet 15                             9163598151377131657     Connecting Families Seniors Internet 15-Copper1
+
+                                                                                            Internet 25 - TELUS Internet for Good Seniors-Fibre
+
+
+Internet 50 - TELUS Internet for Good Seniors                       9161845657446315833    Internet 50 - TELUS Internet for Good Seniors-Copper
+EOM_TEST sept14R1 prodoff                                           9164606724110317434    EOM_TEST sept14R1 prodoff
+Internet 50 - TELUS Internet for Good Seniors                       9161845596162101971    Internet 50 - TELUS Internet for Good Seniors-Fibre
+5G WTTx TELUS Internet Urban Trial                                  9164797715316279239    OCT5-Rel-PO
+Internet 1 - TELUS Internet for Good Seniors                        9163598117659187544    Internet 1 - TELUS Internet for Good Seniors
+Internet 50 - TELUS Internet for Good                               9161472162513203951    Internet 50 - TELUS Internet for Good-Fibre
+Connecting Families Seniors Internet 50                             9162984102004768930    Connecting Families Seniors Internet 50-Copper1
+5G WTTx TELUS Internet Urban Trial                                  9164796287756855397    OCT-R1-PO-TEST
+Internet 6 - TELUS Internet for Good Seniors                        9163598079992131652    Internet 6 - TELUS Internet for Good Seniors-Copper
+
+Connecting Families Seniors Internet 25                             9162855490456193596   Connecting Families Seniors Internet 25-FIFA
+Internet 25 - TELUS Internet for Good                               9164977494936320379   OCT-R2-PO-EOM
+Internet OPTIK 50/50 - Connecting families for Seniors              9163393101841517380   Internet OPTIK 50/50 - Connecting families for Seniors-01
+Internet OPTIK 25/25 - Connecting families for disabled people      9163217339372625431   Internet OPTIK 25/25 - Connecting families for disabled people
+
+Smart Hub Rural Internet 25/10 - 100 GB Monthly Data                9163747014254645385   Manitoba Smart Hub Rural Internet 25/10 - 100 GB Monthly Data
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PureFibre X 2.5 GIGA                                                9161383814713654068   PureFibre X 2.5 GIGA
+Migration Rural Internet - 1TB monthly data                         9163703374782645292   Migration Rural Internet - 1TB monthly data
+TELUS Internet 4G                                                   9161640814360554900   TELUS Internet 4G
+Smart Hub Rural Internet 25/10 - 500 GB Monthly Data                9163746876156645379   Manitoba Smart Hub Rural Internet 25/10 - 500 GB Monthly Data
+
+

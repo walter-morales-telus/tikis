@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "23b07127-7b8d-4957-9cf0-ab731ff429a0",
+		"name": "NC Cloud TMF 648 - Quote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(Ignore) [2. Authorzation] Get  tenant id DEV02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"tenant-id\", responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/api/v4/tenant-manager/registration/tenants?dns=cpq",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-dev02",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"tenant-manager",
+						"registration",
+						"tenants"
+					],
+					"query": [
+						{
+							"key": "dns",
+							"value": "cpq"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Ignore) [2. Authorzation] List Tenant ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"tenant-id\", responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-st.tsl.telus.com/api/v4/tenant-manager/manage/tenants",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"api",
+						"v4",
+						"tenant-manager",
+						"manage",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cloud admin token (ITN01) Copy 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "cpq-admin@netcracker.com",
+							"description": "cpq-admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "MARket1234!",
+							"description": "MARket1234!",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "frontend",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-itn03.nc-gke-st.tsl.telus.com/auth/realms/cpq/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-itn03",
+						"nc-gke-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"cpq",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cloud admin token (dev02) - TELUS users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "tmf-quote-integration",
+							"description": "cpq-admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "eE2h8VEfx6pS*UBd",
+							"description": "MARket1234!",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "frontend",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/auth/realms/{{tenant-id}}/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-dev02",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{tenant-id}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Quote - add Internet 150",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"0marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"313737457\"\n        }\n    ],\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ]\n                    },\n                    {\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2026-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\": [\n                            \"Customer requested tech installer\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"rawValue\": [\n                            \"2021-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"rawValue\": [\n                            \"2023-08-11T08:46:04.44484Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\": [\n                            \"9154143332813396526\"\n                        ],\n                        \"visible\": true\n                    }\n                ],\n                \"place\": [\n                    {\n                        \"address\": \"1116 PHOENIX ST, DRAYTON VALLEY, AB\",\n                        \"externalId\": \"5480039\",\n                        \"id\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n                        \"name\": \"1116\",\n                        \"role\": \"customerLocation\",\n                        \"extendedParameters\": {\n                            \"availability\": [\n                                \"on-net\"\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\",\n                \"origId\" : \"test test\"\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"extendedParameters\": {\n                \"TELUS QuickConnect\": [\n                    \"QC-HS Only\"\n                ]\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-itn03.nc-gke-st.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-itn03",
+						"nc-gke-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Quote - TESTS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"//pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"\",\n    \"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"1234567\"\n        }\n    ],\n    \"placeRefs\": [\n        {\n            \"id\": \"375e6d2a-323d-4c10-a6d6-bb273f1bafbc\",\n            \"role\": \"customerLocation\",\n            \"address\": \"\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\"\n        }\n    ],\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"2343e200-1d9a-464c-a517-790eef0eaced\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                    {\n                        \"name\": \"Delivery Method\",\n                        \"id\": \"f0278e0d-91ec-42ac-8466-8fe225b19618\",\n                        \"rawValue\": [\n                            \"Self-Install\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Overridden Delivery Method\",\n                        \"id\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Forced Pro Install\",\n                        \"id\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Schedule Type Involvement\",\n                        \"id\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"rawValue\":[\"9154143332813396527\"],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Delivery Method change reason\",\n                        \"id\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"rawValue\":[\"Shipment delays/delivery timeframe\"],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Term Start Date\",\n                        \"id\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"rawValue\": [\n                            \"2021-08-11T10:00:00.000000Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"name\": \"Price Guarantee Start Date Characteristic Involvement\",\n                        \"id\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"rawValue\": [\n                            \"2021-08-11T10:00:00.000000Z\"\n                        ],\n                        \"visible\": true\n                    }, \n                    {\n                        \"name\": \"Pricing Effective Date Characteristic Involvement\",\n                        \"id\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"rawValue\": [\n                            \"2021-08-11T10:00:00.000000Z\"\n                        ],\n                        \"visible\": true\n                    },\n                    {\n                        \"id\":\"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"name\": \"Available Method\",\n                        \"rawValue\":[\"-\"]\n                    },\n                    {\n                        \"id\":\"75bb0bf5-bc7e-29d7-f742-5b4a303638be\",\n                        \"name\": \"Swap Date\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    },\n                    {\n                        \"id\":\"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"name\": \"Activation Due Date Involvement\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    }\n                ],\n                \"productSpecification\": {\n                    \"id\": \"36cc7c0e-ceb0-4704-b338-f95b4c0801b0\",\n                    \"href\": \"https://public-gateway-cloud-bss-is09.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/375e6d2a-323d-4c10-a6d6-bb273f1bafbc\",\n                    \"version\": \"0.28\",\n                    \"name\": \"TELUS Internet Product\"\n                },\n                \"place\": [\n                    {\n                        \"id\": \"375e6d2a-323d-4c10-a6d6-bb273f1bafbc\",\n                        \"role\": \"customerLocation\",\n                        \"address\": \"\",\n                        \"marketId\": \"2343e200-1d9a-464c-a517-790eef0eaced\"\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6c023b9c-99bc-a283-b146-72ed1379a3b9\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        },\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"2343e200-1d9a-464c-a517-790eef0eaced\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\": [\n                ],\n                \"productSpecification\": {\n                    \"id\": \"36cc7c0e-ceb0-4704-b338-f95b4c0801b0\",\n                    \"href\": \"https://public-gateway-cloud-bss-is09.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/375e6d2a-323d-4c10-a6d6-bb273f1bafbc\",\n                    \"version\": \"0.28\",\n                    \"name\": \"TELUS Internet Product\"\n                },\n                \"place\": [\n                    {\n                        \"id\": \"375e6d2a-323d-4c10-a6d6-bb273f1bafbc\",\n                        \"role\": \"customerLocation\",\n                        \"address\": \"\",\n                        \"marketId\": \"2343e200-1d9a-464c-a517-790eef0eaced\"\n                    }\n                ]\n            },\n            \"productOffering\": {\n                \"id\": \"6c023b9c-99bc-a283-b146-72ed1379a3b9\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }        \n    ]\n}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-st.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-st",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Quote - Sergey",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"//pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brandId\": \"01fdb423-f3d5-46da-8597-789ef250d3e2\",\n    \"customerCategory\": \"a88bb5d3-9064-ae45-ff6d-1c30709b26ef\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n    \"relatedParty\": [\n        {\n            \"@type\": \"Customer\",\n            \"role\": \"Customer\",\n            \"id\": \"518906c4-2dfc-4b20-8e49-411548f95d76\"\n        }\n    ],\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"QUALIFIED\",\n            \"product\": {\n                \"characteristic\":[\n                    {\n                        \"id\":\"5df1a463-9f9b-1325-631d-f7540914295e\",\n                        \"name\":\"Forced Pro Install\",\n                        \"rawValue\":[\"Yes\"]\n                    },\n                    {\n                        \"id\":\"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n                        \"name\": \"Pricing Effective Date\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    },\n                    {\n                        \"id\":\"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n                        \"name\": \"Delivery Method Change Reason\",\n                        \"rawValue\":[\"Shipment delays/delivery timeframe\"]\n                    },\n                    {\n                        \"id\":\"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n                        \"name\": \"Schedule Type\",\n                        \"rawValue\":[\"9154143332813396527\"]\n                    },\n                    {\n                        \"id\":\"14c667c9-4ae4-558a-687d-4720a2332f32\",\n                        \"name\": \"Overridden Delivery Method\",\n                        \"rawValue\":[\"No\"]\n                    },\n                    {\n                        \"id\":\"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n                        \"name\": \"Activation Due Date\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    },\n                    {\n                        \"id\":\"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n                        \"name\": \"Price Guarantee Start Date Characteristic\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    },\n                    {\n                        \"id\":\"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n                        \"name\": \"Term Start Date\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    },\n                    {\n                        \"id\":\"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n                        \"name\": \"Available Method\",\n                        \"rawValue\":[\"-\"]\n                    },\n                    {\n                        \"id\":\"75bb0bf5-bc7e-29d7-f742-5b4a303638be\",\n                        \"name\": \"Swap Date\",\n                        \"rawValue\":[\"2021-08-11T10:00:00.000000Z\"]\n                    }                    \n                ]\n            },\n            \"extendedParameters\": {\n                    \"quickConnect\":[\"PREINSTALL\"]\n            },\n            \"productOffering\": {\n                \"id\": \"6acec132-d80e-d649-cc0a-f39e1a26bd18\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Quote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}/validateQuote",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}",
+						"validateQuote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IN_PROGRESS->PREPARE_FOR_SUBMITTING Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"quoteVersion\", data.version);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"businessId\": \"{{quoteId}}\",\n    \"quoteId\": \"{{quoteId}}\",\n    \"sourceState\": \"IN_PROGRESS\",\n    \"targetState\": \"PREPARE_FOR_SUBMITTING\"\n}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quoteId}}/changeState",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quoteId}}",
+						"changeState"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL:  POST Quote - add Internet 750 (First)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"postman.setGlobalVariable(\"quote_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"\",\n\t\"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"quoteItem\": [\n        {\n            \"action\": \"ADD\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"COMPLETED\",\n            \"productOffering\": {\n                \"id\": \"750e33bb-b8e1-4771-9a38-25c5568972c6\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Quote - removing items from quote",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"\",\n\t\"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"quoteItem\": [\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Quote - add Internet 750 Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"\",\n\t\"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"quoteItem\": [\n        {\n            \"0id\": \"494e57ea-dc9b-4ae1-8e7b-e6d9855b1f37\",\n            \"action\": \"ADD\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"COMPLETED\",\n            \"productOffering\": {\n                \"id\": \"750e33bb-b8e1-4771-9a38-25c5568972c6\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Quote - add Internet 750 Copy 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/quote/2b5dd3b8-7db6-44cb-a07d-de54f644b28e\",\n    \"id\": \"2b5dd3b8-7db6-44cb-a07d-de54f644b28e\",\n    \"expirationDate\": \"2022-01-19T23:33:10.559077Z\",\n    \"version\": \"18\",\n    \"number\": \"35\",\n    \"description\": \"\",\n    \"state\": \"IN_PROGRESS\",\n    \"quoteDate\": \"2021-10-21T23:33:10.559077Z\",\n    \"validFor\": {\n        \"startDateTime\": \"2021-10-21T23:33:10.559077Z\",\n        \"endDateTime\": \"2022-01-19T23:33:10.559077Z\"\n    },\n    \"quoteItem\": [\n        {\n            \"id\": \"fc93dcc8-d30e-4466-ad49-f74dbb56a0ed\",\n            \"state\": \"QUALIFIED\",\n            \"quantity\": 1,\n            \"action\": \"ADD\",\n            \"productOffering\": {\n                \"id\": \"7a4445c2-3ba3-6523-6609-21f292a33a95\",\n                \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/7a4445c2-3ba3-6523-6609-21f292a33a95\",\n                \"name\": \"TELUS Wi-Fi Hub-1\",\n                \"externalId\": \"9155476571213186350\",\n                \"@type\": \"ProductOffering\"\n            },\n            \"quoteItemPrice\": [\n                {\n                    \"priceType\": \"RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Monthly Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"overridden\": false,\n                        \"priceValueRef\": \"c1643017-befd-4069-6b8c-11859d82b74a\",\n                        \"valueBasePriceExcludingTax\": \"0.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"0.00\",\n                        \"valueBasePriceIncludingTax\": \"0.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"0.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"0.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceComponentSpecificationRef\": \"5f417bce-8fd0-4e21-a900-b333dc3c84b0\",\n                    \"priceSpecificationType\": \"Monthly Fee\",\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                }\n            ],\n            \"product\": {\n                \"name\": \"TELUS Wi-Fi Hub-1 #1\",\n                \"characteristic\": [\n                    {\n                        \"id\": \"c43ae8ed-ca8a-458a-640e-057485372eff\",\n                        \"name\": \"Related Category for Swap\",\n                        \"value\": [\n                            \"9148302515313935481,9154711592813659489\"\n                        ],\n                        \"rawValue\": [\n                            \"9148302515313935481,9154711592813659489\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"7e18beda-febe-3115-3d39-a05c9e319e0e\",\n                        \"name\": \"Mic Code\",\n                        \"value\": [\n                            \"2378870\"\n                        ],\n                        \"rawValue\": [\n                            \"2378870\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"da480576-acef-afcf-31c7-ba2c5dc5e852\",\n                        \"name\": \"Acquisition Type\",\n                        \"value\": [\n                            \"Rented\"\n                        ],\n                        \"rawValue\": [\n                            \"9148273745313924536\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"34c1c518-c2b3-ed8e-4b40-bb1dce3daf30\",\n                        \"name\": \"Offering ID\",\n                        \"value\": [\n                            \"AdvModem-FR\"\n                        ],\n                        \"rawValue\": [\n                            \"AdvModem-FR\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"3bfc9f75-2667-2373-b6cf-a05cc7426103\",\n                        \"name\": \"Delivery Mode\",\n                        \"value\": [\n                            \"Installer supplied\"\n                        ],\n                        \"rawValue\": [\n                            \"Installer supplied\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"8eb4c3ce-99a0-e38c-60f7-f6b20e9ce70d\",\n                        \"name\": \"Manually Set Delivery Mode\",\n                        \"value\": [\n                            \"No\"\n                        ],\n                        \"rawValue\": [\n                            \"No\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"e8bbcc80-1199-dd8d-c7ed-9b6e485913f1\",\n                        \"name\": \"Logistic Provider\",\n                        \"value\": [\n                            \"SAP\"\n                        ],\n                        \"rawValue\": [\n                            \"SAP\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    }\n                ],\n                \"productSpecification\": {\n                    \"id\": \"4b347db7-60d6-e056-003b-10bc74b4e15f\",\n                    \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/7a4445c2-3ba3-6523-6609-21f292a33a95\",\n                    \"version\": \"0.40\",\n                    \"name\": \"TELUS Equipment Product\",\n                    \"@type\": \"ProductSpecification\"\n                }\n            },\n            \"parentQuoteItemId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"quoteItemType\": \"Product offering\",\n            \"rootQuoteItemId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"availabilityCheckResult\": \"AVAILABLE\",\n            \"approvalLevel\": 0,\n            \"extendedParameters\": {},\n            \"creationTime\": \"2021-10-21T23:33:10.611144Z\",\n            \"@type\": \"QuoteItem\"\n        },\n        {\n            \"id\": \"f1b546b4-f6d5-49ea-a44c-15f68edab190\",\n            \"state\": \"QUALIFIED\",\n            \"quantity\": 1,\n            \"action\": \"ADD\",\n            \"productOffering\": {\n                \"id\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\n                \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\n                \"name\": \"Field Work Indicator for Internet\",\n                \"externalId\": \"9146789586413802963\",\n                \"@type\": \"ProductOffering\"\n            },\n            \"quoteItemPrice\": [],\n            \"product\": {\n                \"name\": \"Field Work Indicator for Internet #1\",\n                \"characteristic\": [\n                    {\n                        \"id\": \"9e87687d-6269-3445-7045-808cde175e31\",\n                        \"name\": \"Selected\",\n                        \"value\": [\n                            \"Yes\"\n                        ],\n                        \"rawValue\": [\n                            \"Yes\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"34c1c518-c2b3-ed8e-4b40-bb1dce3daf30\",\n                        \"name\": \"Offering ID\",\n                        \"value\": [\n                            \"FIFA-FW-INET\"\n                        ],\n                        \"rawValue\": [\n                            \"FIFA-FW-INET\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    }\n                ],\n                \"productSpecification\": {\n                    \"id\": \"511e967f-d5b0-4e1d-aa1e-9ca858084fb1\",\n                    \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\n                    \"version\": \"0.14\",\n                    \"name\": \"Technical Offerings Product Specification\",\n                    \"@type\": \"ProductSpecification\"\n                }\n            },\n            \"parentQuoteItemId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"quoteItemType\": \"Product offering\",\n            \"rootQuoteItemId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"availabilityCheckResult\": \"AVAILABLE\",\n            \"extendedParameters\": {},\n            \"creationTime\": \"2021-10-21T23:33:10.611151Z\",\n            \"@type\": \"QuoteItem\"\n        },\n        {\n            \"id\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"state\": \"QUALIFIED\",\n            \"quantity\": 1,\n            \"action\": \"ADD\",\n            \"productOffering\": {\n                \"id\": \"d69f2376-3cb3-45a6-c099-a46add3a94d1\",\n                \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/d69f2376-3cb3-45a6-c099-a46add3a94d1\",\n                \"name\": \"TELUS Internet 300/300-5\",\n                \"externalId\": \"9150554859213487280\",\n                \"@type\": \"ProductOffering\"\n            },\n            \"quoteItemPrice\": [\n                {\n                    \"priceType\": \"RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Monthly Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"120.00\",\n                        \"dutyFreeAmount\": \"120.00\",\n                        \"overridden\": false,\n                        \"priceValueRef\": \"5b660b57-9a7f-257a-75cd-d09149c128d2\",\n                        \"valueBasePriceExcludingTax\": \"120.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"120.00\",\n                        \"valueBasePriceIncludingTax\": \"120.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"120.00\",\n                        \"valueExcludingTax\": \"120.0\",\n                        \"valueExcludingTaxRounded\": \"120.00\",\n                        \"valueIncludingTax\": \"120.0\",\n                        \"valueIncludingTaxRounded\": \"120.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"120.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"120.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"120.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"120.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceComponentSpecificationRef\": \"5f417bce-8fd0-4e21-a900-b333dc3c84b0\",\n                    \"priceSpecificationType\": \"Monthly Fee\",\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"NRC\",\n                    \"name\": \"One-time Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"overridden\": false,\n                        \"priceValueRef\": \"6cecf2a9-d284-3fb6-4dd6-45099d56ba12\",\n                        \"valueBasePriceExcludingTax\": \"0.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"0.00\",\n                        \"valueBasePriceIncludingTax\": \"0.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"0.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"0.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceComponentSpecificationRef\": \"6d6dcac3-0132-41fe-97fe-37f3719f6381\",\n                    \"priceSpecificationType\": \"One-time Fee\",\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Total RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Total RC by Quote Item\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"120.00\",\n                        \"dutyFreeAmount\": \"120.00\",\n                        \"valueExcludingTax\": \"120.0\",\n                        \"valueExcludingTaxRounded\": \"120.00\",\n                        \"valueIncludingTax\": \"120.0\",\n                        \"valueIncludingTaxRounded\": \"120.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Total NRC\",\n                    \"name\": \"Total NRC by Quote Item\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                }\n            ],\n            \"product\": {\n                \"name\": \"TELUS Internet 300/300-5 #1\",\n                \"characteristic\": [\n                    {\n                        \"id\": \"f3800995-d882-ae97-277a-8e170502f78d\",\n                        \"name\": \"Offering Type\",\n                        \"value\": [\n                            \"Consumer\"\n                        ],\n                        \"rawValue\": [\n                            \"Consumer\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"4c0b5b01-9a1d-ff85-ceb5-7ff3bfd924a3\",\n                        \"name\": \"Download speed\",\n                        \"value\": [\n                            \"300 Mbps\",\n                            \"250 Mbps\"\n                        ],\n                        \"rawValue\": [\n                            \"250 Mbps\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"b3b692f9-dccd-7ddc-5003-f80cb154c89f\",\n                        \"name\": \"Use Base Service\",\n                        \"value\": [\n                            \"False\"\n                        ],\n                        \"rawValue\": [\n                            \"9149423635813053390\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"bfefae74-6d67-7b0a-35f5-d79c560b6685\",\n                        \"name\": \"Max Total Discount Life Value\",\n                        \"value\": [\n                            \"480\"\n                        ],\n                        \"rawValue\": [\n                            \"480\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"cb856f87-d6f9-564d-5b00-a8d434c5b629\",\n                        \"name\": \"IP Address Assignment Type\",\n                        \"value\": [\n                            \"Dynamic\"\n                        ],\n                        \"rawValue\": [\n                            \"9136427540613380174\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"7ac539e5-9381-882e-d248-50de7b04c4e1\",\n                        \"name\": \"Upload speed\",\n                        \"value\": [\n                            \"300 Mbps\"\n                        ],\n                        \"rawValue\": [\n                            \"9145374460613752948\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"6133e68d-af9a-a042-dbc3-250ca599dd54\",\n                        \"name\": \"Offering Type\",\n                        \"value\": [\n                            \"Consumer\"\n                        ],\n                        \"rawValue\": [\n                            \"Consumer\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"e18795f0-4c26-f6ee-1e63-a9030a3406d1\",\n                        \"name\": \"Extender Type\",\n                        \"value\": [\n                            \"Non microDPU\"\n                        ],\n                        \"rawValue\": [\n                            \"9159965993013506286\"\n                        ],\n                        \"visible\": false,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"8e5f390e-d171-9e6b-544c-20d43970c6b6\",\n                        \"name\": \"Monthly Data Usage Capacity Characteristic\",\n                        \"value\": [\n                            \"1000 GB\"\n                        ],\n                        \"rawValue\": [\n                            \"9147204774713760656\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"18508a32-fa95-1666-93f0-46f13d527e82\",\n                        \"name\": \"TISAA\",\n                        \"value\": [\n                            \"True\"\n                        ],\n                        \"rawValue\": [\n                            \"True\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"05e249b7-e439-6ac6-e2da-3139033d60f8\",\n                        \"name\": \"Access Type\",\n                        \"value\": [\n                            \"Fibre - FIFA\"\n                        ],\n                        \"rawValue\": [\n                            \"9147856909313058508\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    },\n                    {\n                        \"id\": \"1e3f5408-99b0-2fa9-e7a0-e5d164472ade\",\n                        \"name\": \"Delivery Method\",\n                        \"value\": [\n                            \"Self-Install\"\n                        ],\n                        \"rawValue\": [\n                            \"Self-Install\"\n                        ],\n                        \"visible\": true,\n                        \"@type\": \"ProductOfferingCharacteristic\"\n                    }\n                ],\n                \"productSpecification\": {\n                    \"id\": \"6fc2e315-5c2e-d504-f7bd-3e3e99e1c7e3\",\n                    \"href\": \"https://public-gateway-cloud-bss-dev02.nc-gke-np.tsl.telus.com/catalog-integration-tmf/catalogManagement/productOffering/d69f2376-3cb3-45a6-c099-a46add3a94d1\",\n                    \"version\": \"0.43\",\n                    \"name\": \"TELUS Internet Product\",\n                    \"@type\": \"ProductSpecification\"\n                }\n            },\n            \"quoteItemType\": \"Product offering\",\n            \"rootQuoteItemId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"availabilityCheckResult\": \"AVAILABLE\",\n            \"approvalLevel\": 0,\n            \"extendedParameters\": {\n                \"hierarchyUnrolled\": [\n                    \"true\"\n                ]\n            },\n            \"creationTime\": \"2021-10-21T23:33:10.611148Z\",\n            \"@type\": \"QuoteItem\"\n        }\n    ],\n    \"quoteTotalPrice\": [\n        {\n            \"priceType\": \"Total NRC\",\n            \"name\": \"Total NRC by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"dutyFreeAmount\": \"0.00\",\n                \"valueExcludingTaxRounded\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total NRC Tax\",\n            \"name\": \"Total NRC Tax by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total NRC Reduction\",\n            \"name\": \"Total NRC Reduction by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"dutyFreeAmount\": \"0.00\",\n                \"valueExcludingTaxRounded\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total RC\",\n            \"recurringChargePeriod\": \"Month\",\n            \"name\": \"Total RC by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"120.00\",\n                \"dutyFreeAmount\": \"120.00\",\n                \"valueExcludingTaxRounded\": \"120.00\",\n                \"valueIncludingTaxRounded\": \"120.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total RC Tax\",\n            \"recurringChargePeriod\": \"Month\",\n            \"name\": \"Total RC Tax by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total RC Reduction\",\n            \"recurringChargePeriod\": \"Month\",\n            \"name\": \"Total RC Reduction by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"dutyFreeAmount\": \"0.00\",\n                \"valueExcludingTaxRounded\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"priceCurrency\": \"CAD\",\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total Deactivation Fee\",\n            \"name\": \"Total Deactivation Fee by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"dutyFreeAmount\": \"0.00\",\n                \"valueExcludingTaxRounded\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"@type\": \"QuotePrice\"\n        },\n        {\n            \"priceType\": \"Total Deactivation Fee Tax\",\n            \"name\": \"Total Deactivation Fee Tax by Quote\",\n            \"price\": {\n                \"taxIncludedAmount\": \"0.00\",\n                \"valueIncludingTaxRounded\": \"0.00\",\n                \"@type\": \"Price\"\n            },\n            \"@type\": \"QuotePrice\"\n        }\n    ],\n    \"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"initialDistributionChannelId\": \"PERMIT\",\n    \"newMSA\": false,\n    \"distributionChannelName\": \"CSR\",\n    \"name\": \"Quote #35\",\n    \"updatedWhen\": \"2021-10-21T23:33:10.63009Z\",\n    \"overrideMode\": \"gross\",\n    \"approvalLevel\": 0,\n    \"alertItems\": [\n        {\n            \"id\": \"31870e51-6dd2-4622-ad40-b5f4fe6c2ffe\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"6b10f2ae-1992-4035-023d-df7b8a81cd43\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Term Start Date Characteristic characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Term Start Date Characteristic\"\n                }\n            }\n        },\n        {\n            \"id\": \"e1991765-b327-4c93-80a2-1c33e7827bdc\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"fc93dcc8-d30e-4466-ad49-f74dbb56a0ed\",\n            \"characteristicId\": \"75bb0bf5-bc7e-29d7-f742-5b4a303638be\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Swap Date characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Swap Date\"\n                }\n            }\n        },\n        {\n            \"id\": \"07e729e1-17e2-4190-9a45-207d204e01ca\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Activation Due Date characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Activation Due Date\"\n                }\n            }\n        },\n        {\n            \"id\": \"73fa3498-218f-4a44-8693-6ab043fcc11a\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"f1b546b4-f6d5-49ea-a44c-15f68edab190\",\n            \"characteristicId\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Schedule Type characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Schedule Type\"\n                }\n            }\n        },\n        {\n            \"id\": \"facb4eb6-5f34-4c15-b813-8c194710a3e9\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"dedbcda3-7e8d-f02a-40e2-47c6f7b6e012\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Price Guarantee Start Date Characteristic characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Price Guarantee Start Date Characteristic\"\n                }\n            }\n        },\n        {\n            \"id\": \"9fa4378e-69ee-4d4e-82c2-73235ba5efbf\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"02e29431-a0d2-80fe-1386-3f8f494a791a\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Delivery Method Change Reason characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Delivery Method Change Reason\"\n                }\n            }\n        },\n        {\n            \"id\": \"813370d9-3bba-4b64-8032-81645d1004e3\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"5df1a463-9f9b-1325-631d-f7540914295e\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Forced Pro Install characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Forced Pro Install\"\n                }\n            }\n        },\n        {\n            \"id\": \"851ebf05-08a8-4b24-b587-a4fff65a5aa1\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"14c667c9-4ae4-558a-687d-4720a2332f32\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Overridden Delivery Method characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Overridden Delivery Method\"\n                }\n            }\n        },\n        {\n            \"id\": \"9c668b12-13bf-4298-aa62-fa1547bd1400\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"fc93dcc8-d30e-4466-ad49-f74dbb56a0ed\",\n            \"characteristicId\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Schedule Type characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Schedule Type\"\n                }\n            }\n        },\n        {\n            \"id\": \"07dbef7f-d6b2-40bf-9204-b8dc86982070\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"f0a41d24-6e43-27c2-4398-5fcf5755ed61\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Available Delivery Method characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Available Delivery Method\"\n                }\n            }\n        },\n        {\n            \"id\": \"0a3af378-e01b-4737-a965-c0dbc0790a30\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"f1b546b4-f6d5-49ea-a44c-15f68edab190\",\n            \"characteristicId\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Activation Due Date characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Activation Due Date\"\n                }\n            }\n        },\n        {\n            \"id\": \"e2181765-4843-4813-83ea-121f71ad776f\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"8e6bdbf1-bcea-deb7-b865-68a85b3953c7\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Pricing Effective Date Characteristic characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Pricing Effective Date Characteristic\"\n                }\n            }\n        },\n        {\n            \"id\": \"595d6664-0e16-469c-90cc-9b3ff4f49ccf\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"fc93dcc8-d30e-4466-ad49-f74dbb56a0ed\",\n            \"characteristicId\": \"b8f7756d-9c6c-552b-b692-053bca445c3d\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Activation Due Date characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Activation Due Date\"\n                }\n            }\n        },\n        {\n            \"id\": \"10b5d26c-a41f-44b8-9c48-ae754c73976b\",\n            \"ruleId\": \"IneligiblePO001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"eligibility\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0045\",\n                \"defaultMessage\": \"This Offering is ineligible for selling\"\n            }\n        },\n        {\n            \"id\": \"e9fd9f3d-1088-44e5-aba8-639739f2151c\",\n            \"ruleId\": \"MChar001\",\n            \"refType\": \"productItem\",\n            \"refId\": \"8e87ff68-4da2-4a8e-9d32-f8036ea4b7ab\",\n            \"characteristicId\": \"eb1be80b-9b2c-70ee-2b9a-481c18a6ff43\",\n            \"alertLevel\": \"error\",\n            \"alertType\": \"content\",\n            \"ruleType\": \"custom\",\n            \"alertDomain\": \"UI\",\n            \"message\": {\n                \"code\": \"M-0041\",\n                \"defaultMessage\": \"Value of Schedule Type characteristic should be filled in obligatory.\",\n                \"params\": {\n                    \"CharacteristicName\": \"Schedule Type\"\n                }\n            }\n        }\n    ],\n    \"extendedParameters\": {\n        \"newCustomer\": [\n            \"Yes\"\n        ]\n    },\n    \"productOfferingRefByMarketRefs\": [\n        {\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"productOfferingId\": \"7a4445c2-3ba3-6523-6609-21f292a33a95\",\n            \"pricesByOffering\": [\n                {\n                    \"priceType\": \"Sub-Total RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Monthly Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"valueBasePriceExcludingTax\": \"0.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"0.00\",\n                        \"valueBasePriceIncludingTax\": \"0.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"0.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"0.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Sub-Total NRC\",\n                    \"name\": \"Sub-Total NRC by Product\",\n                    \"price\": {\n                        \"@type\": \"Price\"\n                    },\n                    \"@type\": \"QuotePrice\"\n                }\n            ]\n        },\n        {\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"productOfferingId\": \"dd7e1654-57c5-0bf2-9a3a-c96f9eadd452\",\n            \"pricesByOffering\": [\n                {\n                    \"priceType\": \"Sub-Total RC\",\n                    \"name\": \"Sub-Total RC by Product\",\n                    \"price\": {\n                        \"@type\": \"Price\"\n                    },\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Sub-Total NRC\",\n                    \"name\": \"Sub-Total NRC by Product\",\n                    \"price\": {\n                        \"@type\": \"Price\"\n                    },\n                    \"@type\": \"QuotePrice\"\n                }\n            ]\n        },\n        {\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"productOfferingId\": \"d69f2376-3cb3-45a6-c099-a46add3a94d1\",\n            \"pricesByOffering\": [\n                {\n                    \"priceType\": \"Sub-Total RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Monthly Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"120.00\",\n                        \"dutyFreeAmount\": \"120.00\",\n                        \"valueBasePriceExcludingTax\": \"120.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"120.00\",\n                        \"valueBasePriceIncludingTax\": \"120.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"120.00\",\n                        \"valueExcludingTax\": \"120.0\",\n                        \"valueExcludingTaxRounded\": \"120.00\",\n                        \"valueIncludingTax\": \"120.0\",\n                        \"valueIncludingTaxRounded\": \"120.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"120.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"120.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"120.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"120.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Sub-Total NRC\",\n                    \"name\": \"One-time Fee\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"valueBasePriceExcludingTax\": \"0.0\",\n                        \"valueBasePriceExcludingTaxRounded\": \"0.00\",\n                        \"valueBasePriceIncludingTax\": \"0.0\",\n                        \"valueBasePriceIncludingTaxRounded\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceExcludingTax\": \"0.0\",\n                        \"valueSubTotalPriceExcludingTaxRounded\": \"0.00\",\n                        \"valueSubTotalPriceIncludingTax\": \"0.0\",\n                        \"valueSubTotalPriceIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Total RC\",\n                    \"recurringChargePeriod\": \"Month\",\n                    \"name\": \"Total RC by Product\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"120.00\",\n                        \"dutyFreeAmount\": \"120.00\",\n                        \"valueExcludingTax\": \"120.0\",\n                        \"valueExcludingTaxRounded\": \"120.00\",\n                        \"valueIncludingTax\": \"120.0\",\n                        \"valueIncludingTaxRounded\": \"120.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                },\n                {\n                    \"priceType\": \"Total NRC\",\n                    \"name\": \"Total NRC by Product\",\n                    \"price\": {\n                        \"taxIncludedAmount\": \"0.00\",\n                        \"dutyFreeAmount\": \"0.00\",\n                        \"valueExcludingTax\": \"0.0\",\n                        \"valueExcludingTaxRounded\": \"0.00\",\n                        \"valueIncludingTax\": \"0.0\",\n                        \"valueIncludingTaxRounded\": \"0.00\",\n                        \"@type\": \"Price\"\n                    },\n                    \"priceCurrency\": \"CAD\",\n                    \"@type\": \"QuotePrice\"\n                }\n            ]\n        }\n    ],\n    \"marketRefs\": [\n        {\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"marketName\": \"Canada\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Quote - add samsung TV",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"\",\n\t\"customerCategory\": \"530385d5-ae67-4578-b5dd-3df23d577874\",\n    \"distributionChannelId\": \"PERMIT\",\n    \"quoteItem\": [\n        {\n            \"id\": \"494e57ea-dc9b-4ae1-8e7b-e6d9855b1f37\",\n            \"action\": \"ADD\",\n            \"marketId\": \"9fd4ad80-38fd-472c-9526-91b1e08d2faf\",\n            \"distributionChannelId\": \"PERMIT\",\n            \"quantity\": 1,\n            \"state\": \"COMPLETED\",\n            \"productOffering\": {\n                \"id\": \"2da271b3-5db5-4f83-8a62-19d49f36f1d9\"\n            },\n            \"quoteItemType\": \"Product offering\"\n        }\n    ]\n}\n"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quote",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quote Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"businessId\": \"{{quoteId}}\",\r\n    \"quoteId\": \"{{quoteId}}\",\r\n    \"sourceState\": \"IN_PROGRESS\",\r\n    \"targetState\": \"CANCELLED\",\r\n    \"stateChangeReason\": \"CANC_REASON_002\",\r\n    \"cancellationReasonDescription\": \"demotest\"\r\n}"
+				},
+				"url": {
+					"raw": "https://public-gateway-cloud-bss-{{cloudenv}}.nc-gke-np.tsl.telus.com/quote-tmf-service/quoteManagement/v5/quote/{{quote_id}}",
+					"protocol": "https",
+					"host": [
+						"public-gateway-cloud-bss-{{cloudenv}}",
+						"nc-gke-np",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"quote-tmf-service",
+						"quoteManagement",
+						"v5",
+						"quote",
+						"{{quote_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
