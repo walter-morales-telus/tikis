@@ -1,7 +1,8 @@
 /* 1. All NC Promotions that map to these Offer IDs */
 
 /* OPTIK ---> AA:Y & AC:Y --> OPTIK TV Tax Included Credits */
-select ncp.attr_id,ncp.object_id,sub.name,ncp.value from nc_params ncp, 
+/* Non-OPTIK AA:Y and AC: N --> non-OPTIK Included Credits */
+select ncp.object_id,sub.name,ncp.value from nc_params ncp, 
 (
     select * from nc_objects where object_type_id = 9133383350013199423 /* Promotion */
 )sub
@@ -29,8 +30,7 @@ value in
 order by ncp.value desc;
 
 
-/* Non-OPTIK AA:Y and AC: N --> non-OPTIK Included Credits */
-select ncp.attr_id,ncp.object_id,sub.name,ncp.value from nc_params ncp, 
+select ncp.object_id,sub.name,ncp.value from nc_params ncp, 
 (
     select * from nc_objects where object_type_id = 9133383350013199423 /* Promotion */
 )sub
@@ -69,17 +69,13 @@ order by ncp.value desc;
 
 
 
-/* 2. NC Promotions that are mapped not marked as TIC in NC but should be */
-/* OPTIK ---> AA:Y & AC:Y --> OPTIK TV Tax Included Credits */
-/* Non-OPTIK AA:Y and AC: N --> non-OPTIK Included Credits */
 
 
 
 
 
-/* 3. NC Promotions that are marked as TIC in NC but should not be */
-/* OPTIK ---> AA:Y & AC:Y --> OPTIK TV Tax Included Credits */
-/* Non-OPTIK AA:Y and AC: N --> non-OPTIK Included Credits */
+
+
 
 
 

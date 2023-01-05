@@ -62,7 +62,7 @@ BEGIN
         /*** NO Alteration Price Component Validation ***/
         SELECT COUNT(*) INTO cnt  FROM nc_objects nco WHERE parent_id = NumArray(i);
         IF cnt = 0 THEN 
-            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Has NO Price Alteration Component -> Skiped');
+            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Has NO Price Alteration Component -> SKIPED');
             CONTINUE;
         END IF;
 
@@ -77,6 +77,7 @@ BEGIN
 
         /* NO: Promo doesnt have TIC Promotion Category */
         IF cnt = 0 THEN
+            DBMS_OUTPUT.PUT_LINE('WRONG: Promotion '|| NumArray(i) ||' Doesnt have Tax Included Credits');
             /* INSERT REFERENCE TO TIC PROMO CATEGORY */ 
             INSERT INTO nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
             VALUES

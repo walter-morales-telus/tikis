@@ -31,6 +31,7 @@ Thanks
 
 The second question is about if the first report is related with the others 2, I mean if instead of using
 the complete 10,610 promotions do I have to use the output of the this report, and again
+
 ---
 <br/><br/><br/>
 
