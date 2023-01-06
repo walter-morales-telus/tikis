@@ -232,8 +232,9 @@ BEGIN
             DELETE FROM nc_references WHERE 
             attr_id = 9142883780313111933 /*Tax Code attr*/
             AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)); /* Alteration Price Component */
+            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
         END IF;
-        DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
+        DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Successfully Updated');
     END LOOP;
     COMMIT;
 
@@ -344,8 +345,9 @@ BEGIN
             DELETE FROM nc_references WHERE 
             attr_id = 9142883780313111933 /*Tax Code attr*/
             AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)); /* Alteration Price Component */
+            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
         END IF;
-        DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
+        DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Successfully Updated');
     END LOOP;
     COMMIT;
 
