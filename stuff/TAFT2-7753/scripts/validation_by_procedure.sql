@@ -7,6 +7,7 @@ CREATE OR REPLACE PROCEDURE VALIDATE_YES_OPTIK(NumArray IN NumberArrayType) IS
     v_code  NUMBER;
     v_errm  VARCHAR2(64);
     BEGIN
+        DBMS_OUTPUT.ENABLE(1000000);
         FOR i IN 1..NumArray.count LOOP
 
             /*** NO Alteration Price Component Validation ***/
@@ -140,6 +141,7 @@ CREATE OR REPLACE PROCEDURE VALIDATE_NO_OPTIK(NumArray IN NumberArrayType) IS
     v_code  NUMBER;
     v_errm  VARCHAR2(64);
     BEGIN
+        DBMS_OUTPUT.ENABLE(1000000);
         FOR i IN 1..NumArray.count LOOP
 
             /*** NO Alteration Price Component Validation ***/

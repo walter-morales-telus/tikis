@@ -1,5 +1,4 @@
-/* ERROR ORU-10027: buffer overflow, limit of 20000 bytes*/
-/* Solution DBMS_OUTPUT.ENABLE(1000000); in PL/SQL*/
+
 
 /**** YES YES YES OPTIK TV Tax Included Offer YES YES YES ****/
 CREATE OR REPLACE TYPE NumberArrayType IS TABLE of NUMBER;
@@ -80,7 +79,7 @@ CREATE OR REPLACE PROCEDURE BACKUP_VALIDATE_YES_OPTIK(NumArray IN NumberArrayTyp
                 --attr_id = 9142883780313111933   /* Tax Code attr */
                 --AND 
                 --object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)); /* Alteration Price Component */
-                DBMS_OUTPUT.PUT_LINE('UPDATE nc_references WHERE WHERE attr_id = 9142883780313111933 AND reference = 9164799782513550301 AND object_id = '|| apc ||';');
+                DBMS_OUTPUT.PUT_LINE('UPDATE nc_references SET reference = '|| old_tax_code ||' WHERE attr_id = 9142883780313111933 AND object_id = '|| apc ||';');
             END IF;
         END LOOP;
 
@@ -210,7 +209,7 @@ CREATE OR REPLACE PROCEDURE BACKUP_VALIDATE_NO_OPTIK(NumArray IN NumberArrayType
                 --attr_id = 9142883780313111933 /*Tax Code attr*/
                 --AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)); /* Alteration Price Component */
                 SELECT reference INTO old_tax_code FROM nc_references WHERE attr_id = 9142883780313111933 AND object_id = apc;
-                DBMS_OUTPUT.PUT_LINE('INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type) VALUES (9142883780313111933,old_tax_code,apc,1,0,0);');
+                DBMS_OUTPUT.PUT_LINE('INSERT INTO  nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type) VALUES (9142883780313111933,'||old_tax_code||','||apc||',1,0,0);');
             END IF;
         END LOOP;
         COMMIT;

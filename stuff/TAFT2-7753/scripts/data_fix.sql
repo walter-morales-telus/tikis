@@ -56,6 +56,7 @@ DECLARE
     );
 
 BEGIN
+    DBMS_OUTPUT.ENABLE(1000000);
     SAVEPOINT before_datafix;
     FOR i IN 1..NumArray.count LOOP
 
@@ -185,79 +186,8 @@ DECLARE
         9159598242213794784,9159600003913820374,9159606107713847040,9160005338613179617,9160005340313179820,9160005341013179867,9160131828513290228,9160131976913290427,
         9160132136213290712,9164432620584732480,9159820245013566425,9159633598313566669,9159633598113566664,9159633598513566674,9163107318390081978,9164784723227855382,
         9164801664024279278,9164851736748457443,9164862633707457500,9160555335613311504,9160555403413311510,9160555547213311616,9156315694313090867,9155882804513436700,
-        9155583252913200702,9155584490513201837,9155584511113202036,9155591508113210002
-    );
-BEGIN
-    SAVEPOINT before_datafix;
-    FOR i IN 1..NumArray.count LOOP
+        9155583252913200702,9155584490513201837,9155584511113202036,9155591508113210002,
 
-        /*** NO Alteration Price Component Validation ***/
-        SELECT COUNT(*) INTO cnt  FROM nc_objects nco WHERE parent_id = NumArray(i);
-        IF cnt = 0 THEN 
-            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Has NO Price Alteration Component -> Skiped');
-            CONTINUE;
-        END IF;
-
-
-        /* Promo has TIC Promotion Category? */
-        SELECT COUNT(*) INTO cnt FROM nc_references WHERE 
-        attr_id = 9153770145313318210   /* ATTR_ID : Promotion Type */
-        AND
-        reference = 9153779179813323603 /* REFERENCE :  Tax Included Credits */ 
-        AND
-        object_id = NumArray(i);
-
-        /* NO: Promo doesnt have TIC Promotion Category */
-        IF cnt = 0 THEN
-            /* INSERT REFERENCE TO TIC PROMO CATEGORY */ 
-            INSERT INTO nc_references (attr_id,reference,object_id,show_order,priority,attr_access_type)
-            VALUES
-            ( 
-                9153770145313318210, /* ATTR_ID : Promotion Type */                
-                9153779179813323603, /* REFERENCE :  Tax Included Credits */
-                NumArray(i),
-                6,
-                0,
-                0
-            );
-        END IF;
-
-        /* Price Alteration has referece to tax code? */
-        SELECT COUNT(*) INTO cnt FROM nc_references 
-        WHERE attr_id = 9142883780313111933  /* ATTR_ID: Tax Code */ 
-        AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i));
-
-        /*YES: DELETE REFERENCE TO Tax Code */
-        IF cnt = 1 THEN
-            DELETE FROM nc_references WHERE 
-            attr_id = 9142883780313111933 /*Tax Code attr*/
-            AND object_id = (SELECT object_id  FROM nc_objects nco WHERE parent_id = NumArray(i)); /* Alteration Price Component */
-            DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Tax Code Successfully Removed');
-        END IF;
-        DBMS_OUTPUT.PUT_LINE('Promotion: '|| NumArray(i) ||' Successfully Updated');
-    END LOOP;
-    COMMIT;
-
-EXCEPTION
-    WHEN OTHERS THEN
-        ROLLBACK TO before_datafix;
-        DBMS_OUTPUT.PUT_LINE('E X C E P T I O N');
-        v_code := SQLCODE;
-        v_errm := SUBSTR(SQLERRM, 1, 64);
-        DBMS_OUTPUT.PUT_LINE (v_code || ' ' || v_errm);
-END;
-/
-/* *************************************************** */
-
-/**** NO NO NO OPTIK TV Tax Included Offer NO NO NO ****/
-DECLARE
-    cnt NUMBER := 0;
-    v_code  NUMBER;
-    v_errm  VARCHAR2(64);
-
-    TYPE NumberArrayType IS TABLE of NUMBER;
-    NumArray NumberArrayType := NumberArrayType 
-    (
         9155882804513436704,9155952154013995060,9156100635613171246,9155952154013994972,9150165500913181620,9150227659313137817,9150227866413137993,9150227877513138002,
         9150227883913138007,9150227883913138011,9150227889713138016,9150227889713138020,9150227889713138024,9150227889713138028,9150227889713138032,9150227889713138036,
         9150468568413165504,9150468754513165619,9150468943113165639,9150469133413165754,9150479623613177972,9150491012613183215,9150491034113183220,9150491046313183225,
@@ -301,6 +231,7 @@ DECLARE
         9162173149865604424,9162173155860524040,9162232340719639223,9162232370241637123,9162232604602637124,9162232782137639224,9162232816891637125,9164421569528732407
     );
 BEGIN
+    DBMS_OUTPUT.ENABLE(1000000);
     SAVEPOINT before_datafix;
     FOR i IN 1..NumArray.count LOOP
 
@@ -360,23 +291,3 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE (v_code || ' ' || v_errm);
 END;
 /
-/* *************************************************** */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
