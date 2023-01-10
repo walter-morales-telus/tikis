@@ -314,11 +314,11 @@ Promotion object_id: 9149675349313098013 INSERTED reference to Tax Included Cred
 Promotion object_id: 9149675349313098013 INSERTED reference to Tax Code 9998 since is an OPTIK TV Promo
 Promotion object_id: 9149675349313098013 Successfully Updated
  
-Promotion object_id: 9159034270813379370 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159034270813379370 Does NOT have Price Alteration Component AND is Optik TV -> SKIPED
 
-Promotion object_id: 9159034273213379375 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159034273213379375 Does NOT have Price Alteration Component AND is Optik TV -> SKIPED
  
-Promotion object_id: 9159034275913379380 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159034275913379380 Does NOT have Price Alteration Component AND is Optik TV -> SKIPED
  
 Promotion object_id: 9164739851309855041 INSERTED reference to Tax Included Credits
 Promotion object_id: 9164739851309855041 INSERTED reference to Tax Code 9998 since is an OPTIK TV Promo
@@ -1116,7 +1116,7 @@ Promotion object_id: 9159076222913145232 INSERTED reference to Tax Included Cred
 Promotion object_id: 9159076222913145232 INSERTED reference to Tax Code 9998 since is an OPTIK TV Promo
 Promotion object_id: 9159076222913145232 Successfully Updated
  
-Promotion object_id: 9160675422113633759 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9160675422113633759 Does NOT have Price Alteration Component AND is Optik TV -> SKIPED
  
 Promotion object_id: 9152222266513216902 INSERTED reference to Tax Included Credits
 Promotion object_id: 9152222266513216902 INSERTED reference to Tax Code 9998 since is an OPTIK TV Promo
@@ -1779,11 +1779,11 @@ Promotion object_id: 9158364312313775781 Successfully Updated
 Promotion object_id: 9158364312313775804 INSERTED reference to Tax Included Credits
 Promotion object_id: 9158364312313775804 Successfully Updated
  
-Promotion object_id: 9159033666113378903 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159033666113378903 Does NOT have Price Alteration Component AND is NOT Optik TV  -> SKIPED
  
-Promotion object_id: 9159033882713379042 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159033882713379042 Does NOT have Price Alteration Component AND is NOT Optik TV  -> SKIPED
  
-Promotion object_id: 9159034013313379155 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9159034013313379155 Does NOT have Price Alteration Component AND is NOT Optik TV  -> SKIPED
  
 Promotion object_id: 9159350119513208151 INSERTED reference to Tax Included Credits
 Promotion object_id: 9159350119513208151 Successfully Updated
@@ -3196,9 +3196,9 @@ Promotion object_id: 9161011304513573902 Successfully Updated
 Promotion object_id: 9164793039242235072 INSERTED reference to Tax Included Credits
 Promotion object_id: 9164793039242235072 Successfully Updated
  
-Promotion object_id: 9160675422213633905 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9160675422213633905 Does NOT have Price Alteration Component AND is NOT Optik TV  -> SKIPED
  
-Promotion object_id: 9160675273713633376 Does NOT have Price Alteration Component -> SKIPED
+Promotion object_id: 9160675273713633376 Does NOT have Price Alteration Component AND is NOT Optik TV  -> SKIPED
  
 Promotion object_id: 9164800303681882392 INSERTED reference to Tax Included Credits
 Promotion object_id: 9164800303681882392 Successfully Updated
